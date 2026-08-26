@@ -30,7 +30,6 @@ const app = new Hono<{ Bindings: HttpBindings }>();
 // missing from the real response until this was fixed).
 const nativeAppOrigins = new Set([
   "https://localhost", // Capacitor's default androidScheme origin
-  "http://localhost", // TEMP: local testing with androidScheme:'http' (see capacitor.config.ts)
   "capacitor://localhost",
   ...(process.env.CAPACITOR_ORIGINS ?? "")
     .split(",")
