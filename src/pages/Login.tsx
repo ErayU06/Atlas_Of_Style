@@ -1,0 +1,195 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { ChevronLeft, UserRound, Lock, Sparkles, Mail } from "lucide-react";
+import { Capacitor } from "@capacitor/core";
+import { trpc } from "@/providers/trpc";
+import { useApp } from "@/context/AppContext";
+import { setNativeToken } from "@/lib/nativeAuth";
+import { t } from "@/i18n";
+
+export default function Login() {
+  const { lang } = useApp();
+  const navigate = useNavigate();
+  const utils = trpc.useUtils();
+
+  const [tab, setTab] = useState<"login" | "signup">("signup");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState<"male" | "female">("male");
+  const [error, setError] = useState<string | null>(null);
+
+  const onSuccess = async (data: { success: boolean; token: string }) => {
+    if (Capacitor.isNativePlatform()) {
+      await setNativeToken(data.token);
+    }
+    await utils.invalidate();
+    navigate("/profile");
+  };
+  const onError = (err: unknown) => {
+    const code = (err as { data?: { code?: string } | null })?.data?.code;
+    if (code === "CONFLICT") setError(t("errTaken", lang));
+    else if (code === "UNAUTHORIZED") setError(t("errWrong", lang));
+    else setError(t("errGeneric", lang));
+  };
+
+  const loginMutation = trpc.localAuth.login.useMutation({ onSuccess, onError });
+  const signupMutation = trpc.localAuth.signup.useMutation({ onSuccess, onError });
+  const pending = loginMutation.isPending || signupMutation.isPending;
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    const un = username.trim().toLowerCase();
+    if (tab === "login") {
+      loginMutation.mutate({ username: un, password });
+    } else {
+      signupMutation.mutate({
+        username: un,
+        password,
+        name: name.trim() || undefined,
+        email: email.trim(),
+        gender,
+      });
+    }
+  };
+
+  return (
+    <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-28 pt-6">
+      <Link
+        to="/"
+        className="inline-flex w-fit items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm"
+      >
+        <ChevronLeft size={16} />
+        {t("back", lang)}
+      </Link>
+
+      <div className="flex flex-1 flex-col justify-center py-8">
+        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-stone-500">
+          Atlas of Style
+        </p>
+        <h1 className="mt-3 text-center font-serif text-3xl font-semibold text-stone-900">
+          {tab === "login" ? t("welcomeBack", lang) : t("createAccount", lang)}
+        </h1>
+        <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-stone-500">
+          {t("authDesc", lang)}
+        </p>
+
+        {/* Tabs */}
+        <div className="mx-auto mt-6 flex w-full max-w-xs rounded-full border border-stone-200 bg-white p-1 shadow-sm">
+          {(["signup", "login"] as const).map((k) => (
+            <button
+              key={k}
+              onClick={() => {
+                setTab(k);
+                setError(null);
+              }}
+              className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
+                tab === k ? "bg-[#c2603a] text-white shadow-sm" : "text-stone-500"
+              }`}
+            >
+              {k === "signup" ? t("signupTab", lang) : t("loginTab", lang)}
+            </button>
+          ))}
+        </div>
+
+        {/* Form */}
+        <form onSubmit={submit} className="mx-auto mt-6 w-full max-w-xs space-y-3">
+          {tab === "signup" && (
+            <div className="relative">
+              <Sparkles size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder={t("nameOptional", lang)}
+                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+              />
+            </div>
+          )}
+          {tab === "signup" && (
+            <div className="relative">
+              <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t("email", lang)}
+                autoCapitalize="none"
+                autoCorrect="off"
+                required
+                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+              />
+            </div>
+          )}
+          {tab === "signup" && (
+            <div>
+              <p className="mb-1.5 pl-4 text-[11px] text-stone-400">{t("gender", lang)}</p>
+              <div className="flex w-full rounded-full border border-stone-200 bg-white p-1 shadow-sm">
+                {(["male", "female"] as const).map((g) => (
+                  <button
+                    key={g}
+                    type="button"
+                    onClick={() => setGender(g)}
+                    className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
+                      gender === g ? "bg-[#c2603a] text-white shadow-sm" : "text-stone-500"
+                    }`}
+                  >
+                    {g === "male" ? t("genderMale", lang) : t("genderFemale", lang)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          <div>
+            <div className="relative">
+              <UserRound size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder={t("username", lang)}
+                autoCapitalize="none"
+                autoCorrect="off"
+                required
+                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+              />
+            </div>
+            {tab === "signup" && (
+              <p className="mt-1 pl-4 text-[11px] text-stone-400">{t("usernameHint", lang)}</p>
+            )}
+          </div>
+          <div>
+            <div className="relative">
+              <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder={t("password", lang)}
+                required
+                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+              />
+            </div>
+            {tab === "signup" && (
+              <p className="mt-1 pl-4 text-[11px] text-stone-400">{t("passwordHint", lang)}</p>
+            )}
+          </div>
+
+          {error && (
+            <p className="rounded-xl bg-red-50 px-4 py-2.5 text-center text-sm text-red-600">
+              {error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={pending}
+            className="w-full rounded-full bg-[#c2603a] py-3.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#a9512f] disabled:opacity-60"
+          >
+            {tab === "login" ? t("loginTab", lang) : t("signupButton", lang)}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
