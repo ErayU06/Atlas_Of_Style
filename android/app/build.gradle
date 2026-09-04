@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Release signing — reads from keystore.properties (gitignored, never
+// committed) so the actual keystore/passwords never touch source control.
+// If the file is missing (e.g. a fresh clone without the keystore), the
+// release build still compiles, just unsigned — it only fails at upload time.
+def keystorePropertiesFile = rootProject.file('keystore.properties')
+def keystoreProperties = new Properties()
+def hasKeystoreProperties = keystorePropertiesFile.exists()
+if (hasKeystoreProperties) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.atlasofstyle.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -16,10 +27,25 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            if (hasKeystoreProperties) {
+                // Resolved relative to this module (android/app/), where the
+                // keystore file actually lives.
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (hasKeystoreProperties) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
