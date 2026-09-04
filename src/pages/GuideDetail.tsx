@@ -5,6 +5,8 @@ import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { useAuth } from '@/hooks/useAuth'
 import { t } from '@/i18n'
+import SmartImage from '@/components/SmartImage'
+import { Button } from '@/components/ui/button'
 
 export default function GuideDetailPage() {
   const { slug } = useParams()
@@ -16,18 +18,19 @@ export default function GuideDetailPage() {
 
   if (!isAuthenticated && !isLoading) {
     return (
-      <div className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-5 pb-28 text-center">
-        <Lock size={28} className="text-[#c2603a]" />
-        <h2 className="mt-3 font-serif text-2xl font-semibold text-stone-900">
+      <div className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-6 pb-28 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-atlas-gold/[0.12] text-atlas-gold">
+          <Lock size={24} />
+        </div>
+        <h1 className="mt-4 font-serif text-[26px] font-semibold leading-tight text-atlas-ink">
           {t('premiumLocked', lang)}
-        </h2>
-        <p className="mx-auto mt-2 max-w-xs text-sm text-stone-500">{t('premiumLockedDesc', lang)}</p>
-        <Link
-          to="/login"
-          className="mt-5 rounded-full bg-[#c2603a] px-6 py-2.5 text-sm font-medium text-white shadow-sm"
-        >
-          {t('loginButton', lang)}
-        </Link>
+        </h1>
+        <p className="mx-auto mt-2.5 max-w-xs text-[13px] leading-relaxed text-atlas-muted">
+          {t('premiumLockedDesc', lang)}
+        </p>
+        <Button asChild variant="atlasGold" size="pill" className="mt-6">
+          <Link to="/login">{t('loginButton', lang)}</Link>
+        </Button>
       </div>
     )
   }
@@ -35,44 +38,72 @@ export default function GuideDetailPage() {
   return (
     <div className="mx-auto max-w-md pb-28">
       <div className="relative">
-        <img
+        <SmartImage
           src={`/images/${guide.countrySlug}-2.jpg`}
           alt={guide.city.en}
-          className="aspect-[16/10] w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+          ratio="story"
+          priority
+        >
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/25"
+            aria-hidden
+          />
+        </SmartImage>
         <Link
           to="/premium"
-          className="absolute left-5 top-5 flex items-center gap-1 rounded-full bg-white/85 px-3 py-1.5 text-xs font-medium text-stone-700 shadow-sm backdrop-blur"
+          className="tap absolute start-5 top-5 flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
         >
-          <ChevronLeft size={16} />
+          <ChevronLeft size={16} className="rtl:rotate-180" />
           {t('back', lang)}
         </Link>
-        <div className="absolute bottom-5 left-5 right-5 text-white">
-          <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/80">
+        <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+          <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80">
             <MapPin size={12} />
             {pick(guide.city, lang)}
           </div>
-          <h1 className="mt-1 font-serif text-3xl font-semibold drop-shadow">{pick(guide.title, lang)}</h1>
+          <h1 className="mt-2 font-serif text-[30px] font-semibold leading-[1.08] drop-shadow-sm">
+            {pick(guide.title, lang)}
+          </h1>
         </div>
       </div>
 
-      <p className="mt-4 px-5 text-sm leading-relaxed text-stone-500">{pick(guide.subtitle, lang)}</p>
+      <p className="px-6 pt-6 font-serif text-[18px] leading-[1.6] text-atlas-ink">
+        {pick(guide.subtitle, lang)}
+      </p>
 
-      <div className="mt-6 space-y-6 px-5">
+      <div className="mt-8 space-y-9 px-5">
         {guide.days.map((day, di) => (
           <div key={di}>
-            <h3 className="font-serif text-lg font-semibold text-[#c2603a]">{pick(day.title, lang)}</h3>
-            <div className="mt-3 space-y-3">
-              {day.stops.map((stop, si) => (
-                <div key={si} className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-serif text-base font-semibold text-stone-900">
-                    {pick(stop.name, lang)}
-                  </h4>
-                  <p className="mt-1.5 text-sm leading-relaxed text-stone-600">{pick(stop.desc, lang)}</p>
-                </div>
-              ))}
+            <div className="mb-4">
+              <p className="kicker">
+                {t('days', lang)} {di + 1}
+              </p>
+              <h2 className="mt-1.5 font-serif text-[23px] font-semibold leading-tight text-atlas-ink">
+                {pick(day.title, lang)}
+              </h2>
+              <div className="mt-3 h-px w-full bg-atlas-line" />
             </div>
+            <ol className="space-y-3">
+              {day.stops.map((stop, si) => (
+                <li
+                  key={si}
+                  className="animate-fade-up flex gap-4 rounded-2xl border border-atlas-line bg-atlas-surface p-5 shadow-card"
+                  style={{ animationDelay: `${Math.min(si, 6) * 60}ms` }}
+                >
+                  <span className="mt-0.5 shrink-0 font-serif text-sm font-semibold text-atlas-clay">
+                    {String(si + 1).padStart(2, '0')}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="font-serif text-[18px] font-semibold leading-snug text-atlas-ink">
+                      {pick(stop.name, lang)}
+                    </h3>
+                    <p className="mt-1.5 text-[14px] leading-relaxed text-atlas-body">
+                      {pick(stop.desc, lang)}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         ))}
       </div>

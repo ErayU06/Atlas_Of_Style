@@ -59,25 +59,25 @@ export default function Login() {
     <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-28 pt-6">
       <Link
         to="/"
-        className="inline-flex w-fit items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm"
+        className="inline-flex w-fit items-center gap-1 rounded-full bg-atlas-surface px-3 py-1.5 text-xs font-medium text-atlas-body shadow-card"
       >
         <ChevronLeft size={16} />
         {t("back", lang)}
       </Link>
 
       <div className="flex flex-1 flex-col justify-center py-8">
-        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-stone-500">
+        <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-atlas-muted">
           Atlas of Style
         </p>
-        <h1 className="mt-3 text-center font-serif text-3xl font-semibold text-stone-900">
+        <h1 className="mt-3 text-center font-serif text-3xl font-semibold text-atlas-ink">
           {tab === "login" ? t("welcomeBack", lang) : t("createAccount", lang)}
         </h1>
-        <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-stone-500">
+        <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-relaxed text-atlas-muted">
           {t("authDesc", lang)}
         </p>
 
         {/* Tabs */}
-        <div className="mx-auto mt-6 flex w-full max-w-xs rounded-full border border-stone-200 bg-white p-1 shadow-sm">
+        <div className="mx-auto mt-6 flex w-full max-w-xs rounded-full border border-atlas-line bg-atlas-surface p-1 shadow-card">
           {(["signup", "login"] as const).map((k) => (
             <button
               key={k}
@@ -86,7 +86,7 @@ export default function Login() {
                 setError(null);
               }}
               className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
-                tab === k ? "bg-[#c2603a] text-white shadow-sm" : "text-stone-500"
+                tab === k ? "bg-atlas-clay text-white shadow-card" : "text-atlas-muted"
               }`}
             >
               {k === "signup" ? t("signupTab", lang) : t("loginTab", lang)}
@@ -98,18 +98,18 @@ export default function Login() {
         <form onSubmit={submit} className="mx-auto mt-6 w-full max-w-xs space-y-3">
           {tab === "signup" && (
             <div className="relative">
-              <Sparkles size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <Sparkles size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={t("nameOptional", lang)}
-                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
           )}
           {tab === "signup" && (
             <div className="relative">
-              <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
               <input
                 type="email"
                 value={email}
@@ -118,21 +118,21 @@ export default function Login() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 required
-                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
           )}
           {tab === "signup" && (
             <div>
-              <p className="mb-1.5 pl-4 text-[11px] text-stone-400">{t("gender", lang)}</p>
-              <div className="flex w-full rounded-full border border-stone-200 bg-white p-1 shadow-sm">
+              <p className="mb-1.5 pl-4 text-[11px] text-atlas-muted/70">{t("gender", lang)}</p>
+              <div className="flex w-full rounded-full border border-atlas-line bg-atlas-surface p-1 shadow-card">
                 {(["male", "female"] as const).map((g) => (
                   <button
                     key={g}
                     type="button"
                     onClick={() => setGender(g)}
                     className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
-                      gender === g ? "bg-[#c2603a] text-white shadow-sm" : "text-stone-500"
+                      gender === g ? "bg-atlas-clay text-white shadow-card" : "text-atlas-muted"
                     }`}
                   >
                     {g === "male" ? t("genderMale", lang) : t("genderFemale", lang)}
@@ -143,7 +143,7 @@ export default function Login() {
           )}
           <div>
             <div className="relative">
-              <UserRound size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <UserRound size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
               <input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -151,27 +151,27 @@ export default function Login() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 required
-                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
             {tab === "signup" && (
-              <p className="mt-1 pl-4 text-[11px] text-stone-400">{t("usernameHint", lang)}</p>
+              <p className="mt-1 pl-4 text-[11px] text-atlas-muted/70">{t("usernameHint", lang)}</p>
             )}
           </div>
           <div>
             <div className="relative">
-              <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+              <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t("password", lang)}
                 required
-                className="w-full rounded-full border border-stone-200 bg-white py-3 pl-11 pr-4 text-sm text-stone-800 shadow-sm outline-none placeholder:text-stone-400 focus:border-[#c2603a]/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
             {tab === "signup" && (
-              <p className="mt-1 pl-4 text-[11px] text-stone-400">{t("passwordHint", lang)}</p>
+              <p className="mt-1 pl-4 text-[11px] text-atlas-muted/70">{t("passwordHint", lang)}</p>
             )}
           </div>
 
@@ -184,7 +184,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={pending}
-            className="w-full rounded-full bg-[#c2603a] py-3.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#a9512f] disabled:opacity-60"
+            className="w-full rounded-full bg-atlas-clay py-3.5 text-sm font-medium text-white shadow-card transition-colors hover:bg-atlas-deep disabled:opacity-60"
           >
             {tab === "login" ? t("loginTab", lang) : t("signupButton", lang)}
           </button>

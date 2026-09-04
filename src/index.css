@@ -8,6 +8,7 @@
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   .font-serif {
     font-family: 'Playfair Display', Georgia, serif;
@@ -16,64 +17,101 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    /* ---- Atlas of Style brand palette ------------------------------------
+       Refined, not replaced: the original clay #c2603a stays the accent, the
+       paper/ink tones around it are tuned for contrast and calm. Every value
+       is a raw "H S% L%" triple so Tailwind can apply alpha modifiers. */
+    --atlas-paper: 38 33% 97%; /* #faf7f2 — app background */
+    --atlas-surface: 0 0% 100%; /* cards */
+    --atlas-surface-soft: 36 28% 95%; /* insets, chips */
+    --atlas-ink: 30 8% 12%; /* headings */
+    --atlas-ink-soft: 30 6% 34%; /* body copy */
+    --atlas-ink-muted: 30 5% 45%; /* captions, meta — 4.6:1 on paper (AA) */
+    --atlas-line: 33 18% 88%; /* hairlines */
+    --atlas-clay: 17 55% 49%; /* #c2603a — primary accent */
+    --atlas-clay-deep: 17 57% 42%;
+    --atlas-clay-tint: 17 55% 49%; /* used with /10 alpha */
+    --atlas-gold: 38 62% 52%; /* premium */
+
+    /* Era atmosphere — overwritten at runtime by the Time Travel screen. */
+    --era-tint: 17 55% 49%;
+    --era-wash: 38 33% 97%;
+
+    /* shadcn tokens, mapped onto the Atlas palette so ui/* components inherit
+       the brand instead of shipping a second, unrelated look. */
+    --background: var(--atlas-paper);
+    --foreground: var(--atlas-ink);
+    --card: var(--atlas-surface);
+    --card-foreground: var(--atlas-ink);
+    --popover: var(--atlas-surface);
+    --popover-foreground: var(--atlas-ink);
+    --primary: var(--atlas-clay);
+    --primary-foreground: 38 33% 98%;
+    --secondary: var(--atlas-surface-soft);
+    --secondary-foreground: var(--atlas-ink);
+    --muted: var(--atlas-surface-soft);
+    --muted-foreground: var(--atlas-ink-muted);
+    --accent: var(--atlas-surface-soft);
+    --accent-foreground: var(--atlas-ink);
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.625rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--atlas-line);
+    --input: var(--atlas-line);
+    --ring: var(--atlas-clay);
+    --radius: 0.875rem;
+    --sidebar-background: var(--atlas-paper);
+    --sidebar-foreground: var(--atlas-ink-soft);
+    --sidebar-primary: var(--atlas-clay);
+    --sidebar-primary-foreground: 38 33% 98%;
+    --sidebar-accent: var(--atlas-surface-soft);
+    --sidebar-accent-foreground: var(--atlas-ink);
+    --sidebar-border: var(--atlas-line);
+    --sidebar-ring: var(--atlas-clay);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --atlas-paper: 28 12% 8%;
+    --atlas-surface: 28 10% 12%;
+    --atlas-surface-soft: 28 9% 16%;
+    --atlas-ink: 36 30% 95%;
+    --atlas-ink-soft: 34 12% 78%;
+    --atlas-ink-muted: 32 8% 60%;
+    --atlas-line: 28 8% 22%;
+    --atlas-clay: 19 68% 60%;
+    --atlas-clay-deep: 19 62% 52%;
+    --atlas-clay-tint: 19 68% 60%;
+    --atlas-gold: 40 68% 62%;
+
+    --era-tint: 19 68% 60%;
+    --era-wash: 28 12% 8%;
+
+    --background: var(--atlas-paper);
+    --foreground: var(--atlas-ink);
+    --card: var(--atlas-surface);
+    --card-foreground: var(--atlas-ink);
+    --popover: var(--atlas-surface);
+    --popover-foreground: var(--atlas-ink);
+    --primary: var(--atlas-clay);
+    --primary-foreground: 28 12% 8%;
+    --secondary: var(--atlas-surface-soft);
+    --secondary-foreground: var(--atlas-ink);
+    --muted: var(--atlas-surface-soft);
+    --muted-foreground: var(--atlas-ink-muted);
+    --accent: var(--atlas-surface-soft);
+    --accent-foreground: var(--atlas-ink);
+    --destructive: 0 62% 46%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: var(--atlas-line);
+    --input: var(--atlas-line);
+    --ring: var(--atlas-clay);
+    --sidebar-background: var(--atlas-paper);
+    --sidebar-foreground: var(--atlas-ink-soft);
+    --sidebar-primary: var(--atlas-clay);
+    --sidebar-primary-foreground: 28 12% 8%;
+    --sidebar-accent: var(--atlas-surface-soft);
+    --sidebar-accent-foreground: var(--atlas-ink);
+    --sidebar-border: var(--atlas-line);
+    --sidebar-ring: var(--atlas-clay);
   }
 }
 
@@ -83,5 +121,61 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Safe-area padding for the fixed bottom nav on notched devices. */
+  :root {
+    --nav-safe: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@layer components {
+  /* Editorial eyebrow above a section title. */
+  .kicker {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-atlas-muted;
+  }
+  /* Scroll rows that must not show a scrollbar (chips, timelines). */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Shared press feedback for anything tappable. */
+  .tap {
+    @apply transition-transform duration-200 ease-out active:scale-[0.97];
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Skeleton shimmer used while imagery decodes. */
+  .shimmer {
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--atlas-surface-soft)) 0%,
+      hsl(var(--atlas-line)) 50%,
+      hsl(var(--atlas-surface-soft)) 100%
+    );
+    background-size: 200% 100%;
+    animation: atlas-shimmer 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes atlas-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Motion is decorative here: honour the OS setting and switch it all off. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

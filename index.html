@@ -2,7 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- The font CSS is @imported from index.css, so the browser only learns
+         about these hosts after that file parses. Warming the connections here
+         removes a DNS + TLS round trip from the critical path. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Tints the Android status bar to match the Atlas paper / ink grounds. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf7f2" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171412" />
+    <meta
+      name="description"
+      content="Atlas of Style — a cultural map of world fashion, country by country and era by era."
+    />
     <title>Atlas of Style</title>
   </head>
   <body>

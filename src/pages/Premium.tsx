@@ -6,6 +6,9 @@ import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { useAuth } from '@/hooks/useAuth'
 import { t } from '@/i18n'
+import SmartImage from '@/components/SmartImage'
+import SectionHeading from '@/components/SectionHeading'
+import { Button } from '@/components/ui/button'
 
 export default function PremiumPage() {
   const { lang } = useApp()
@@ -13,82 +16,113 @@ export default function PremiumPage() {
 
   return (
     <div className="mx-auto max-w-md px-5 pb-28 pt-10">
-      <div className="flex items-center gap-2">
-        <Crown size={22} className="text-[#c2603a]" />
-        <h1 className="font-serif text-4xl font-semibold text-stone-900">
+      <header>
+        <div className="flex items-center gap-2">
+          <Crown size={16} className="text-atlas-gold" />
+          <p className="kicker">{t('premiumCard', lang)}</p>
+        </div>
+        <h1 className="mt-2.5 font-serif text-[34px] font-semibold leading-[1.08] text-atlas-ink">
           {t('premiumTitle', lang)}
         </h1>
-      </div>
-      <p className="mt-1.5 text-sm text-stone-500">{t('premiumSubtitle', lang)}</p>
+        <p className="mt-2.5 text-sm leading-relaxed text-atlas-muted">
+          {t('premiumSubtitle', lang)}
+        </p>
+      </header>
 
       {!isAuthenticated && !isLoading && (
-        <div className="mt-6 rounded-2xl border border-[#c2603a]/20 bg-[#c2603a]/5 p-5 text-center">
-          <Lock size={22} className="mx-auto text-[#c2603a]" />
-          <h3 className="mt-2 font-serif text-lg font-semibold text-stone-900">
+        <div className="mt-6 rounded-3xl border border-atlas-gold/25 bg-atlas-gold/[0.07] p-6 text-center">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-atlas-gold text-white shadow-card">
+            <Lock size={20} />
+          </div>
+          <h2 className="mt-3.5 font-serif text-[21px] font-semibold text-atlas-ink">
             {t('premiumLocked', lang)}
-          </h3>
-          <p className="mx-auto mt-1.5 max-w-xs text-sm leading-relaxed text-stone-500">
+          </h2>
+          <p className="mx-auto mt-2 max-w-xs text-[13px] leading-relaxed text-atlas-muted">
             {t('premiumLockedDesc', lang)}
           </p>
-          <Link
-            to="/login"
-            className="mt-4 inline-block rounded-full bg-[#c2603a] px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#a9512f]"
-          >
-            {t('loginButton', lang)}
-          </Link>
+          <Button asChild variant="atlasGold" size="pill" className="mt-5">
+            <Link to="/login">{t('loginButton', lang)}</Link>
+          </Button>
         </div>
       )}
 
-      <div className="mt-8 space-y-3">
-        {guides.map((g) => {
-          const country = countries.find((c) => c.slug === g.countrySlug)
-          const locked = !isAuthenticated
-          const inner = (
-            <>
-              <div className="relative h-36 w-full overflow-hidden">
-                <img
+      <div className="mt-9">
+        <SectionHeading
+          kicker={`${guides.length} ${t('openGuide', lang)}`}
+          title={t('destinations', lang)}
+        />
+        <div className="space-y-4">
+          {guides.map((g, i) => {
+            const country = countries.find((c) => c.slug === g.countrySlug)
+            const locked = !isAuthenticated
+
+            const inner = (
+              <>
+                <SmartImage
                   src={`/images/${g.countrySlug}-2.jpg`}
                   alt={g.city.en}
-                  loading="lazy"
-                  className={`h-full w-full object-cover ${locked ? 'blur-[3px] brightness-75' : ''}`}
-                />
-                {locked && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="flex items-center gap-1.5 rounded-full bg-black/50 px-3.5 py-1.5 text-xs font-medium text-white backdrop-blur">
-                      <Lock size={13} /> Premium
-                    </span>
+                  ratio="story"
+                  imgClassName={
+                    locked
+                      ? 'blur-[3px] brightness-[0.72] scale-105'
+                      : 'transition-transform duration-700 group-hover:scale-[1.04]'
+                  }
+                >
+                  {locked && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="flex items-center gap-1.5 rounded-full bg-black/45 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+                        <Lock size={13} /> Premium
+                      </span>
+                    </div>
+                  )}
+                </SmartImage>
+                <div className="flex items-center gap-3 p-4">
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-atlas-muted">
+                      <MapPin size={11} />
+                      <span className="truncate">
+                        {pick(g.city, lang)}
+                        {country ? ` · ${country.flag} ${pick(country.name, lang)}` : ''}
+                      </span>
+                    </div>
+                    <h3 className="mt-1 font-serif text-[21px] font-semibold leading-tight text-atlas-ink">
+                      {pick(g.title, lang)}
+                    </h3>
+                    <p className="mt-0.5 line-clamp-1 text-[13px] text-atlas-muted">
+                      {pick(g.subtitle, lang)}
+                    </p>
                   </div>
-                )}
-              </div>
-              <div className="flex items-center gap-3 p-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-widest text-stone-400">
-                    <MapPin size={11} />
-                    {pick(g.city, lang)} {country ? `· ${country.flag} ${pick(country.name, lang)}` : ''}
-                  </div>
-                  <h3 className="mt-0.5 font-serif text-lg font-semibold text-stone-900">
-                    {pick(g.title, lang)}
-                  </h3>
-                  <p className="mt-0.5 line-clamp-1 text-sm text-stone-500">{pick(g.subtitle, lang)}</p>
+                  <ChevronRight
+                    size={18}
+                    className="shrink-0 text-atlas-muted/50 rtl:rotate-180"
+                  />
                 </div>
-                <ChevronRight size={18} className="shrink-0 text-stone-300" />
+              </>
+            )
+
+            const shell =
+              'animate-fade-up overflow-hidden rounded-3xl border border-atlas-line bg-atlas-surface shadow-card'
+
+            return locked ? (
+              <div
+                key={g.slug}
+                className={shell}
+                style={{ animationDelay: `${Math.min(i, 6) * 70}ms` }}
+              >
+                {inner}
               </div>
-            </>
-          )
-          return locked ? (
-            <div key={g.slug} className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-              {inner}
-            </div>
-          ) : (
-            <Link
-              key={g.slug}
-              to={`/guides/${g.slug}`}
-              className="block overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-            >
-              {inner}
-            </Link>
-          )
-        })}
+            ) : (
+              <Link
+                key={g.slug}
+                to={`/guides/${g.slug}`}
+                className={`${shell} tap group block transition-shadow duration-300 hover:shadow-lift`}
+                style={{ animationDelay: `${Math.min(i, 6) * 70}ms` }}
+              >
+                {inner}
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

@@ -48,24 +48,26 @@ export default function PrivacyPolicyPage() {
     <div className="mx-auto max-w-md px-5 pb-28 pt-6">
       <Link
         to="/profile"
-        className="inline-flex w-fit items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm"
+        className="tap inline-flex w-fit items-center gap-1 rounded-full border border-atlas-line bg-atlas-surface px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card"
       >
-        <ChevronLeft size={16} />
+        <ChevronLeft size={16} className="rtl:rotate-180" />
         {t('back', lang)}
       </Link>
 
-      <h1 className="mt-6 font-serif text-3xl font-semibold text-stone-900">
+      <h1 className="mt-6 font-serif text-[32px] font-semibold leading-tight text-atlas-ink">
         Gizlilik Politikası
       </h1>
-      <p className="mt-1.5 text-sm text-stone-500">Atlas of Style · Son güncelleme: Ağustos 2026</p>
+      <p className="mt-2 text-sm text-atlas-muted">
+        Atlas of Style · Son güncelleme: Ağustos 2026
+      </p>
 
       <div className="mt-6 space-y-6">
         {sections.map((s) => (
           <section key={s.title}>
-            <h2 className="font-serif text-lg font-semibold text-stone-900">{s.title}</h2>
+            <h2 className="font-serif text-[19px] font-semibold text-atlas-ink">{s.title}</h2>
             <div className="mt-2 space-y-2">
               {s.body.map((p) => (
-                <p key={p} className="text-sm leading-relaxed text-stone-600">
+                <p key={p} className="text-sm leading-relaxed text-atlas-body">
                   {p}
                 </p>
               ))}

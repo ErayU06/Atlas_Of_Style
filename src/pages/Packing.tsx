@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router'
-import { ChevronLeft, Check, Luggage, MapPin } from 'lucide-react'
+import { ChevronLeft, Check, Luggage, MapPin, ArrowRight } from 'lucide-react'
 import { countries } from '@/data/countries'
 import { citiesByCountry, getCity } from '@/data/cities'
 import { getPackingList, seasonForMonth, seasonNames, monthNames } from '@/data/packing'
@@ -10,6 +10,33 @@ import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
 import PremiumGate from '@/components/PremiumGate'
 import ProBadge from '@/components/ProBadge'
+import { cn } from '@/lib/utils'
+
+/** One shared style for every horizontally-scrolling choice chip. */
+function Chip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={active}
+      className={cn(
+        'tap flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-sm transition-colors duration-200',
+        active
+          ? 'bg-atlas-clay font-semibold text-white shadow-card'
+          : 'border border-atlas-line bg-atlas-surface text-atlas-body hover:border-atlas-clay/30',
+      )}
+    >
+      {children}
+    </button>
+  )
+}
 
 export default function PackingPage() {
   const { slug } = useParams()
@@ -35,112 +62,101 @@ export default function PackingPage() {
     <div className="mx-auto max-w-md px-5 pb-28 pt-6">
       <Link
         to="/tools"
-        className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm"
+        className="tap inline-flex items-center gap-1 rounded-full border border-atlas-line bg-atlas-surface px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card"
       >
-        <ChevronLeft size={16} />
+        <ChevronLeft size={16} className="rtl:rotate-180" />
         {t('back', lang)}
       </Link>
 
-      <h1 className="mt-4 font-serif text-4xl font-semibold text-stone-900">
-        {t('packingTitle', lang)}
-      </h1>
-      <p className="mt-1.5 text-sm text-stone-500">{t('packingSubtitle', lang)}</p>
+      <header className="mt-5">
+        <p className="kicker">{t('tools', lang)}</p>
+        <h1 className="mt-2.5 font-serif text-[34px] font-semibold leading-[1.08] text-atlas-ink">
+          {t('packingTitle', lang)}
+        </h1>
+        <p className="mt-2.5 text-sm leading-relaxed text-atlas-muted">
+          {t('packingSubtitle', lang)}
+        </p>
+      </header>
 
-      {/* Country select */}
-      <p className="mb-2 mt-6 text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-400">
-        {t('selectCountry', lang)}
-      </p>
-      <div className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* ---- Country ---------------------------------------------------- */}
+      <p className="kicker mb-2.5 mt-7">{t('selectCountry', lang)}</p>
+      <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2">
         {countries.map((c) => (
-          <button
+          <Chip
             key={c.slug}
+            active={countrySlug === c.slug}
             onClick={() => {
               setCountrySlug(c.slug)
               setCitySlug(null)
             }}
-            className={`flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-sm transition-colors ${
-              countrySlug === c.slug
-                ? 'bg-[#c2603a] text-white shadow-sm'
-                : 'border border-stone-200 bg-white text-stone-600'
-            }`}
           >
             <span>{c.flag}</span>
             {pick(c.name, lang)}
-          </button>
+          </Chip>
         ))}
       </div>
 
-      {/* City select (if the country has cities) */}
+      {/* ---- City (when the country has any) ---------------------------- */}
       {needsCity && (
         <>
-          <p className="mb-2 mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-400">
-            {t('selectCity', lang)}
-          </p>
-          <div className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <p className="kicker mb-2.5 mt-5">{t('selectCity', lang)}</p>
+          <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2">
             {countryCities.map((c) => (
-              <button
+              <Chip
                 key={c.slug}
+                active={citySlug === c.slug}
                 onClick={() => setCitySlug(c.slug)}
-                className={`flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-sm transition-colors ${
-                  citySlug === c.slug
-                    ? 'bg-[#c2603a] text-white shadow-sm'
-                    : 'border border-stone-200 bg-white text-stone-600'
-                }`}
               >
                 <MapPin size={13} />
                 {pick(c.name, lang)}
-              </button>
+              </Chip>
             ))}
           </div>
         </>
       )}
 
-      {/* Month select + result — Premium */}
+      {/* ---- Month + result — Premium ----------------------------------- */}
       <PremiumGate>
         {(!needsCity || city) && (
           <>
-            <div className="mb-2 mt-4 flex items-center gap-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-400">
-                {t('selectMonth', lang)}
-              </p>
+            <div className="mb-2.5 mt-5 flex items-center gap-2">
+              <p className="kicker">{t('selectMonth', lang)}</p>
               <ProBadge />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2">
               {monthNames[lang].map((m, i) => (
-                <button
-                  key={m}
-                  onClick={() => setMonth(i)}
-                  className={`shrink-0 rounded-full px-3.5 py-2 text-sm transition-colors ${
-                    month === i
-                      ? 'bg-[#c2603a] text-white shadow-sm'
-                      : 'border border-stone-200 bg-white text-stone-600'
-                  }`}
-                >
+                <Chip key={m} active={month === i} onClick={() => setMonth(i)}>
                   {m}
-                </button>
+                </Chip>
               ))}
             </div>
 
-            {/* Result */}
-            <div className="mt-6 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#c2603a]/10 text-[#c2603a]">
+            {/* Keyed so a new selection re-enters instead of swapping in place. */}
+            <div
+              key={`${country.slug}-${citySlug ?? ''}-${month}`}
+              className="animate-fade-up mt-7 overflow-hidden rounded-3xl border border-atlas-line bg-atlas-surface shadow-card"
+            >
+              <div className="flex items-center gap-3.5 border-b border-atlas-line p-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-atlas-clay/[0.09] text-atlas-clay">
                   <Luggage size={20} />
                 </div>
-                <div>
-                  <h3 className="font-serif text-lg font-semibold text-stone-900">
-                    {country.flag} {city ? pick(city.name, lang) : pick(country.name, lang)} ·{' '}
-                    {monthNames[lang][month]}
-                  </h3>
-                  <p className="text-xs text-stone-400">
-                    {seasonNames[season][lang]} · {t('packingFor', lang)}
+                <div className="min-w-0">
+                  <h2 className="truncate font-serif text-[20px] font-semibold leading-tight text-atlas-ink">
+                    {country.flag} {city ? pick(city.name, lang) : pick(country.name, lang)}
+                  </h2>
+                  <p className="mt-0.5 text-[11px] font-medium text-atlas-muted">
+                    {monthNames[lang][month]} · {seasonNames[season][lang]}
                   </p>
                 </div>
               </div>
-              <ul className="mt-4 space-y-2.5">
-                {list.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-stone-700">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c2603a]/10 text-[#c2603a]">
+              <ul className="divide-y divide-atlas-line">
+                {list.map((item, i) => (
+                  <li
+                    key={item}
+                    style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
+                    className="animate-fade-in flex items-start gap-3 px-5 py-3.5 text-[14px] leading-relaxed text-atlas-body"
+                  >
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-atlas-clay/[0.09] text-atlas-clay">
                       <Check size={12} />
                     </span>
                     {item}
@@ -154,9 +170,10 @@ export default function PackingPage() {
 
       <Link
         to={city ? `/city/${city.slug}` : `/country/${country.slug}`}
-        className="mt-4 block rounded-2xl border border-dashed border-stone-300 bg-white/60 p-4 text-center text-sm text-stone-500 transition-colors hover:border-[#c2603a]/40"
+        className="tap mt-5 flex items-center justify-center gap-2 rounded-full border border-dashed border-atlas-line bg-atlas-surface/60 py-3.5 text-sm font-medium text-atlas-muted transition-colors hover:border-atlas-clay/40 hover:text-atlas-body"
       >
-        {city ? pick(city.name, lang) : pick(country.name, lang)} →
+        {city ? pick(city.name, lang) : pick(country.name, lang)}
+        <ArrowRight size={15} className="rtl:rotate-180" />
       </Link>
     </div>
   )

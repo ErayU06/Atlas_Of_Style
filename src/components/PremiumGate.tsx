@@ -4,6 +4,7 @@ import { Crown } from 'lucide-react'
 import { useApp } from '@/context/AppContext'
 import { useAuth } from '@/hooks/useAuth'
 import { t } from '@/i18n'
+import { Button } from '@/components/ui/button'
 
 export default function PremiumGate({ children }: { children: ReactNode }) {
   const { lang } = useApp()
@@ -17,22 +18,19 @@ export default function PremiumGate({ children }: { children: ReactNode }) {
         {children}
       </div>
       <div className="absolute inset-0 flex items-center justify-center p-4">
-        <div className="w-full max-w-xs rounded-2xl border border-amber-200 bg-white/95 p-6 text-center shadow-xl backdrop-blur">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-sm">
+        <div className="animate-fade-up w-full max-w-xs rounded-3xl border border-atlas-gold/25 bg-atlas-surface/95 p-6 text-center shadow-lift backdrop-blur-md">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-atlas-gold text-white shadow-card">
             <Crown size={22} />
           </div>
-          <h3 className="mt-3 font-serif text-lg font-semibold text-stone-900">
+          <h3 className="mt-3.5 font-serif text-[20px] font-semibold text-atlas-ink">
             {t('premiumFeature', lang)}
           </h3>
-          <p className="mt-1.5 text-sm leading-relaxed text-stone-500">
+          <p className="mt-2 text-[13px] leading-relaxed text-atlas-muted">
             {t('premiumFeatureDesc', lang)}
           </p>
-          <Link
-            to="/login"
-            className="mt-4 inline-block rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.02]"
-          >
-            {t('goPremium', lang)}
-          </Link>
+          <Button asChild variant="atlasGold" size="pill-sm" className="mt-5">
+            <Link to="/login">{t('goPremium', lang)}</Link>
+          </Button>
         </div>
       </div>
     </div>

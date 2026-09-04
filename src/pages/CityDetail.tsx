@@ -1,5 +1,5 @@
 import { Link, useParams, Navigate } from 'react-router'
-import { ChevronLeft, MapPin, Thermometer, Camera } from 'lucide-react'
+import { ChevronLeft, MapPin, Thermometer } from 'lucide-react'
 import { getCity } from '@/data/cities'
 import { countries } from '@/data/countries'
 import { pick } from '@/types/country'
@@ -7,6 +7,8 @@ import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
 import ProBadge from '@/components/ProBadge'
 import PremiumGate from '@/components/PremiumGate'
+import SmartImage from '@/components/SmartImage'
+import { Button } from '@/components/ui/button'
 
 export default function CityDetailPage() {
   const { slug } = useParams()
@@ -18,90 +20,82 @@ export default function CityDetailPage() {
 
   return (
     <div className="mx-auto max-w-md pb-28">
-      {/* Hero with photo */}
+      {/* ---- Hero plate -------------------------------------------------- */}
       <div className="relative">
-        <img
+        <SmartImage
           src={`/images/city-${city.slug}.jpg`}
           alt={`${city.name.en} everyday street style`}
-          className="aspect-[4/5] w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
-        <div className="absolute left-5 right-5 top-5 flex items-center justify-between">
+          ratio="portrait"
+          priority
+        >
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-black/25"
+            aria-hidden
+          />
+        </SmartImage>
+
+        <div className="absolute inset-x-5 top-5 flex items-center justify-between">
           <Link
             to={`/country/${country.slug}`}
-            className="flex items-center gap-1 rounded-full bg-white/85 px-3 py-1.5 text-xs font-medium text-stone-700 shadow-sm backdrop-blur transition-colors hover:text-stone-900"
+            className="tap flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
           >
-            <ChevronLeft size={16} />
+            <ChevronLeft size={16} className="rtl:rotate-180" />
             {t('backToCountry', lang)}
           </Link>
           <ProBadge />
         </div>
-        <div className="absolute bottom-5 left-5 right-5 text-white">
-          <div className="text-4xl">{country.flag}</div>
-          <h1 className="mt-1 font-serif text-4xl font-semibold drop-shadow">
+
+        <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+          <div className="text-3xl leading-none">{country.flag}</div>
+          <h1 className="mt-2 font-serif text-[38px] font-semibold leading-[1.02] drop-shadow-sm">
             {pick(city.name, lang)}
           </h1>
-          <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/80">
+          <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">
             {pick(country.name, lang)}
           </p>
         </div>
       </div>
 
       <PremiumGate>
-        {/* Intro */}
-        <div className="px-5 pt-6">
-          <h2 className="font-serif text-xl font-semibold text-stone-900">
+        {/* ---- Standfirst ---------------------------------------------- */}
+        <div className="px-6 pt-7">
+          <h2 className="font-serif text-[23px] font-semibold leading-snug text-atlas-ink">
             {pick(city.tagline, lang)}
           </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-stone-500">
+          <p className="mt-3 text-[15px] leading-[1.65] text-atlas-body">
             {pick(city.description, lang)}
           </p>
         </div>
 
-        {/* Climate card */}
-        <div className="mt-4 px-5">
-          <div className="flex items-start gap-3 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#c2603a]/10 text-[#c2603a]">
+        {/* ---- Climate wall label -------------------------------------- */}
+        <div className="mt-7 px-5">
+          <div className="flex items-start gap-3.5 rounded-2xl border border-atlas-line bg-atlas-surface p-5 shadow-card">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-atlas-clay/[0.09] text-atlas-clay">
               <Thermometer size={18} />
             </span>
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-stone-400">
-                {t('climateLabel', lang)}
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-stone-700">
+              <p className="kicker">{t('climateLabel', lang)}</p>
+              <p className="mt-1.5 text-[14px] leading-relaxed text-atlas-body">
                 {pick(city.climate, lang)}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Packing link */}
-        <div className="px-5 pt-4">
-          <Link
-            to={`/packing/${country.slug}`}
-            className="flex items-center justify-center gap-2 rounded-full border border-[#c2603a]/30 bg-[#c2603a]/5 py-3 text-sm font-medium text-[#c2603a] transition-colors hover:bg-[#c2603a]/10"
-          >
-            🧳 {t('whatToWear', lang)} <ProBadge />
-          </Link>
-        </div>
-
-        {/* Everyday style note */}
-        <div className="mt-4 px-5">
-          <div className="flex items-center gap-2 px-1 text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400">
-            <Camera size={13} />
-            {t('everydayStyle', lang)}
-          </div>
-        </div>
-
-        {/* Country link */}
-        <div className="px-5 pt-4">
-          <Link
-            to={`/country/${country.slug}`}
-            className="flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white py-3 text-sm font-medium text-stone-600 shadow-sm transition-colors hover:border-[#c2603a]/40"
-          >
-            <MapPin size={15} />
-            {country.flag} {pick(country.name, lang)}
-          </Link>
+        {/* ---- Next steps ---------------------------------------------- */}
+        <div className="mt-5 space-y-3 px-5">
+          <Button asChild variant="atlasSoft" size="pill" className="w-full">
+            <Link to={`/packing/${country.slug}`}>
+              🧳 {t('whatToWear', lang)}
+              <ProBadge />
+            </Link>
+          </Button>
+          <Button asChild variant="atlasOutline" size="pill" className="w-full">
+            <Link to={`/country/${country.slug}`}>
+              <MapPin size={15} />
+              {country.flag} {pick(country.name, lang)}
+            </Link>
+          </Button>
         </div>
       </PremiumGate>
     </div>

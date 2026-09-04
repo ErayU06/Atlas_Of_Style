@@ -10,6 +10,25 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        // Atlas of Style brand scale. Every screen composes from these so the
+        // whole app reads as one brand in both light and dark mode.
+        atlas: {
+          paper: "hsl(var(--atlas-paper) / <alpha-value>)",
+          surface: "hsl(var(--atlas-surface) / <alpha-value>)",
+          soft: "hsl(var(--atlas-surface-soft) / <alpha-value>)",
+          ink: "hsl(var(--atlas-ink) / <alpha-value>)",
+          body: "hsl(var(--atlas-ink-soft) / <alpha-value>)",
+          muted: "hsl(var(--atlas-ink-muted) / <alpha-value>)",
+          line: "hsl(var(--atlas-line) / <alpha-value>)",
+          clay: "hsl(var(--atlas-clay) / <alpha-value>)",
+          deep: "hsl(var(--atlas-clay-deep) / <alpha-value>)",
+          gold: "hsl(var(--atlas-gold) / <alpha-value>)",
+        },
+        // Driven by the Time Travel screen, which swaps the era atmosphere.
+        era: {
+          tint: "hsl(var(--era-tint) / <alpha-value>)",
+          wash: "hsl(var(--era-wash) / <alpha-value>)",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -58,6 +77,15 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        // Soft, warm-tinted elevation instead of neutral black blur.
+        card: "0 1px 2px hsl(28 20% 20% / 0.04), 0 8px 24px -12px hsl(28 20% 20% / 0.14)",
+        lift: "0 2px 6px hsl(28 20% 20% / 0.06), 0 20px 40px -20px hsl(28 20% 20% / 0.22)",
+      },
+      // Consistent editorial crops used across cards and heroes.
+      aspectRatio: {
+        editorial: "4 / 5",
+        portrait: "3 / 4",
+        story: "16 / 10",
       },
       keyframes: {
         "accordion-down": {
@@ -72,11 +100,64 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        // --- Atlas micro-interactions (transform/opacity only: GPU friendly) --
+        "fade-up": {
+          from: { opacity: "0", transform: "translate3d(0, 12px, 0)" },
+          to: { opacity: "1", transform: "translate3d(0, 0, 0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "era-in": {
+          from: { opacity: "0", transform: "scale(1.04)", filter: "blur(6px)" },
+          to: { opacity: "1", transform: "scale(1)", filter: "blur(0)" },
+        },
+        // Era portal: scale + blur only, so the image's own opacity fade is
+        // free to crossfade over the outgoing decade underneath it.
+        "portal-in": {
+          from: { transform: "scale(1.05)", filter: "blur(5px)" },
+          to: { transform: "scale(1)", filter: "blur(0)" },
+        },
+        "portal-out": {
+          from: { opacity: "1", transform: "scale(1)" },
+          to: { opacity: "0", transform: "scale(0.985)" },
+        },
+        "heart-pop": {
+          "0%": { transform: "scale(1)" },
+          "40%": { transform: "scale(1.35)" },
+          "70%": { transform: "scale(0.92)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "stamp-in": {
+          "0%": { opacity: "0", transform: "scale(1.6) rotate(-14deg)" },
+          "55%": { opacity: "1", transform: "scale(0.94) rotate(-4deg)" },
+          "100%": { opacity: "1", transform: "scale(1) rotate(-6deg)" },
+        },
+        "sheen": {
+          "0%": { transform: "translate3d(-120%, 0, 0)" },
+          "100%": { transform: "translate3d(220%, 0, 0)" },
+        },
+        "float-up": {
+          "0%": { opacity: "0", transform: "translate3d(0, 8px, 0) scale(0.96)" },
+          "12%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
+          "88%": { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
+          "100%": { opacity: "0", transform: "translate3d(0, -6px, 0) scale(0.98)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "fade-up": "fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "fade-in": "fade-in 0.4s ease-out both",
+        "era-in": "era-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "portal-in": "portal-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "portal-out": "portal-out 0.6s ease-in both",
+        "heart-pop": "heart-pop 0.42s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "stamp-in": "stamp-in 0.55s cubic-bezier(0.34, 1.4, 0.64, 1) both",
+        "sheen": "sheen 1.6s ease-in-out",
+        "float-up": "float-up 2.6s ease-out both",
       },
     },
   },

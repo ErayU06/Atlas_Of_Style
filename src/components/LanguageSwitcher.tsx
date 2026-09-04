@@ -15,7 +15,7 @@ export default function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <button
           aria-label="Language"
-          className="flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-stone-600 shadow-sm transition-colors hover:border-[#c2603a]/40"
+          className="tap flex items-center gap-1.5 rounded-full border border-atlas-line bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md transition-colors hover:border-atlas-clay/40"
         >
           <Globe size={14} />
           {lang.toUpperCase()}
@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
             className="flex items-center justify-between gap-3 text-sm"
           >
             <span>{langNames[l]}</span>
-            {l === lang && <Check size={14} className="text-[#c2603a]" />}
+            {l === lang && <Check size={14} className="text-atlas-clay" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
