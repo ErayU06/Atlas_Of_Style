@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Atlas of Style — App Store mark.
+       A meridian globe whose latitudes are stitched like thread: the atlas
+       half of the name and the style half in one figure. Palette is taken
+       straight from src/index.css: ink ground, paper linework, gold stitching,
+       clay locator dot.
+       Drawn full-bleed and square on purpose — iOS masks the corners itself,
+       and the App Store rejects an icon that bakes in its own rounding. -->
+  <defs>
+    <radialGradient id="ground" cx="50%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#2B2723"/>
+      <stop offset="100%" stop-color="#191714"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#ground)"/>
+
+  <!-- Scaled about the centre so the mark fills ~69% of the tile: iOS sits
+       the icon on a busy home screen, and artwork this simple looks timid
+       with a wider margin. -->
+  <g transform="translate(512 512) scale(1.1) translate(-512 -512)">
+  <g fill="none" stroke-linecap="round">
+    <!-- Globe rim and meridian: paper, the heaviest strokes so the silhouette
+         still reads at the 40px home-screen size. -->
+    <circle cx="512" cy="512" r="320" stroke="#FAF7F2" stroke-width="30"/>
+    <ellipse cx="512" cy="512" rx="124" ry="320" stroke="#FAF7F2" stroke-width="20" opacity="0.92"/>
+
+    <!-- Latitudes as running stitches. Endpoints are solved against the rim
+         (w = sqrt(r² - dy²)) so each arc lands exactly on the circle instead
+         of overshooting it. -->
+    <path d="M 229.3 362 A 282.7 52 0 0 0 794.7 362" stroke="#D19939" stroke-width="22" stroke-dasharray="44 34"/>
+    <path d="M 192 512 A 320 76 0 0 0 832 512" stroke="#D19939" stroke-width="26" stroke-dasharray="52 38"/>
+    <path d="M 229.3 662 A 282.7 52 0 0 0 794.7 662" stroke="#D19939" stroke-width="22" stroke-dasharray="44 34"/>
+  </g>
+
+  <!-- Locator, sitting on the upper stitch line. The ink collar keeps it from
+       merging into the gold underneath at small sizes. -->
+  <circle cx="636" cy="409" r="46" fill="#191714"/>
+  <circle cx="636" cy="409" r="34" fill="#C2603A"/>
+  </g>
+</svg>

@@ -17,7 +17,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState<"male" | "female">("male");
+  const [gender, setGender] = useState<"male" | "female" | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const onSuccess = async (data: { success: boolean; token: string }) => {
@@ -50,7 +50,7 @@ export default function Login() {
         password,
         name: name.trim() || undefined,
         email: email.trim(),
-        gender,
+        gender: gender ?? undefined,
       });
     }
   };
@@ -124,13 +124,19 @@ export default function Login() {
           )}
           {tab === "signup" && (
             <div>
-              <p className="mb-1.5 pl-4 text-[11px] text-atlas-muted/70">{t("gender", lang)}</p>
+              <p className="mb-1.5 pl-4 text-[11px] text-atlas-muted/70">
+                {t("genderOptional", lang)}
+              </p>
               <div className="flex w-full rounded-full border border-atlas-line bg-atlas-surface p-1 shadow-card">
                 {(["male", "female"] as const).map((g) => (
                   <button
                     key={g}
                     type="button"
-                    onClick={() => setGender(g)}
+                    aria-pressed={gender === g}
+                    /* Nothing is selected by default, and tapping the active
+                       choice clears it again — so leaving this blank is a
+                       reachable state, not just an undocumented default. */
+                    onClick={() => setGender((prev) => (prev === g ? null : g))}
                     className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
                       gender === g ? "bg-atlas-clay text-white shadow-card" : "text-atlas-muted"
                     }`}
