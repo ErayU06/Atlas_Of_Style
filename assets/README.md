@@ -1,55 +1,103 @@
-# App icon source
+# App icon sources
 
-`icon.svg` is the master artwork; `icon.png` is the 1024×1024 render App Store
-Connect asks for. Colours come straight from the tokens in `src/index.css`
-(`--atlas-ink`, `--atlas-paper`, `--atlas-gold`, `--atlas-clay`), so the icon
-and the app stay on one palette.
+`icon.svg` is the master artwork. Everything else in this folder is derived
+from it, and every platform icon in `android/` (and, once the iOS project
+exists, in `ios/`) is generated from these files by `@capacitor/assets`.
 
-## Why the PNG looks the way it does
+| File | What it is |
+| --- | --- |
+| `icon.svg` | Master artwork, 2048×2048 |
+| `icon.png` | 1024×1024 flattened render — the App Store Connect upload |
+| `icon-foreground.svg` / `.png` | Android adaptive foreground: artwork only, cream plate removed |
+| `icon-background.png` | Android adaptive background: the flat cream plate |
+| `ios/AppIcon.appiconset/` | Staged iOS icon set — see below |
 
-App Store Connect rejects an icon that carries an alpha channel or bakes in its
-own rounded corners — iOS applies the mask itself. The render is therefore
-flattened onto the ink ground, stripped of alpha and tagged sRGB:
+## Why the foreground is scaled up
 
-- 1024×1024, PNG, 8-bit RGB (3 channels, no alpha), sRGB
+Android masks an adaptive icon to a circle or squircle and only guarantees the
+centre 66% is visible. `ic_launcher.xml` additionally insets both layers by
+16.7%, and the artwork already sits inside a generous margin in the master's
+viewBox. Left as drawn, those three reductions compound and the globe lands at
+roughly 42% of the masked icon — correct, but lost in space.
+
+`icon-foreground.svg` therefore scales the artwork by 1.33 about the centre so
+it fills ~93% of its own frame, which comes out at ~62% of the finished icon:
+inside the guaranteed circle, but properly weighted. The ribbon tips are the
+outermost points, and they clear the mask with margin.
+
+The iOS and App Store icons use the master unchanged — iOS masks the corners
+but crops nothing, so there is nothing to compensate for.
+
+## No alpha in the store icons
+
+Apple rejects an App Store icon that carries an alpha channel or bakes in its
+own rounded corners. `icon.png` and `ios/AppIcon.appiconset/AppIcon-512@2x.png`
+are both flattened onto the cream ground, stripped of alpha and tagged sRGB:
+1024×1024, 8-bit RGB, 3 channels.
+
+## The staged iOS icon set
+
+`npx cap add ios` refuses to run when an `ios/` directory already exists, so
+creating one here purely to hold an icon would block the very command that
+scaffolds the Xcode project. The icon set is staged at
+`assets/ios/AppIcon.appiconset/` instead. It is exactly what `@capacitor/assets`
+writes for iOS — one universal 1024×1024 `AppIcon-512@2x.png` plus its
+`Contents.json`, which is all modern Xcode wants.
+
+On macOS, after the platform exists, either copy it into place:
+
+```sh
+npx cap add ios
+cp -R assets/ios/AppIcon.appiconset ios/App/App/Assets.xcassets/
+```
+
+…or just re-run the generator, which now has somewhere to write:
+
+```sh
+npx @capacitor/assets generate --ios
+```
 
 ## Regenerating
 
-`sharp` is not a project dependency — it is only needed to rasterise this file,
-so install it ad hoc rather than adding it to `package.json`:
+```sh
+npx @capacitor/assets generate --android
+```
+
+Two things to know before you run it:
+
+- **It also rewrites splash screens.** With no `assets/splash.png` present it
+  derives them from the icon, which is not what the splash should be. It also
+  adds `drawable-*-night-*` and `-ldpi` variants that this project does not
+  otherwise carry.
+- **It also emits PWA output** into `icons/` and `public/manifest.webmanifest`
+  at the repo root, and reformats `AndroidManifest.xml`.
+
+None of that is wanted here, so revert everything outside `res/mipmap-*` after
+generating:
+
+```sh
+git checkout -- android/app/src/main/AndroidManifest.xml
+git checkout -- $(git diff --name-only | grep splash.png)
+rm -rf icons public/manifest.webmanifest \
+       android/app/src/main/res/drawable-*night-* \
+       android/app/src/main/res/drawable-land-ldpi \
+       android/app/src/main/res/drawable-port-ldpi \
+       android/app/src/main/res/drawable-night
+```
+
+To rebuild `icon.png`, the foreground and the staged iOS set from the master,
+`sharp` does the rasterising. It is not a project dependency — install it ad
+hoc:
 
 ```sh
 npm i --no-save sharp
-node -e '
-const sharp = require("sharp"), fs = require("fs");
-sharp(fs.readFileSync("assets/icon.svg"), { density: 384 })
-  .resize(1024, 1024)
-  .flatten({ background: "#191714" })
-  .removeAlpha()
-  .withMetadata({ icc: "srgb" })
-  .png({ compressionLevel: 9 })
-  .toFile("assets/icon.png");
-'
 ```
 
-## Feeding it to the platforms
+## Provenance note
 
-`assets/icon.png` is the path `@capacitor/assets` reads by default, so once the
-iOS project exists the whole set can be generated from this one file:
-
-```sh
-npx cap add ios          # macOS + Xcode only
-npx @capacitor/assets generate
-```
-
-That writes the iOS asset catalog and the Android mipmaps. The 1024 PNG is also
-what you upload to App Store Connect directly.
-
-## Heads-up on the current Android icon
-
-The icons committed under `android/app/src/main/res/mipmap-*` are still the
-stock Android placeholder — the default robot-head launcher art that
-`cap add android` generates, on a white background. Running the `assets
-generate` command above replaces them with this mark. Shipping the placeholder
-to either store is a rejection risk, so do that before the next release on
-either platform.
+The SVG as supplied carried a C2PA `<metadata>` manifest recording that the
+artwork was generated by Recraft AI. It is not reproduced in the committed
+file: it is inert for rasterising, and none of the generated PNGs can carry it
+regardless. If that disclosure should live in the repo, commit the original
+file over `icon.svg` — the paths are unchanged, so every generated icon stays
+byte-identical.
