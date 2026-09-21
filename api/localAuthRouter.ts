@@ -56,7 +56,12 @@ export const localAuthRouter = createRouter({
         password: z.string().min(6).max(72),
         name: z.string().min(1).max(60).optional(),
         email: emailSchema,
-        gender: genderSchema,
+        // Optional: App Store Review Guideline 5.1.1(ii) bars requiring
+        // personal data the core experience doesn't need, and a style atlas
+        // works the same whether or not this is answered. Left unset the
+        // column stays NULL — it is already nullable in db/schema.ts, so
+        // making it optional needs no migration.
+        gender: genderSchema.optional(),
       }),
     )
     .mutation(async ({ ctx, input }) => {

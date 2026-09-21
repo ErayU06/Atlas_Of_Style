@@ -187,6 +187,7 @@ export const ui = {
   nameOptional: { tr: 'Adın (isteğe bağlı)', en: 'Your name (optional)', zh: '你的名字（可选）', hi: 'आपका नाम (वैकल्पिक)', es: 'Tu nombre (opcional)', ar: 'اسمك (اختياري)' },
   email: { tr: 'E-posta', en: 'Email', zh: '电子邮箱', hi: 'ईमेल', es: 'Correo electrónico', ar: 'البريد الإلكتروني' },
   gender: { tr: 'Cinsiyet', en: 'Gender', zh: '性别', hi: 'लिंग', es: 'Género', ar: 'الجنس' },
+  genderOptional: { tr: 'Cinsiyet (isteğe bağlı)', en: 'Gender (optional)', zh: '性别（选填）', hi: 'लिंग (वैकल्पिक)', es: 'Género (opcional)', ar: 'الجنس (اختياري)' },
   genderMale: { tr: 'Erkek', en: 'Male', zh: '男', hi: 'पुरुष', es: 'Hombre', ar: 'ذكر' },
   genderFemale: { tr: 'Kadın', en: 'Female', zh: '女', hi: 'महिला', es: 'Mujer', ar: 'أنثى' },
   signupButton: { tr: 'Hesap oluştur', en: 'Create account', zh: '创建账户', hi: 'खाता बनाएं', es: 'Crear cuenta', ar: 'إنشاء الحساب' },
