@@ -97,6 +97,13 @@ export const localAuthRouter = createRouter({
         new TRPCError({ code: "UNAUTHORIZED", message: "invalid_credentials" });
       if (!user || !user.passwordHash) throw invalid();
       const [salt, stored] = user.passwordHash.split(":");
+      // A passwordHash that didn't come from signup — a value typed straight
+      // into the column by hand, say — has no ":" separator, so `stored` is
+      // undefined and the Buffer.from() below throws. That surfaced as a 500
+      // and a generic "something went wrong" in the app instead of a clean
+      // rejection, which is a confusing way to discover the column holds
+      // plaintext. Treat a malformed hash as what it is: not a credential.
+      if (!salt || !stored) throw invalid();
       const candidate = hashPassword(input.password, salt);
       const a = Buffer.from(stored, "hex");
       const b = Buffer.from(candidate, "hex");
