@@ -29,8 +29,13 @@ const app = new Hono<{ Bindings: HttpBindings }>();
 // which actually sticks — confirmed via curl (Origin header was silently
 // missing from the real response until this was fixed).
 const nativeAppOrigins = new Set([
-  "https://localhost", // Capacitor's default androidScheme origin
-  "capacitor://localhost",
+  // What the shells actually send: both platforms are configured with a
+  // scheme of `https` in capacitor.config.ts, so their origin is
+  // `https://localhost`. The other two are Capacitor's defaults, kept so a
+  // build that drops those scheme overrides still reaches the API.
+  "https://localhost",
+  "capacitor://localhost", // iOS default when iosScheme is unset
+  "http://localhost", // Android default when androidScheme is unset
   ...(process.env.CAPACITOR_ORIGINS ?? "")
     .split(",")
     .map((o) => o.trim())
