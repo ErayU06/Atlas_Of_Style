@@ -29,6 +29,15 @@ export default function Login() {
   };
   const onError = (err: unknown) => {
     const code = (err as { data?: { code?: string } | null })?.data?.code;
+    // Only CONFLICT and UNAUTHORIZED get a specific message below; everything
+    // else collapses into the generic one, which hides whether the call was a
+    // validation rejection, a 500 or a request that never left the device.
+    console.error("[auth] login/signup failed", {
+      code: code ?? "<none — the request may not have reached the server>",
+      message: (err as { message?: string })?.message,
+      httpStatus: (err as { data?: { httpStatus?: number } } | null)?.data?.httpStatus,
+      error: err,
+    });
     if (code === "CONFLICT") setError(t("errTaken", lang));
     else if (code === "UNAUTHORIZED") setError(t("errWrong", lang));
     else setError(t("errGeneric", lang));

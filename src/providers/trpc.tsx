@@ -37,11 +37,33 @@ const trpcClient = trpc.createClient({
         const token = await getNativeToken();
         return token ? { Authorization: `Bearer ${token}` } : {};
       },
-      fetch(input, init) {
-        return globalThis.fetch(input, {
-          ...(init ?? {}),
-          credentials: "include",
-        });
+      async fetch(input, init) {
+        const url = typeof input === "string" ? input : (input as Request).url;
+        try {
+          const res = await globalThis.fetch(input, {
+            ...(init ?? {}),
+            credentials: "include",
+          });
+          if (!res.ok) {
+            // Read from a clone: the caller still needs the original stream.
+            const body = await res
+              .clone()
+              .text()
+              .catch(() => "<body unreadable>");
+            console.error(
+              `[trpc] ${init?.method ?? "GET"} ${url} -> ${res.status} ${res.statusText}`,
+              body.slice(0, 1000),
+            );
+          }
+          return res;
+        } catch (err) {
+          // A throw here never reached the server: DNS, TLS, App Transport
+          // Security, or a CORS preflight the browser refused. The tRPC error
+          // that follows carries no HTTP status, so without this line the
+          // cause is invisible from inside the app.
+          console.error(`[trpc] ${init?.method ?? "GET"} ${url} -> request failed`, err);
+          throw err;
+        }
       },
     }),
   ],
