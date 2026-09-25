@@ -1,7 +1,7 @@
 import * as cookie from "cookie";
 import { Session } from "@contracts/constants";
 import { getSessionCookieOptions } from "./lib/cookies";
-import { createRouter, authedQuery } from "./middleware";
+import { createRouter, authedQuery, publicQuery } from "./middleware";
 import { deleteUserCascade } from "./queries/users";
 import type { TrpcContext } from "./context";
 
@@ -20,7 +20,13 @@ function clearSessionCookie(ctx: Pick<TrpcContext, "req" | "resHeaders">) {
 }
 
 export const authRouter = createRouter({
-  me: authedQuery.query((opts) => opts.ctx.user),
+  // Public, and null rather than a throw when nobody is signed in. Asking
+  // "who am I?" as a guest is the app's normal first call on every launch —
+  // it is not an error, and answering it with a 401 put a red UNAUTHORIZED in
+  // the console of every healthy anonymous session, which is a costly thing
+  // to have to rule out while debugging something else. Everything that acts
+  // on an account below stays behind authedQuery.
+  me: publicQuery.query(({ ctx }) => ctx.user ?? null),
   logout: authedQuery.mutation(async ({ ctx }) => {
     clearSessionCookie(ctx);
     return { success: true };

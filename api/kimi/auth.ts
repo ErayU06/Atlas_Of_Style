@@ -72,7 +72,8 @@ function extractToken(headers: Headers): string | undefined {
 export async function authenticateRequest(headers: Headers) {
   const token = extractToken(headers);
   if (!token) {
-    console.warn("[auth] No session cookie or bearer token found in request.");
+    // No warning: an anonymous request is the ordinary case, not an anomaly,
+    // and logging one per page load buries the failures worth reading.
     throw Errors.forbidden("Invalid authentication token.");
   }
   const claim = await verifySessionToken(token);
