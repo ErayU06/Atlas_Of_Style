@@ -73,6 +73,28 @@ app.use("/api/trpc/*", async (c) => {
     req: c.req.raw,
     router: appRouter,
     createContext,
+    // tRPC already turns an unhandled throw into INTERNAL_SERVER_ERROR, so
+    // the client gets a 500 either way. What was missing is any record of
+    // *why*: a constraint violation deep in a query surfaced to the app as a
+    // generic "something went wrong" and left nothing in the server log to
+    // work from. `cause` carries the original error — for a pg rejection that
+    // means the code (23502, 23505, ...), the column and the failing row.
+    onError({ error, path, type }) {
+      if (error.code !== "INTERNAL_SERVER_ERROR") return;
+      const cause = error.cause as
+        | (Error & { code?: string; detail?: string; constraint?: string })
+        | undefined;
+      // Deliberately without `input`: it carries plaintext passwords on the
+      // signup and login procedures.
+      console.error(`[trpc] ${type} ${path ?? "<no path>"} failed`, {
+        message: error.message,
+        causeName: cause?.name,
+        causeCode: cause?.code,
+        causeDetail: cause?.detail,
+        causeConstraint: cause?.constraint,
+        stack: cause?.stack ?? error.stack,
+      });
+    },
   });
 });
 app.all("/api/*", (c) => c.json({ error: "Not Found" }, 404));

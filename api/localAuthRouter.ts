@@ -7,7 +7,7 @@ import { getSessionCookieOptions } from "./lib/cookies";
 import { createRouter, publicQuery } from "./middleware";
 import { signSessionToken } from "./kimi/session";
 import { env } from "./lib/env";
-import { findUserByUnionId, upsertUser } from "./queries/users";
+import { findUserByUnionId, touchLastSignIn, upsertUser } from "./queries/users";
 import type { TrpcContext } from "./context";
 
 const usernameSchema = z
@@ -108,7 +108,11 @@ export const localAuthRouter = createRouter({
       const a = Buffer.from(stored, "hex");
       const b = Buffer.from(candidate, "hex");
       if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) throw invalid();
-      await upsertUser({ unionId, lastSignInAt: new Date() });
+      // The row was loaded above, so this only refreshes it. Going through
+      // upsertUser here used to send an INSERT ... ON CONFLICT carrying no
+      // email, which Postgres rejects on the NOT NULL check before it ever
+      // looks at the conflict — a 500 on every successful password check.
+      await touchLastSignIn(unionId);
       const token = await issueSession(ctx, unionId);
       return { success: true, token };
     }),

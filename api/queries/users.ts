@@ -25,11 +25,28 @@ export async function deleteUserCascade(userId: number): Promise<void> {
   });
 }
 
-// `email` is required for a genuine new-user insert (see signup), but this
-// function also handles "touch an existing user" calls (e.g. login just
-// updates lastSignInAt) that never take the insert branch in practice —
-// only `unionId` is truly required here.
-type UpsertUserInput = Partial<InsertUser> & Pick<InsertUser, "unionId">;
+/**
+ * `email` is required, and the type enforces it, because Postgres validates
+ * the proposed row's NOT NULL constraints *before* it resolves ON CONFLICT.
+ * A payload without an email therefore fails with 23502 even when the row
+ * already exists and the statement would only ever have updated it — which
+ * is not what "upsert" reads like, and cost a production login outage.
+ * To only refresh an existing row, use touchLastSignIn below.
+ */
+type UpsertUserInput = Partial<InsertUser> &
+  Pick<InsertUser, "unionId" | "email">;
+
+/**
+ * Records a sign-in against a row that is already known to exist. A plain
+ * UPDATE, not an upsert: the caller has just loaded the user, so there is
+ * nothing to insert and no NOT NULL column to satisfy.
+ */
+export async function touchLastSignIn(unionId: string): Promise<void> {
+  await getDb()
+    .update(schema.users)
+    .set({ lastSignInAt: new Date() })
+    .where(eq(schema.users.unionId, unionId));
+}
 
 export async function upsertUser(data: UpsertUserInput) {
   const values = { ...data };
