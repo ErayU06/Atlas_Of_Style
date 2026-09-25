@@ -18,7 +18,7 @@ export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState<"male" | "female" | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<{ message: string; detail: string } | null>(null);
 
   const onSuccess = async (data: { success: boolean; token: string }) => {
     if (Capacitor.isNativePlatform()) {
@@ -28,28 +28,50 @@ export default function Login() {
     navigate("/profile");
   };
   const onError = (err: unknown) => {
-    const code = (err as { data?: { code?: string } | null })?.data?.code;
-    // Only CONFLICT and UNAUTHORIZED get a specific message below; everything
-    // else collapses into the generic one, which hides whether the call was a
-    // validation rejection, a 500 or a request that never left the device.
-    // The endpoint is repeated here so one console line carries both halves:
-    // where the call went, and what came back.
     const data = (err as { data?: Record<string, unknown> | null } | null)?.data;
+    const code = data?.code as string | undefined;
+    const httpStatus = data?.httpStatus as number | undefined;
+    const rawMessage = (err as { message?: string })?.message;
+
     console.error("[auth] login/signup failed", {
       tab,
       requestUrl: TRPC_URL,
-      VITE_API_BASE_URL: API_BASE_URL ?? "<not set at build time>",
-      code: code ?? "<none — the request may not have reached the server>",
-      httpStatus: data?.httpStatus ?? "<none — no HTTP response>",
-      message: (err as { message?: string })?.message,
-      // zod rejections carry their field errors here; a 500 carries a stack.
+      apiBaseUrl: API_BASE_URL,
+      code: code ?? "<none \u2014 the request never reached the server>",
+      httpStatus: httpStatus ?? "<none \u2014 no HTTP response>",
+      message: rawMessage,
       zodError: data?.zodError,
       stack: data?.stack,
       error: err,
     });
-    if (code === "CONFLICT") setError(t("errTaken", lang));
-    else if (code === "UNAUTHORIZED") setError(t("errWrong", lang));
-    else setError(t("errGeneric", lang));
+
+    // A tRPC error carrying no `data` never got an HTTP response at all: DNS,
+    // TLS, App Transport Security, or a CORS preflight the browser refused.
+    // Calling that "wrong password" would be a lie, and it is the case that
+    // has cost the most time to identify, so it is named explicitly.
+    if (!code) {
+      setError({
+        message: t("errNetwork", lang),
+        detail: `NETWORK \u00b7 ${TRPC_URL} \u00b7 ${rawMessage ?? "no response"}`,
+      });
+      return;
+    }
+
+    const message =
+      code === "CONFLICT"
+        ? t("errTaken", lang)
+        : code === "UNAUTHORIZED"
+          ? t("errWrong", lang)
+          : code === "BAD_REQUEST"
+            ? t("errInvalid", lang)
+            : t("errGeneric", lang);
+
+    setError({
+      message,
+      // Small and muted under the message: enough for whoever is holding the
+      // phone to report what actually broke, without opening a console.
+      detail: `${code}${httpStatus ? ` \u00b7 HTTP ${httpStatus}` : ""} \u00b7 localAuth.${tab}`,
+    });
   };
 
   const loginMutation = trpc.localAuth.login.useMutation({ onSuccess, onError });
@@ -200,9 +222,15 @@ export default function Login() {
           </div>
 
           {error && (
-            <p className="rounded-xl bg-red-50 px-4 py-2.5 text-center text-sm text-red-600">
-              {error}
-            </p>
+            <div
+              role="alert"
+              className="rounded-xl bg-red-50 px-4 py-2.5 text-center text-red-600"
+            >
+              <p className="text-sm">{error.message}</p>
+              <p className="mt-1 break-all font-mono text-[10px] leading-snug text-red-500/80">
+                {error.detail}
+              </p>
+            </div>
           )}
 
           <button

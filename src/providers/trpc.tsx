@@ -4,29 +4,22 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Capacitor } from "@capacitor/core";
 import superjson from "superjson";
 import { getNativeToken } from "@/lib/nativeAuth";
+import { resolveApiBaseUrl } from "@/config";
 import type { AppRouter } from "../../api/router";
 import type { ReactNode } from "react";
 
 export const trpc = createTRPCReact<AppRouter>();
 
-/**
- * Whatever VITE_API_BASE_URL held when the bundle was built. Vite inlines it
- * at build time, so this is a literal in the shipped JavaScript: a wrong value
- * here cannot be fixed on the device, only by rebuilding.
- */
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as
-  | string
-  | undefined;
+const resolution = resolveApiBaseUrl();
+
+/** The backend origin this bundle will call. Never undefined: see src/config.ts. */
+export const API_BASE_URL = resolution.baseUrl;
 
 // Bundled into the native shell, the app has no same-origin backend to call
 // relatively — it needs the deployed backend's absolute HTTPS URL instead.
 // Web (dev and prod) keeps using the relative path, unchanged.
 function getTrpcUrl() {
-  if (Capacitor.isNativePlatform()) {
-    if (!API_BASE_URL) return "/api/trpc";
-    return `${API_BASE_URL.replace(/\/$/, "")}/api/trpc`;
-  }
-  return "/api/trpc";
+  return Capacitor.isNativePlatform() ? `${API_BASE_URL}/api/trpc` : "/api/trpc";
 }
 
 /** The absolute (native) or relative (web) endpoint every call goes to. */
@@ -34,31 +27,22 @@ export const TRPC_URL = getTrpcUrl();
 
 // Printed once on startup, before anything can fail. Inside a native shell
 // there is no address bar and no network tab, so without this there is no way
-// to tell a bundle that was built with the right backend URL from one that was
+// to tell a bundle that was built against the right backend from one that was
 // not — and the two fail in ways that look identical from the UI.
-{
-  const native = Capacitor.isNativePlatform();
-  console.log("[trpc] endpoint", {
-    platform: Capacitor.getPlatform(),
-    isNative: native,
-    // Logged raw, unparsed: a value pasted with surrounding markdown or quotes
-    // is invisible once it has been concatenated into a URL string.
-    VITE_API_BASE_URL: API_BASE_URL ?? "<not set at build time>",
-    resolvedUrl: TRPC_URL,
-  });
-  if (native && !API_BASE_URL) {
-    console.error(
-      "[trpc] VITE_API_BASE_URL was empty when this bundle was built, so calls " +
-        "resolve to https://localhost/api/trpc — the local bundle, which serves " +
-        "no API. Set it in .env and run `npm run build && npx cap sync ios`.",
-    );
-  } else if (native && !/^https:\/\//.test(API_BASE_URL ?? "")) {
-    console.error(
-      `[trpc] VITE_API_BASE_URL is not a plain https:// URL: ${API_BASE_URL}. ` +
-        "iOS App Transport Security refuses anything else, and the request " +
-        "fails before it leaves the device.",
-    );
-  }
+console.log("[trpc] endpoint", {
+  platform: Capacitor.getPlatform(),
+  isNative: Capacitor.isNativePlatform(),
+  baseUrl: API_BASE_URL,
+  source: resolution.source,
+  resolvedUrl: TRPC_URL,
+});
+if (resolution.rejectedEnvValue !== undefined) {
+  console.error(
+    "[trpc] VITE_API_BASE_URL was set but is not a plain https:// URL, so it " +
+      `was ignored in favour of the built-in address. Value seen: ${JSON.stringify(
+        resolution.rejectedEnvValue,
+      )}`,
+  );
 }
 
 const queryClient = new QueryClient();

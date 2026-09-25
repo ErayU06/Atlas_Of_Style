@@ -200,6 +200,8 @@ export const ui = {
     ar: 'أحرف صغيرة وأرقام وشرطة سفلية (3-24 حرفاً)',
   },
   passwordHint: { tr: 'En az 6 karakter', en: 'At least 6 characters', zh: '至少6个字符', hi: 'कम से कम 6 अक्षर', es: 'Mínimo 6 caracteres', ar: '6 أحرف على الأقل' },
+  errNetwork: { tr: 'Sunucuya ulaşılamadı. Bağlantını kontrol et.', en: 'Could not reach the server. Check your connection.', zh: '无法连接服务器，请检查网络。', hi: 'सर्वर तक नहीं पहुँच सके। अपना कनेक्शन जाँचें।', es: 'No se pudo conectar con el servidor. Revisa tu conexión.', ar: 'تعذّر الوصول إلى الخادم. تحقق من اتصالك.' },
+  errInvalid: { tr: 'Girdiğin bilgiler geçersiz. Kontrol et.', en: 'Those details are not valid. Please check them.', zh: '输入的信息无效，请检查。', hi: 'दर्ज की गई जानकारी मान्य नहीं है। कृपया जाँचें।', es: 'Esos datos no son válidos. Revísalos.', ar: 'البيانات المُدخلة غير صالحة. يرجى مراجعتها.' },
   errTaken: { tr: 'Bu kullanıcı adı alınmış.', en: 'This username is taken.', zh: '该用户名已被占用。', hi: 'यह उपयोगकर्ता नाम पहले से लिया गया है।', es: 'Ese nombre de usuario ya está en uso.', ar: 'اسم المستخدم هذا مأخوذ.' },
   errWrong: {
     tr: 'Kullanıcı adı veya şifre hatalı.',
