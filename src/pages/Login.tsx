@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { ChevronLeft, UserRound, Lock, Sparkles, Mail } from "lucide-react";
 import { Capacitor } from "@capacitor/core";
-import { trpc } from "@/providers/trpc";
+import { trpc, API_BASE_URL, TRPC_URL } from "@/providers/trpc";
 import { useApp } from "@/context/AppContext";
 import { setNativeToken } from "@/lib/nativeAuth";
 import { t } from "@/i18n";
@@ -32,10 +32,19 @@ export default function Login() {
     // Only CONFLICT and UNAUTHORIZED get a specific message below; everything
     // else collapses into the generic one, which hides whether the call was a
     // validation rejection, a 500 or a request that never left the device.
+    // The endpoint is repeated here so one console line carries both halves:
+    // where the call went, and what came back.
+    const data = (err as { data?: Record<string, unknown> | null } | null)?.data;
     console.error("[auth] login/signup failed", {
+      tab,
+      requestUrl: TRPC_URL,
+      VITE_API_BASE_URL: API_BASE_URL ?? "<not set at build time>",
       code: code ?? "<none — the request may not have reached the server>",
+      httpStatus: data?.httpStatus ?? "<none — no HTTP response>",
       message: (err as { message?: string })?.message,
-      httpStatus: (err as { data?: { httpStatus?: number } } | null)?.data?.httpStatus,
+      // zod rejections carry their field errors here; a 500 carries a stack.
+      zodError: data?.zodError,
+      stack: data?.stack,
       error: err,
     });
     if (code === "CONFLICT") setError(t("errTaken", lang));
