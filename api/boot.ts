@@ -7,6 +7,7 @@ import { createContext } from "./context";
 import { env } from "./lib/env";
 import { createOAuthCallbackHandler } from "./kimi/auth";
 import { Paths } from "@contracts/constants";
+import { findPostgresError } from "./lib/pg-error";
 
 const app = new Hono<{ Bindings: HttpBindings }>();
 
@@ -81,18 +82,16 @@ app.use("/api/trpc/*", async (c) => {
     // means the code (23502, 23505, ...), the column and the failing row.
     onError({ error, path, type }) {
       if (error.code !== "INTERNAL_SERVER_ERROR") return;
-      const cause = error.cause as
-        | (Error & { code?: string; detail?: string; constraint?: string })
-        | undefined;
+      // Drizzle wraps the driver error and tRPC wraps that, so the SQLSTATE
+      // code and the offending relation sit two levels down from `cause`.
+      const pg = findPostgresError(error);
       // Deliberately without `input`: it carries plaintext passwords on the
       // signup and login procedures.
       console.error(`[trpc] ${type} ${path ?? "<no path>"} failed`, {
         message: error.message,
-        causeName: cause?.name,
-        causeCode: cause?.code,
-        causeDetail: cause?.detail,
-        causeConstraint: cause?.constraint,
-        stack: cause?.stack ?? error.stack,
+        pg: pg ?? "<not a database error>",
+        cause: error.cause,
+        stack: (error.cause as Error | undefined)?.stack ?? error.stack,
       });
     },
   });

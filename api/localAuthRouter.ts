@@ -8,6 +8,7 @@ import { createRouter, publicQuery } from "./middleware";
 import { signSessionToken } from "./kimi/session";
 import { env } from "./lib/env";
 import { findUserByUnionId, touchLastSignIn, upsertUser } from "./queries/users";
+import { findPostgresError } from "./lib/pg-error";
 import type { TrpcContext } from "./context";
 
 const usernameSchema = z
@@ -125,10 +126,9 @@ export const localAuthRouter = createRouter({
         console.error("[auth] login failed after the password verified", {
           unionId,
           step: "touchLastSignIn / issueSession",
-          // A pg rejection carries these; they name the column and the row.
-          pgCode: (cause as { code?: string })?.code,
-          pgDetail: (cause as { detail?: string })?.detail,
-          pgConstraint: (cause as { constraint?: string })?.constraint,
+          // Unwrapped: Drizzle hides the driver's SQLSTATE behind its own
+          // error, so reading `cause.code` directly yields undefined.
+          pg: findPostgresError(cause) ?? "<not a database error>",
           cause,
         });
         throw new TRPCError({
