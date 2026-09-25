@@ -108,12 +108,34 @@ export const localAuthRouter = createRouter({
       const a = Buffer.from(stored, "hex");
       const b = Buffer.from(candidate, "hex");
       if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) throw invalid();
-      // The row was loaded above, so this only refreshes it. Going through
-      // upsertUser here used to send an INSERT ... ON CONFLICT carrying no
-      // email, which Postgres rejects on the NOT NULL check before it ever
-      // looks at the conflict — a 500 on every successful password check.
-      await touchLastSignIn(unionId);
-      const token = await issueSession(ctx, unionId);
-      return { success: true, token };
+      // Everything above rejects a bad credential with a clean 401. Past this
+      // line the password was correct, so any throw is infrastructure, not the
+      // user — and it reaches the app as the same opaque "something went
+      // wrong" that a wrong password would have shown. Label it on the way
+      // out so the server log says which half failed.
+      try {
+        // The row was loaded above, so this only refreshes it. Going through
+        // upsertUser here used to send an INSERT ... ON CONFLICT carrying no
+        // email, which Postgres rejects on the NOT NULL check before it ever
+        // looks at the conflict — a 500 on every successful password check.
+        await touchLastSignIn(unionId);
+        const token = await issueSession(ctx, unionId);
+        return { success: true, token };
+      } catch (cause) {
+        console.error("[auth] login failed after the password verified", {
+          unionId,
+          step: "touchLastSignIn / issueSession",
+          // A pg rejection carries these; they name the column and the row.
+          pgCode: (cause as { code?: string })?.code,
+          pgDetail: (cause as { detail?: string })?.detail,
+          pgConstraint: (cause as { constraint?: string })?.constraint,
+          cause,
+        });
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "login_session_failed",
+          cause,
+        });
+      }
     }),
 });
