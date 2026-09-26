@@ -103,6 +103,12 @@ export default app;
 if (env.isProduction) {
   const { serve } = await import("@hono/node-server");
   const { serveStaticFiles } = await import("./lib/vite");
+  const { runMigrations } = await import("./lib/migrate");
+
+  // Before the first request, not after: a database missing its tables would
+  // otherwise answer every call with a 500 indistinguishable from a code bug.
+  await runMigrations();
+
   serveStaticFiles(app);
 
   const port = parseInt(process.env.PORT || "3000");
