@@ -48,6 +48,17 @@ export async function touchLastSignIn(unionId: string): Promise<void> {
     .where(eq(schema.users.unionId, unionId));
 }
 
+/** Updates one column on a row the caller is already authenticated as. */
+export async function setUserGender(
+  userId: number,
+  gender: "male" | "female" | null,
+): Promise<void> {
+  await getDb()
+    .update(schema.users)
+    .set({ gender })
+    .where(eq(schema.users.id, userId));
+}
+
 export async function upsertUser(data: UpsertUserInput) {
   const values = { ...data };
   const updateSet: Partial<InsertUser> = {

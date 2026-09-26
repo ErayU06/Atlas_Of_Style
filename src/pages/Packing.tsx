@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router'
-import { ChevronLeft, Check, Luggage, MapPin, ArrowRight } from 'lucide-react'
+import { ChevronLeft, Check, Luggage, MapPin, ArrowRight, Sparkles } from 'lucide-react'
 import { countries } from '@/data/countries'
 import { citiesByCountry, getCity } from '@/data/cities'
 import { getPackingList, seasonForMonth, seasonNames, monthNames } from '@/data/packing'
+import { genderedExtrasFor } from '@/data/style-gender'
 import { getCityPackingList } from '@/data/packing-cities'
 import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
@@ -40,7 +41,7 @@ function Chip({
 
 export default function PackingPage() {
   const { slug } = useParams()
-  const { lang } = useApp()
+  const { lang, styleGender } = useApp()
   const [countrySlug, setCountrySlug] = useState(slug ?? 'turkiye')
   const [citySlug, setCitySlug] = useState<string | null>(null)
   const [month, setMonth] = useState(new Date().getMonth())
@@ -57,6 +58,10 @@ export default function PackingPage() {
   const list = city
     ? getCityPackingList(city.slug, season, lang)
     : getPackingList(country.slug, season, lang)
+  // A separate group rather than merged into the list above: the shared advice
+  // is what the destination asks of anyone, and stays intact for a traveller
+  // who did not answer the question.
+  const extras = genderedExtrasFor(styleGender, season, lang)
 
   return (
     <div className="mx-auto max-w-md px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(1.5rem+var(--safe-top))]">
@@ -163,6 +168,30 @@ export default function PackingPage() {
                   </li>
                 ))}
               </ul>
+              {extras.length > 0 && (
+                <div className="border-t border-atlas-line bg-atlas-clay/[0.04]">
+                  <div className="flex items-baseline justify-between gap-3 px-5 pt-4">
+                    <p className="kicker text-atlas-clay">{t('styleForYou', lang)}</p>
+                  </div>
+                  <ul className="mt-1 divide-y divide-atlas-line/60">
+                    {extras.map((item, i) => (
+                      <li
+                        key={item}
+                        style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
+                        className="animate-fade-in flex items-start gap-3 px-5 py-3.5 text-[14px] leading-relaxed text-atlas-body"
+                      >
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-atlas-clay text-white">
+                          <Sparkles size={11} />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="px-5 pb-4 pt-2.5 text-[11px] leading-relaxed text-atlas-muted">
+                    {t('styleForYouHint', lang)}
+                  </p>
+                </div>
+              )}
             </div>
           </>
         )}

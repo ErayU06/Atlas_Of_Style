@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { createRouter, authedQuery } from "./middleware";
+import { setUserGender } from "./queries/users";
 import {
   findFavoritesByUser,
   addFavorite,
@@ -29,6 +30,16 @@ export const travelerRouter = createRouter({
     .mutation(async ({ ctx, input }) => {
       await mergeFavorites(ctx.user.id, input.slugs);
       return findFavoritesByUser(ctx.user.id);
+    }),
+
+  // The style recommendations read this, so it has to be changeable after
+  // signup rather than fixed at the one moment it is first asked for. null
+  // clears it and puts the shared, ungendered advice back.
+  setGender: authedQuery
+    .input(z.object({ gender: z.enum(["male", "female"]).nullable() }))
+    .mutation(async ({ ctx, input }) => {
+      await setUserGender(ctx.user.id, input.gender);
+      return { gender: input.gender };
     }),
 
   notes: authedQuery.query(({ ctx }) => findNotesByUser(ctx.user.id)),

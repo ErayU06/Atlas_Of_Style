@@ -139,6 +139,20 @@
   }
 }
 
+/* Motion is decoration here: every animation in this app conveys state that
+   is already visible without it. Someone who has asked the system for less
+   motion gets the same screens, arriving instantly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @layer components {
   /* Editorial eyebrow above a section title. */
   .kicker {

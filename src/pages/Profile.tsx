@@ -106,7 +106,7 @@ function ThemePicker() {
 }
 
 export default function ProfilePage() {
-  const { lang, favorites, notes, discovery } = useApp()
+  const { lang, favorites, notes, discovery, styleGender, setStyleGender } = useApp()
   const { user, isAuthenticated, isLoading, logout, deleteAccount, isDeletingAccount } = useAuth()
   const noteCount = Object.values(notes).filter((n) => n.trim()).length
   const [deleteError, setDeleteError] = useState<string | null>(null)
@@ -134,6 +134,36 @@ export default function ProfilePage() {
           {t('profileSubtitle', lang)}
         </p>
       </header>
+
+      {/* ---- Style advice preference ------------------------------------
+          Lives here, not only on the signup form: it drives the packing
+          advice, so it has to be answerable late and changeable later — and
+          a guest who never signed up needs it too. */}
+      <section className="mt-6 rounded-3xl border border-atlas-line bg-atlas-surface p-5 shadow-card">
+        <p className="text-[13px] font-semibold text-atlas-ink">{t('stylePreference', lang)}</p>
+        <p className="mt-1 text-[11px] leading-relaxed text-atlas-muted">{t('genderWhy', lang)}</p>
+        <div className="mt-3.5 flex w-full rounded-full border border-atlas-line bg-atlas-soft p-1">
+          {([
+            ['male', t('genderMale', lang)],
+            ['female', t('genderFemale', lang)],
+            [null, t('styleNeutral', lang)],
+          ] as const).map(([value, label]) => (
+            <button
+              key={label}
+              type="button"
+              aria-pressed={styleGender === value}
+              onClick={() => setStyleGender(value)}
+              className={`flex-1 rounded-full py-2 text-[12px] font-medium transition-colors ${
+                styleGender === value
+                  ? 'bg-atlas-clay text-white shadow-card'
+                  : 'text-atlas-muted'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </section>
 
       {/* ---- Who you are ------------------------------------------------ */}
       {isAuthenticated && user ? (

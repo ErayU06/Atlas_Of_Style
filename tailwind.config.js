@@ -109,6 +109,37 @@ module.exports = {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        // --- Route transitions -------------------------------------------
+        // A push moves both screens together: the arriving one comes from the
+        // trailing edge, the leaving one drifts a third of the way the other
+        // way and dims, which reads as depth rather than a swap. Distances are
+        // percentages so they hold at any width.
+        "screen-push-in": {
+          from: { opacity: "0.6", transform: "translate3d(100%, 0, 0)" },
+          to: { opacity: "1", transform: "translate3d(0, 0, 0)" },
+        },
+        "screen-push-out": {
+          from: { opacity: "1", transform: "translate3d(0, 0, 0)" },
+          to: { opacity: "0", transform: "translate3d(-30%, 0, 0)" },
+        },
+        "screen-pop-in": {
+          from: { opacity: "0.6", transform: "translate3d(-30%, 0, 0)" },
+          to: { opacity: "1", transform: "translate3d(0, 0, 0)" },
+        },
+        "screen-pop-out": {
+          from: { opacity: "1", transform: "translate3d(0, 0, 0)" },
+          to: { opacity: "0", transform: "translate3d(100%, 0, 0)" },
+        },
+        // Switching tabs is a jump between peers, not a step deeper, so it
+        // crossfades with a breath of vertical travel instead of sliding.
+        "screen-swap-in": {
+          from: { opacity: "0", transform: "translate3d(0, 10px, 0) scale(0.99)" },
+          to: { opacity: "1", transform: "translate3d(0, 0, 0) scale(1)" },
+        },
+        "screen-swap-out": {
+          from: { opacity: "1", transform: "scale(1)" },
+          to: { opacity: "0", transform: "scale(1.01)" },
+        },
         "era-in": {
           from: { opacity: "0", transform: "scale(1.04)", filter: "blur(6px)" },
           to: { opacity: "1", transform: "scale(1)", filter: "blur(0)" },
@@ -151,6 +182,14 @@ module.exports = {
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         "fade-up": "fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
         "fade-in": "fade-in 0.4s ease-out both",
+        // 280ms: long enough to read as movement, short enough that a fast
+        // tapper never waits on it.
+        "screen-push-in": "screen-push-in 280ms cubic-bezier(0.32, 0.72, 0, 1) both",
+        "screen-push-out": "screen-push-out 280ms cubic-bezier(0.32, 0.72, 0, 1) both",
+        "screen-pop-in": "screen-pop-in 280ms cubic-bezier(0.32, 0.72, 0, 1) both",
+        "screen-pop-out": "screen-pop-out 280ms cubic-bezier(0.32, 0.72, 0, 1) both",
+        "screen-swap-in": "screen-swap-in 220ms cubic-bezier(0.22, 1, 0.36, 1) both",
+        "screen-swap-out": "screen-swap-out 160ms ease-in both",
         "era-in": "era-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both",
         "portal-in": "portal-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
         "portal-out": "portal-out 0.6s ease-in both",

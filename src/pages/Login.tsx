@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { ChevronLeft, UserRound, Lock, Sparkles, Mail } from "lucide-react";
+import { ChevronLeft, UserRound, Lock, Mail } from "lucide-react";
 import { Capacitor } from "@capacitor/core";
 import { trpc, API_BASE_URL, TRPC_URL } from "@/providers/trpc";
 import { useApp } from "@/context/AppContext";
@@ -8,16 +8,14 @@ import { setNativeToken } from "@/lib/nativeAuth";
 import { t } from "@/i18n";
 
 export default function Login() {
-  const { lang } = useApp();
+  const { lang, styleGender, setStyleGender } = useApp();
   const navigate = useNavigate();
   const utils = trpc.useUtils();
 
   const [tab, setTab] = useState<"login" | "signup">("signup");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState<"male" | "female" | null>(null);
   const [error, setError] = useState<{ message: string; detail: string } | null>(null);
 
   const onSuccess = async (data: { success: boolean; token: string }) => {
@@ -88,9 +86,8 @@ export default function Login() {
       signupMutation.mutate({
         username: un,
         password,
-        name: name.trim() || undefined,
         email: email.trim(),
-        gender: gender ?? undefined,
+        gender: styleGender ?? undefined,
       });
     }
   };
@@ -138,17 +135,6 @@ export default function Login() {
         <form onSubmit={submit} className="mx-auto mt-6 w-full max-w-xs space-y-3">
           {tab === "signup" && (
             <div className="relative">
-              <Sparkles size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={t("nameOptional", lang)}
-                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
-              />
-            </div>
-          )}
-          {tab === "signup" && (
-            <div className="relative">
               <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
               <input
                 type="email"
@@ -172,19 +158,22 @@ export default function Login() {
                   <button
                     key={g}
                     type="button"
-                    aria-pressed={gender === g}
+                    aria-pressed={styleGender === g}
                     /* Nothing is selected by default, and tapping the active
                        choice clears it again — so leaving this blank is a
                        reachable state, not just an undocumented default. */
-                    onClick={() => setGender((prev) => (prev === g ? null : g))}
+                    onClick={() => setStyleGender(styleGender === g ? null : g)}
                     className={`flex-1 rounded-full py-2 text-sm font-medium transition-colors ${
-                      gender === g ? "bg-atlas-clay text-white shadow-card" : "text-atlas-muted"
+                      styleGender === g ? "bg-atlas-clay text-white shadow-card" : "text-atlas-muted"
                     }`}
                   >
                     {g === "male" ? t("genderMale", lang) : t("genderFemale", lang)}
                   </button>
                 ))}
               </div>
+              <p className="mt-1 pl-4 text-[11px] leading-relaxed text-atlas-muted/70">
+                {t("genderWhy", lang)}
+              </p>
             </div>
           )}
           <div>
