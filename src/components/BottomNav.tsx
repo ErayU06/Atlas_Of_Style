@@ -39,7 +39,15 @@ export default function BottomNav() {
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-atlas-line bg-atlas-paper/90 backdrop-blur-xl"
-      style={{ paddingBottom: 'var(--nav-safe)' }}
+      style={{
+        // The home indicator sits inside the bar's own background, so the
+        // padding goes on the bar and the row of tabs lifts clear of it.
+        paddingBottom: 'var(--safe-bottom)',
+        // Landscape on a notched phone insets one side; without these the
+        // outermost tab disappears under the rounded corner.
+        paddingLeft: 'var(--safe-left)',
+        paddingRight: 'var(--safe-right)',
+      }}
     >
       <div className="mx-auto flex max-w-md items-stretch justify-around py-1.5">
         {items.map(({ to, icon: Icon, label, active }) => (

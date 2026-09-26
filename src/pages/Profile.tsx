@@ -121,7 +121,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="mx-auto max-w-md px-5 pb-28 pt-10">
+    <div className="mx-auto max-w-md px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(2.5rem+var(--safe-top))]">
       <header>
         <div className="flex items-start justify-between gap-3">
           <p className="kicker mt-1">{t('profile', lang)}</p>

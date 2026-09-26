@@ -96,7 +96,7 @@ export default function Login() {
   };
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-28 pt-6">
+    <div className="mx-auto flex min-h-screen max-w-md flex-col px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(1.5rem+var(--safe-top))]">
       <Link
         to="/"
         className="inline-flex w-fit items-center gap-1 rounded-full bg-atlas-surface px-3 py-1.5 text-xs font-medium text-atlas-body shadow-card"

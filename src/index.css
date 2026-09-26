@@ -122,9 +122,20 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* Safe-area padding for the fixed bottom nav on notched devices. */
+  /* The device's own safe area, read once and used everywhere. index.html
+     sets viewport-fit=cover, so the WebView draws edge to edge and nothing
+     is inset for us: the status bar, the notch and the home indicator all
+     sit on top of the page until these are applied.
+
+     Kept as variables rather than env() at each call site so a test can
+     override them and assert the layout on a notched device without one. */
   :root {
-    --nav-safe: env(safe-area-inset-bottom, 0px);
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    /* Pre-existing name, kept so nothing that reads it has to change. */
+    --nav-safe: var(--safe-bottom);
   }
 }
 

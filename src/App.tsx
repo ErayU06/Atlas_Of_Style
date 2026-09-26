@@ -32,7 +32,15 @@ export default function App() {
     <AppProvider>
       {/* bg-background resolves to the Atlas paper token, so light and dark
           are driven from one place instead of a hardcoded hex. */}
-      <div className="min-h-screen bg-background">
+      {/* Horizontal insets live here rather than on each page: in landscape
+          on a notched phone one side is inset, and every screen needs it. */}
+      <div
+        className="min-h-screen bg-background"
+        style={{
+          paddingLeft: 'var(--safe-left)',
+          paddingRight: 'var(--safe-right)',
+        }}
+      >
         <PageTransition>
           <Suspense fallback={<PageLoader />}>
             <Routes>

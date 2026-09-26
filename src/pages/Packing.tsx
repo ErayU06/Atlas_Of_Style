@@ -59,7 +59,7 @@ export default function PackingPage() {
     : getPackingList(country.slug, season, lang)
 
   return (
-    <div className="mx-auto max-w-md px-5 pb-28 pt-6">
+    <div className="mx-auto max-w-md px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(1.5rem+var(--safe-top))]">
       <Link
         to="/tools"
         className="tap inline-flex items-center gap-1 rounded-full border border-atlas-line bg-atlas-surface px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card"

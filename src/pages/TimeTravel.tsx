@@ -63,7 +63,7 @@ export default function TimeTravelPage() {
 
   return (
     <div
-      className="relative mx-auto max-w-md pb-28"
+      className="relative mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]"
       // Both custom properties drive Tailwind's `era-*` colours, so the whole
       // screen re-tints from one place when the decade changes.
       style={{ ['--era-tint' as string]: tint, ['--era-wash' as string]: wash }}

@@ -61,7 +61,7 @@ export default function HomePage() {
   const favCountries = countries.filter((c) => favorites.includes(c.slug))
 
   return (
-    <div className="mx-auto max-w-md pb-28">
+    <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
       {/* ---- Hero: the first three seconds ------------------------------ */}
       <header className="relative">
         <SmartImage
@@ -82,7 +82,7 @@ export default function HomePage() {
           />
         </SmartImage>
 
-        <div className="absolute inset-x-0 top-0 px-6 pt-7">
+        <div className="absolute inset-x-0 top-0 px-6 pt-[calc(1.75rem+var(--safe-top))]">
           <div className="flex items-start justify-between gap-3">
             <p className="kicker mt-1 text-atlas-clay">{t('homeKicker', lang)}</p>
             <LanguageSwitcher />

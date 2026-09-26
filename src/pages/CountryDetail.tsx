@@ -51,7 +51,7 @@ export default function CountryDetailPage() {
   )
 
   return (
-    <div className="mx-auto max-w-md pb-28">
+    <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
       {/* ---- Hero plate -------------------------------------------------- */}
       <div className="relative">
         <SmartImage src={img(1)} alt={imgAlt} ratio="portrait" priority>
@@ -61,7 +61,7 @@ export default function CountryDetailPage() {
           />
         </SmartImage>
 
-        <div className="absolute inset-x-5 top-5 flex items-center justify-between">
+        <div className="absolute inset-x-5 top-[calc(1.25rem+var(--safe-top))] flex items-center justify-between">
           <Link
             to="/"
             className="tap flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"

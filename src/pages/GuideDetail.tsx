@@ -18,7 +18,7 @@ export default function GuideDetailPage() {
 
   if (!isAuthenticated && !isLoading) {
     return (
-      <div className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-6 pb-28 text-center">
+      <div className="mx-auto flex min-h-[70vh] max-w-md flex-col items-center justify-center px-6 pb-[calc(7rem+var(--safe-bottom))] text-center">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-atlas-gold/[0.12] text-atlas-gold">
           <Lock size={24} />
         </div>
@@ -36,7 +36,7 @@ export default function GuideDetailPage() {
   }
 
   return (
-    <div className="mx-auto max-w-md pb-28">
+    <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
       <div className="relative">
         <SmartImage
           src={`/images/${guide.countrySlug}-2.jpg`}
@@ -51,7 +51,7 @@ export default function GuideDetailPage() {
         </SmartImage>
         <Link
           to="/premium"
-          className="tap absolute start-5 top-5 flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
+          className="tap absolute start-5 top-[calc(1.25rem+var(--safe-top))] flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
         >
           <ChevronLeft size={16} className="rtl:rotate-180" />
           {t('back', lang)}
@@ -67,7 +67,7 @@ export default function GuideDetailPage() {
         </div>
       </div>
 
-      <p className="px-6 pt-6 font-serif text-[18px] leading-[1.6] text-atlas-ink">
+      <p className="px-6 pt-[calc(1.5rem+var(--safe-top))] font-serif text-[18px] leading-[1.6] text-atlas-ink">
         {pick(guide.subtitle, lang)}
       </p>
 

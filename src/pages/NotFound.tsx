@@ -7,7 +7,7 @@ export default function NotFound() {
   const { lang } = useApp()
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-7 pb-28 text-center">
+    <div className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-7 pb-[calc(7rem+var(--safe-bottom))] text-center">
       {/* An empty picture hook on a museum wall. */}
       <svg viewBox="0 0 120 100" fill="none" className="h-28 w-[8.5rem]" aria-hidden>
         <path d="M60 14v10" className="stroke-atlas-line" strokeWidth="2" strokeLinecap="round" />

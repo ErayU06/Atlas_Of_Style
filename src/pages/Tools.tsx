@@ -41,7 +41,7 @@ export default function ToolsPage() {
   ]
 
   return (
-    <div className="mx-auto max-w-md px-5 pb-28 pt-10">
+    <div className="mx-auto max-w-md px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(2.5rem+var(--safe-top))]">
       <header>
         <p className="kicker">{t('appName', lang)}</p>
         <h1 className="mt-2.5 font-serif text-[34px] font-semibold leading-[1.08] text-atlas-ink">

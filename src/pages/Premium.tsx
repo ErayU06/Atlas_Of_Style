@@ -15,7 +15,7 @@ export default function PremiumPage() {
   const { isAuthenticated, isLoading } = useAuth()
 
   return (
-    <div className="mx-auto max-w-md px-5 pb-28 pt-10">
+    <div className="mx-auto max-w-md px-5 pb-[calc(7rem+var(--safe-bottom))] pt-[calc(2.5rem+var(--safe-top))]">
       <header>
         <div className="flex items-center gap-2">
           <Crown size={16} className="text-atlas-gold" />
