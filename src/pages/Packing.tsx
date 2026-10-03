@@ -10,7 +10,6 @@ import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
 import PremiumGate from '@/components/PremiumGate'
-import ProBadge from '@/components/ProBadge'
 import { cn } from '@/lib/utils'
 
 /** One shared style for every horizontally-scrolling choice chip. */
@@ -126,7 +125,6 @@ export default function PackingPage() {
           <>
             <div className="mb-2.5 mt-5 flex items-center gap-2">
               <p className="kicker">{t('selectMonth', lang)}</p>
-              <ProBadge />
             </div>
             <div className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 pb-2">
               {monthNames[lang].map((m, i) => (

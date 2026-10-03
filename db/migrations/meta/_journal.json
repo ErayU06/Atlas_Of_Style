@@ -15,6 +15,13 @@
       "when": 1787766141730,
       "tag": "0001_add_email_gender_to_users",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791024878129,
+      "tag": "0002_make_email_optional",
+      "breakpoints": true
     }
   ]
 }

@@ -5,7 +5,6 @@ import { countries } from '@/data/countries'
 import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
-import ProBadge from '@/components/ProBadge'
 import PremiumGate from '@/components/PremiumGate'
 import SmartImage from '@/components/SmartImage'
 import { Button } from '@/components/ui/button'
@@ -42,7 +41,6 @@ export default function CityDetailPage() {
             <ChevronLeft size={16} className="rtl:rotate-180" />
             {t('backToCountry', lang)}
           </Link>
-          <ProBadge />
         </div>
 
         <div className="absolute inset-x-0 bottom-0 p-6 text-white">
@@ -87,7 +85,6 @@ export default function CityDetailPage() {
           <Button asChild variant="atlasSoft" size="pill" className="w-full">
             <Link to={`/packing/${country.slug}`}>
               🧳 {t('whatToWear', lang)}
-              <ProBadge />
             </Link>
           </Button>
           <Button asChild variant="atlasOutline" size="pill" className="w-full">

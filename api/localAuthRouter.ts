@@ -56,7 +56,9 @@ export const localAuthRouter = createRouter({
         username: usernameSchema,
         password: z.string().min(6).max(72),
         name: z.string().min(1).max(60).optional(),
-        email: emailSchema,
+        // Optional: see db/schema.ts. Offered for account recovery later,
+        // never required for anything the app does today.
+        email: emailSchema.optional(),
         // Optional: App Store Review Guideline 5.1.1(ii) bars requiring
         // personal data the core experience doesn't need, and a style atlas
         // works the same whether or not this is answered. Left unset the
@@ -124,7 +126,9 @@ export const localAuthRouter = createRouter({
         return { success: true, token };
       } catch (cause) {
         console.error("[auth] login failed after the password verified", {
-          unionId,
+          // Not the unionId: it embeds the username, and this line fires on
+          // infrastructure faults that say nothing about who was signing in.
+          userId: user.id,
           step: "touchLastSignIn / issueSession",
           // Unwrapped: Drizzle hides the driver's SQLSTATE behind its own
           // error, so reading `cause.code` directly yields undefined.

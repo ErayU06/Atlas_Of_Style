@@ -7,7 +7,6 @@ import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
 import PremiumGate from '@/components/PremiumGate'
-import ProBadge from '@/components/ProBadge'
 import SectionHeading from '@/components/SectionHeading'
 import FashionCard from '@/components/FashionCard'
 import { Button } from '@/components/ui/button'
@@ -66,7 +65,6 @@ export default function QuizPage() {
               {t('quizCard', lang)}
             </h1>
             <div className="mt-3 flex justify-center">
-              <ProBadge />
             </div>
             <p className="mx-auto mt-3.5 max-w-[30ch] text-[13px] leading-relaxed text-atlas-muted">
               {t('quizCardDesc', lang)}

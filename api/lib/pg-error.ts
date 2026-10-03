@@ -11,6 +11,7 @@
 
 export type PostgresErrorFields = {
   code?: string;
+  /** Present on the driver's error, never copied out: it quotes the row. */
   detail?: string;
   constraint?: string;
   table?: string;
@@ -41,7 +42,11 @@ export function findPostgresError(
       const pg = current as PostgresErrorFields;
       return {
         code: pg.code,
-        detail: pg.detail,
+        // `detail` is dropped, not forwarded: on a constraint violation
+        // Postgres spells out the whole offending row ("Failing row contains
+        // (4, local:ayse, ayse@example.com, ...)"), which puts account data
+        // into the log of every failed write. The code, table, column and
+        // constraint below say what broke without saying whose it was.
         constraint: pg.constraint,
         table: pg.table,
         column: pg.column,

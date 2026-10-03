@@ -26,15 +26,14 @@ export async function deleteUserCascade(userId: number): Promise<void> {
 }
 
 /**
- * `email` is required, and the type enforces it, because Postgres validates
- * the proposed row's NOT NULL constraints *before* it resolves ON CONFLICT.
- * A payload without an email therefore fails with 23502 even when the row
- * already exists and the statement would only ever have updated it — which
- * is not what "upsert" reads like, and cost a production login outage.
- * To only refresh an existing row, use touchLastSignIn below.
+ * Only `unionId` is required now that email is nullable. The rule that made
+ * email mandatory here still holds in general though: Postgres validates a
+ * proposed row's NOT NULL constraints *before* it resolves ON CONFLICT, so an
+ * upsert that omits any NOT NULL column without a default fails with 23502
+ * even when the row already exists and the statement would only have updated
+ * it. To refresh an existing row, use touchLastSignIn below rather than this.
  */
-type UpsertUserInput = Partial<InsertUser> &
-  Pick<InsertUser, "unionId" | "email">;
+type UpsertUserInput = Partial<InsertUser> & Pick<InsertUser, "unionId">;
 
 /**
  * Records a sign-in against a row that is already known to exist. A plain

@@ -16,7 +16,11 @@ export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   unionId: varchar("unionId", { length: 255 }).notNull().unique(),
   name: varchar("name", { length: 255 }),
-  email: varchar("email", { length: 320 }).notNull(),
+  // Optional: nothing in the app sends, verifies or recovers through it —
+  // there is no mail, no reset flow, no notification. Requiring an address
+  // the product never uses is collecting data that is not relevant to what
+  // the app does, which is what Review Guideline 5.1.1(ii) prohibits.
+  email: varchar("email", { length: 320 }),
   gender: genderEnum("gender"),
   avatar: text("avatar"),
   passwordHash: varchar("passwordHash", { length: 255 }),

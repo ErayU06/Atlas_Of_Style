@@ -7,7 +7,6 @@ import { eras } from '@/data/eras'
 import { pick } from '@/types/country'
 import { useApp } from '@/context/AppContext'
 import { t, regionLabel, sectionMeta } from '@/i18n'
-import ProBadge from '@/components/ProBadge'
 import PremiumGate from '@/components/PremiumGate'
 import SmartImage from '@/components/SmartImage'
 import SectionHeading from '@/components/SectionHeading'
@@ -97,7 +96,6 @@ export default function CountryDetailPage() {
         <Button asChild variant="atlasSoft" size="pill" className="w-full">
           <Link to={`/packing/${country.slug}`}>
             🧳 {t('whatToWear', lang)}
-            <ProBadge />
           </Link>
         </Button>
       </div>

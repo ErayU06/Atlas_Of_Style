@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { ChevronLeft, UserRound, Lock, Mail } from "lucide-react";
+import { ChevronLeft, UserRound, Lock } from "lucide-react";
 import { Capacitor } from "@capacitor/core";
 import { trpc, API_BASE_URL, TRPC_URL } from "@/providers/trpc";
 import { useApp } from "@/context/AppContext";
@@ -15,7 +15,6 @@ export default function Login() {
   const [tab, setTab] = useState<"login" | "signup">("signup");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
   const [error, setError] = useState<{ message: string; detail: string } | null>(null);
 
   const onSuccess = async (data: { success: boolean; token: string }) => {
@@ -86,7 +85,6 @@ export default function Login() {
       signupMutation.mutate({
         username: un,
         password,
-        email: email.trim(),
         gender: styleGender ?? undefined,
       });
     }
@@ -133,21 +131,6 @@ export default function Login() {
 
         {/* Form */}
         <form onSubmit={submit} className="mx-auto mt-6 w-full max-w-xs space-y-3">
-          {tab === "signup" && (
-            <div className="relative">
-              <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-atlas-muted/70" />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("email", lang)}
-                autoCapitalize="none"
-                autoCorrect="off"
-                required
-                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
-              />
-            </div>
-          )}
           {tab === "signup" && (
             <div>
               <p className="mb-1.5 pl-4 text-[11px] text-atlas-muted/70">
@@ -229,6 +212,18 @@ export default function Login() {
           >
             {tab === "login" ? t("loginTab", lang) : t("signupButton", lang)}
           </button>
+
+          {/* At the point of collection, not buried in a settings screen the
+              visitor can only reach once they have already handed the data
+              over — which is the only place it used to be linked from. */}
+          {tab === "signup" && (
+            <p className="px-2 text-center text-[11px] leading-relaxed text-atlas-muted/80">
+              {t("signupPrivacy", lang)}{" "}
+              <Link to="/privacy" className="underline underline-offset-2">
+                {t("signupPrivacyLink", lang)}
+              </Link>
+            </p>
+          )}
         </form>
       </div>
     </div>

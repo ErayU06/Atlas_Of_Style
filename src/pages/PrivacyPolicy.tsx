@@ -7,7 +7,8 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: 'Topladığımız veriler',
     body: [
-      'Hesap oluşturduğunuzda: kullanıcı adı, e-posta adresi, isteğe bağlı ad, cinsiyet ve şifrenizin geri döndürülemez şekilde şifrelenmiş (hash\'lenmiş) hâli.',
+      'Hesap oluşturduğunuzda: kullanıcı adı ve şifrenizin geri döndürülemez şekilde şifrelenmiş (hash\'lenmiş) hâli. Zorunlu alan bunlardan ibarettir.',
+      'İsteğe bağlı olarak: cinsiyet tercihi — yalnızca bavul ve stil önerilerini buna göre sunmak için kullanılır, Profil sayfasından istediğiniz zaman değiştirebilir veya kaldırabilirsiniz.',
       'Uygulama kullanımınız sırasında: favori ülkeleriniz ve seyahat notlarınız.',
       'Şifreniz hiçbir zaman düz metin olarak saklanmaz; yalnızca tek yönlü bir şifreleme algoritmasıyla (scrypt) üretilmiş hash\'i tutulur.',
     ],
@@ -15,8 +16,9 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: 'Verileri nasıl kullanıyoruz',
     body: [
-      'Toplanan veriler yalnızca hesabınızı çalıştırmak (giriş yapabilmeniz, favori ve notlarınızın cihazlar arasında senkronize olması) için kullanılır.',
+      'Toplanan veriler yalnızca hesabınızı çalıştırmak (giriş yapabilmeniz, favori ve notlarınızın cihazlar arasında senkronize olması) ve cinsiyet tercihini verdiyseniz önerileri ona göre hazırlamak için kullanılır.',
       'Verileriniz reklam, pazarlama veya profil oluşturma amacıyla işlenmez.',
+      'Uygulama ücretsizdir; uygulama içi satın alma, abonelik veya ödeme bilgisi toplama yoktur.',
     ],
   },
   {

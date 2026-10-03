@@ -2,7 +2,6 @@ import { Link } from 'react-router'
 import { Luggage, Sparkles, Crown, ChevronRight, Hourglass } from 'lucide-react'
 import { useApp } from '@/context/AppContext'
 import { t } from '@/i18n'
-import ProBadge from '@/components/ProBadge'
 import SectionHeading from '@/components/SectionHeading'
 
 export default function ToolsPage() {
@@ -14,21 +13,18 @@ export default function ToolsPage() {
       icon: Luggage,
       title: t('packingCard', lang),
       desc: t('packingCardDesc', lang),
-      pro: true,
     },
     {
       to: '/quiz',
       icon: Sparkles,
       title: t('quizCard', lang),
       desc: t('quizCardDesc', lang),
-      pro: true,
     },
     {
       to: '/premium',
       icon: Crown,
       title: t('premiumCard', lang),
       desc: t('premiumCardDesc', lang),
-      pro: true,
     },
     // Free, and the reason the app exists — so it sits with the rest.
     {
@@ -36,7 +32,6 @@ export default function ToolsPage() {
       icon: Hourglass,
       title: t('timeTravel', lang),
       desc: t('timeTravelSubtitle', lang),
-      pro: false,
     },
   ]
 
@@ -55,7 +50,7 @@ export default function ToolsPage() {
       <div className="mt-9">
         <SectionHeading kicker={`${items.length}`} title={t('explore', lang)} />
         <div className="space-y-3">
-          {items.map(({ to, icon: Icon, title, desc, pro }, i) => (
+          {items.map(({ to, icon: Icon, title, desc }, i) => (
             <Link
               key={to}
               to={to}
@@ -70,7 +65,6 @@ export default function ToolsPage() {
                   <h3 className="font-serif text-[20px] font-semibold leading-tight text-atlas-ink">
                     {title}
                   </h3>
-                  {pro && <ProBadge />}
                 </div>
                 <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-atlas-muted">
                   {desc}
