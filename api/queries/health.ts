@@ -14,7 +14,7 @@ const EXPECTED_USER_COLUMNS: Array<{
   why: string;
 }> = [
   { column: "unionId", nullable: false, why: "every lookup keys off it" },
-  { column: "email", nullable: false, why: "0001 sets NOT NULL; signup supplies it" },
+  { column: "email", nullable: true, why: "0002 drops NOT NULL; nothing collects it" },
   { column: "passwordHash", nullable: true, why: "OAuth accounts have none" },
   { column: "gender", nullable: true, why: "added by 0001, optional at signup" },
   { column: "role", nullable: false, why: "defaults to 'user'" },
