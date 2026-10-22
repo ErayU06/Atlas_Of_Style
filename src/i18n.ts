@@ -242,12 +242,12 @@ export const ui = {
   welcomeBack: { tr: 'Tekrar hoş geldin', en: 'Welcome back', zh: '欢迎回来', hi: 'फिर से स्वागत है', es: 'Bienvenido de nuevo', ar: 'مرحباً بعودتك' },
   createAccount: { tr: 'Hesap oluştur', en: 'Create your account', zh: '创建账户', hi: 'खाता बनाएं', es: 'Crea tu cuenta', ar: 'أنشئ حسابك' },
   authDesc: {
-    tr: 'Favorilerini, notlarını ve premium özellikleri tüm cihazlarında kullan.',
-    en: 'Use your favorites, notes and premium features on all your devices.',
-    zh: '在所有设备上使用你的收藏、笔记和高级功能。',
-    hi: 'अपने पसंदीदा, नोट्स और प्रीमियम फीचर सभी डिवाइस पर इस्तेमाल करें।',
-    es: 'Usa tus favoritos, notas y funciones premium en todos tus dispositivos.',
-    ar: 'استخدم مفضلاتك وملاحظاتك وميزات بريميوم على جميع أجهزتك.',
+    tr: 'Favorilerini, notlarını ve bütün rehberleri her cihazında kullan.',
+    en: 'Use your favorites, notes and every guide on all your devices.',
+    zh: '在所有设备上使用你的收藏、笔记和全部指南。',
+    hi: 'अपने पसंदीदा, नोट्स और सभी गाइड हर डिवाइस पर इस्तेमाल करें।',
+    es: 'Usa tus favoritos, notas y todas las guías en todos tus dispositivos.',
+    ar: 'استخدم مفضلاتك وملاحظاتك وجميع الأدلة على كل أجهزتك.',
   },
   footer: {
     tr: 'Atlas of Style · dünya modasının kültürel haritası',
