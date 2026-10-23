@@ -43,7 +43,7 @@ function NoteEditor({ slug }: { slug: string }) {
         onBlur={save}
         placeholder={t('notesPlaceholder', lang)}
         rows={2}
-        className="mt-2 w-full resize-none rounded-xl border border-atlas-line bg-atlas-soft/60 p-3 text-sm text-atlas-body outline-none transition-colors placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
+        className="mt-2 w-full resize-none rounded-xl border border-atlas-line bg-atlas-soft/60 p-3 text-base md:text-sm text-atlas-body outline-none transition-colors placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
       />
     </div>
   )

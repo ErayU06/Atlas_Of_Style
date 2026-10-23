@@ -169,7 +169,7 @@ export default function Login() {
                 autoCapitalize="none"
                 autoCorrect="off"
                 required
-                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-base md:text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
             {tab === "signup" && (
@@ -185,7 +185,7 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={t("password", lang)}
                 required
-                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
+                className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pl-11 pr-4 text-base md:text-sm text-atlas-ink shadow-card outline-none placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
               />
             </div>
             {tab === "signup" && (

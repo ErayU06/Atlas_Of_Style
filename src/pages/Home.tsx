@@ -191,7 +191,7 @@ export default function HomePage() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('searchPlaceholder', lang)}
             aria-label={t('searchPlaceholder', lang)}
-            className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pe-4 ps-11 text-sm text-atlas-ink shadow-card outline-none transition-colors placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
+            className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pe-4 ps-11 text-base md:text-sm text-atlas-ink shadow-card outline-none transition-colors placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
           />
         </div>
 
