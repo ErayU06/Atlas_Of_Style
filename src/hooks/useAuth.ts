@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { LOGIN_PATH } from "@/const";
 import { clearNativeToken } from "@/lib/nativeAuth";
+import { flushPassport } from "@/lib/passportFlush";
 
 type UseAuthOptions = {
   redirectOnUnauthenticated?: boolean;
@@ -48,7 +49,13 @@ export function useAuth(options?: UseAuthOptions) {
     onError: finishLogout,
   });
 
-  const logout = useCallback(() => logoutMutation.mutate(), [logoutMutation]);
+  // Give the passport its last chance to save stamps this device is still
+  // holding, while the session cookie is still valid. It stashes them
+  // locally first, so this returning before the request lands costs nothing.
+  const logout = useCallback(() => {
+    flushPassport();
+    logoutMutation.mutate();
+  }, [logoutMutation]);
 
   // Unlike logout, this one only redirects on confirmed success — the
   // account may still exist if the request failed, so the caller (the

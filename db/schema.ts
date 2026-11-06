@@ -69,3 +69,33 @@ export const tripNotes = pgTable(
 );
 
 export type TripNote = typeof tripNotes.$inferSelect;
+
+/**
+ * The Fashion Passport: every country and era an account has opened.
+ *
+ * Append-only by nature — a stamp is earned once and cannot be given back —
+ * which is why nothing here ever deletes a single row, and why the client can
+ * safely show the union of what the server knows and what the device is still
+ * holding.
+ *
+ * `kind` is a varchar rather than a pgEnum, unlike `role` and `gender`. Those
+ * are closed sets; this one is not — city stamps are the obvious next entry.
+ * Adding a value to a Postgres enum from inside a migration's transaction is
+ * the kind of thing that fails at boot, and api/lib/migrate.ts refuses to
+ * start the server when a migration fails. The API validates the value.
+ */
+export const discoveries = pgTable(
+  "discoveries",
+  {
+    id: serial("id").primaryKey(),
+    userId: bigint("userId", { mode: "number" }).notNull(),
+    kind: varchar("kind", { length: 16 }).notNull(),
+    slug: varchar("slug", { length: 64 }).notNull(),
+    createdAt: timestamp("createdAt").defaultNow().notNull(),
+  },
+  (t) => ({
+    discUserKindSlug: unique("disc_user_kind_slug").on(t.userId, t.kind, t.slug),
+  }),
+);
+
+export type Discovery = typeof discoveries.$inferSelect;

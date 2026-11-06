@@ -1,5 +1,5 @@
 import { getDb } from "./connection";
-import { favorites, tripNotes } from "@db/schema";
+import { discoveries, favorites, tripNotes } from "@db/schema";
 import { and, eq, sql } from "drizzle-orm";
 
 export async function findFavoritesByUser(userId: number) {
@@ -57,5 +57,73 @@ export async function upsertNote(userId: number, slug: string, note: string) {
     .onConflictDoUpdate({
       target: [tripNotes.userId, tripNotes.countrySlug],
       set: { note },
+    });
+}
+
+/** The two kinds of stamp the passport holds today. */
+export type DiscoveryKind = "country" | "era";
+
+/** The passport as the client models it: one list per kind of stamp. */
+export type PassportStamps = { countries: string[]; eras: string[] };
+
+/**
+ * Grouped in one round trip rather than one query per kind: the passport is
+ * read on every launch of a signed-in app, and the two lists are always
+ * wanted together.
+ */
+export async function findDiscoveriesByUser(
+  userId: number,
+): Promise<PassportStamps> {
+  const rows = await getDb()
+    .select({ kind: discoveries.kind, slug: discoveries.slug })
+    .from(discoveries)
+    .where(eq(discoveries.userId, userId));
+
+  const stamps: PassportStamps = { countries: [], eras: [] };
+  for (const row of rows) {
+    if (row.kind === "country") stamps.countries.push(row.slug);
+    else if (row.kind === "era") stamps.eras.push(row.slug);
+  }
+  return stamps;
+}
+
+/**
+ * `onConflictDoNothing` rather than an upsert: a stamp carries no payload to
+ * refresh, and `createdAt` is when it was first earned — rewriting that on a
+ * second visit would be a small lie about the reader's history.
+ */
+export async function addDiscovery(
+  userId: number,
+  kind: DiscoveryKind,
+  slug: string,
+) {
+  await getDb()
+    .insert(discoveries)
+    .values({ userId, kind, slug })
+    .onConflictDoNothing({
+      target: [discoveries.userId, discoveries.kind, discoveries.slug],
+    });
+}
+
+/**
+ * Takes a device's whole passport at once. Called when a guest signs in, and
+ * again whenever a stamp earned offline is still waiting to be sent, so it
+ * has to be safe to run repeatedly with overlapping input — hence the same
+ * do-nothing conflict handling, in a single statement.
+ */
+export async function mergeDiscoveries(
+  userId: number,
+  stamps: PassportStamps,
+): Promise<void> {
+  const rows = [
+    ...stamps.countries.map((slug) => ({ userId, kind: "country", slug })),
+    ...stamps.eras.map((slug) => ({ userId, kind: "era", slug })),
+  ];
+  if (rows.length === 0) return;
+  await getDb()
+    .insert(discoveries)
+    .values(rows)
+    .onConflictDoNothing({
+      target: [discoveries.userId, discoveries.kind, discoveries.slug],
     });
 }

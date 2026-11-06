@@ -21,6 +21,9 @@ export async function deleteUserCascade(userId: number): Promise<void> {
   await db.transaction(async (tx) => {
     await tx.delete(schema.favorites).where(eq(schema.favorites.userId, userId));
     await tx.delete(schema.tripNotes).where(eq(schema.tripNotes.userId, userId));
+    await tx
+      .delete(schema.discoveries)
+      .where(eq(schema.discoveries.userId, userId));
     await tx.delete(schema.users).where(eq(schema.users.id, userId));
   });
 }

@@ -8,7 +8,13 @@ import {
   mergeFavorites,
   findNotesByUser,
   upsertNote,
+  findDiscoveriesByUser,
+  addDiscovery,
+  mergeDiscoveries,
 } from "./queries/traveler";
+
+/** Far above every country and era the app can stamp, and still bounded. */
+const MAX_STAMPS = 500;
 
 export const travelerRouter = createRouter({
   favorites: authedQuery.query(({ ctx }) => findFavoritesByUser(ctx.user.id)),
@@ -54,5 +60,49 @@ export const travelerRouter = createRouter({
     .mutation(async ({ ctx, input }) => {
       await upsertNote(ctx.user.id, input.slug, input.note);
       return findNotesByUser(ctx.user.id);
+    }),
+
+  // ---- Fashion Passport ----------------------------------------------------
+  //
+  // Stamps are append-only: there is no endpoint that removes one, because
+  // nothing in the product takes a stamp back. That is also what lets the
+  // client show the union of these rows and whatever the device has not sent
+  // yet, without a stale local copy ever resurrecting something deleted.
+
+  discoveries: authedQuery.query(({ ctx }) =>
+    findDiscoveriesByUser(ctx.user.id),
+  ),
+
+  discover: authedQuery
+    .input(
+      z.object({
+        kind: z.enum(["country", "era"]),
+        slug: z.string().min(1).max(64),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      await addDiscovery(ctx.user.id, input.kind, input.slug);
+      return findDiscoveriesByUser(ctx.user.id);
+    }),
+
+  // Takes a device's whole passport. The cap is well above the number of
+  // stamps the app can actually award, so a legitimate reader never hits it,
+  // while a malformed or hostile payload cannot turn one request into an
+  // unbounded insert.
+  mergeDiscoveries: authedQuery
+    .input(
+      z
+        .object({
+          countries: z.array(z.string().min(1).max(64)).max(MAX_STAMPS),
+          eras: z.array(z.string().min(1).max(64)).max(MAX_STAMPS),
+        })
+        .refine(
+          (v) => v.countries.length + v.eras.length <= MAX_STAMPS,
+          { message: `a passport carries at most ${MAX_STAMPS} stamps` },
+        ),
+    )
+    .mutation(async ({ ctx, input }) => {
+      await mergeDiscoveries(ctx.user.id, input);
+      return findDiscoveriesByUser(ctx.user.id);
     }),
 });

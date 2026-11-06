@@ -22,6 +22,13 @@
       "when": 1791024878129,
       "tag": "0002_make_email_optional",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793922737084,
+      "tag": "0003_add_discoveries",
+      "breakpoints": true
     }
   ]
 }
