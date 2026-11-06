@@ -2,64 +2,89 @@
 
 ## Imagery
 
-88 görselin 11'i değiştirildi; **77'si hâlâ eski set.** Değiştirilmemiş
+88 görselin **23'ü değiştirildi; 65'i hâlâ eski set.** Değiştirilmemiş
 fotoğrafların telif durumu aşağıda, "Henüz değiştirilmemiş" başlığında.
 Hangi dosyanın yerine ne geleceği `docs/image-replacement.md`'de, prompt'ların
 tam metni `docs/image-prompts.md`'de.
 
 ### Yeni görseller — bizim ürettiklerimiz
 
-Hepsi **Google Gemini** ile üretildi (2026-11-06). Her dosyanın ham hâli
-imzalı bir **C2PA kaynak kaydı** ve **SynthID** işareti taşıyordu; bu
-kayıtlar "Google Generative AI" üreticisini doğruluyor. Ham dosyalar
-`Atlas_Of_Style_Images/` klasöründeydi, kullanıldıktan sonra silindi — git
-geçmişinde `efc9634` commit'inde imzalarıyla birlikte duruyorlar, gerekirse
-oradan çıkarılabilir. Yayınlanan JPG'lerde metadata yok (dosya boyutu için
-temizlendi).
+Hepsi **Google Gemini** ile üretildi. Her dosyanın ham hâli imzalı bir **C2PA
+kaynak kaydı** ve **SynthID** işareti taşıyordu; bu kayıtlar "Google Generative
+AI" üreticisini doğruluyor. Ham dosyalar `Atlas_Of_Style_Images/` klasöründeydi,
+kullanıldıktan sonra silindi — git geçmişinde imzalarıyla birlikte duruyorlar
+(1. parti `efc9634`, 2. parti `bc6680f`), gerekirse oradan çıkarılabilir.
+Yayınlanan JPG'lerde metadata yok (dosya boyutu için temizlendi).
 
 **Ticari kullanım:** Gemini Apps hizmet şartlarına göre üretilen görselin
-hakları kullanıcıya ait ve ticari kullanım serbest. Üçüncü bir tarafın
-telifi söz konusu değil; atıf zorunluluğu yok.
+hakları kullanıcıya ait ve ticari kullanım serbest. Üçüncü bir tarafın telifi
+söz konusu değil; atıf zorunluluğu yok.
 
-| Dosya | Araç | Prompt | Üretim | Ticari kullanım |
-| --- | --- | --- | --- | --- |
-| `public/images/eras/atlas-hero.jpg` | Google Gemini | `docs/image-prompts.md` 1. parti #1 | 2026-11-06 | İzinli |
-| `public/images/turkiye-1.jpg` | Google Gemini | 1. parti #2 | 2026-11-06 | İzinli |
-| `public/images/france-1.jpg` | Google Gemini | 1. parti #3 | 2026-11-06 | İzinli |
-| `public/images/italy-1.jpg` | Google Gemini | 1. parti #4 | 2026-11-06 | İzinli |
-| `public/images/united-kingdom-1.jpg` | Google Gemini | 1. parti #5 | 2026-11-06 | İzinli |
-| `public/images/germany-1.jpg` | Google Gemini | 1. parti #6 | 2026-11-06 | İzinli |
-| `public/images/spain-1.jpg` | Google Gemini | 1. parti #7 | 2026-11-06 | İzinli |
-| `public/images/canada-1.jpg` | Google Gemini | 1. parti #8 | 2026-11-06 | İzinli |
-| `public/images/turkiye-2.jpg` | Google Gemini | 1. parti #9 | 2026-11-06 | İzinli |
-| `public/images/france-2.jpg` | Google Gemini | 1. parti #10 | 2026-11-06 | İzinli |
-| `public/images/eras/era-1920.jpg` | Google Gemini | 1. parti #11 | 2026-11-06 | İzinli |
+**Tarz:** 1. parti flat lay / askılık, 2. parti mekânda tam boy manken. İkisi
+yan yana durduğunda set ikiye bölünmüş görünüyor; 1. partinin dokuzu yeni tarza
+göre yeniden üretilebilir (prompt'ları `docs/image-prompts.md` 3. partide).
 
-Her biri için ChatGPT (gpt-image) ile üretilmiş ikinci bir sürüm de vardı;
-uygulamadaki üç kırpmada (3:4, 4:5, 16:10) Gemini sürümleri daha iyi durduğu
-ve prompt'un istediği komple kombini eksiksiz verdiği için onlar seçildi.
-ChatGPT sürümleri de aynı commit'te, git geçmişinde duruyor.
+#### 1. parti — 2026-11-06, flat lay / askılık tarzı
 
-İçerik kontrolü: hiçbirinde insan, yüz, el, marka logosu, tasarımcı
-monogramı, okunabilir yazı veya görünür filigran yok. Tek tek büyütülerek
-bakıldı.
+| Dosya | Araç | Prompt |
+| --- | --- | --- |
+| `public/images/eras/atlas-hero.jpg` | Google Gemini | mankenli, yeni tarza uyuyor |
+| `public/images/eras/era-1920.jpg` | Google Gemini | mankenli, yeni tarza uyuyor |
+| `public/images/turkiye-1.jpg` | Google Gemini | flat lay |
+| `public/images/turkiye-2.jpg` | Google Gemini | flat lay |
+| `public/images/france-1.jpg` | Google Gemini | askıda |
+| `public/images/france-2.jpg` | Google Gemini | flat lay |
+| `public/images/italy-1.jpg` | Google Gemini | flat lay |
+| `public/images/united-kingdom-1.jpg` | Google Gemini | flat lay |
+| `public/images/germany-1.jpg` | Google Gemini | askıda |
+| `public/images/spain-1.jpg` | Google Gemini | flat lay |
+| `public/images/canada-1.jpg` | Google Gemini | flat lay |
 
-### Henüz değiştirilmemiş — 77 dosya
+#### 2. parti — 2026-11-06, mekânda manken tarzı
+
+| Dosya | Araç | Prompt |
+| --- | --- | --- |
+| `public/images/norway-1.jpg` | Google Gemini | `docs/image-prompts.md` 1. parti #1 |
+| `public/images/morocco-1.jpg` | Google Gemini | 1. parti #2 |
+| `public/images/nigeria-1.jpg` | Google Gemini | 1. parti #3 |
+| `public/images/south-africa-1.jpg` | Google Gemini | 1. parti #4 |
+| `public/images/united-states-1.jpg` | Google Gemini | 1. parti #5 |
+| `public/images/mexico-1.jpg` | Google Gemini | 1. parti #6 |
+| `public/images/brazil-1.jpg` | Google Gemini | 1. parti #7 |
+| `public/images/japan-1.jpg` | Google Gemini | 1. parti #8 |
+| `public/images/south-korea-1.jpg` | Google Gemini | 1. parti #9 |
+| `public/images/china-1.jpg` | Google Gemini | 1. parti #10 |
+| `public/images/india-1.jpg` | Google Gemini | 1. parti #11 |
+| `public/images/australia-1.jpg` | Google Gemini | 1. parti #12 |
+
+Bununla **ana sayfadaki 19 ülke kartının tamamı** bizim görsellerimiz oldu.
+
+İçerik kontrolü: 23 dosyanın hiçbirinde insan, yüz, el, ten, saç, marka logosu,
+tasarımcı monogramı, okunabilir yazı veya görünür filigran yok. Her biri
+büyütülerek tek tek incelendi. Mankenler yüz hatsız, mat krem; elleri de aynı
+malzemeden, tırnaksız.
+
+Kayda geçen üç ayrıntı (hiçbiri kural ihlali değil):
+
+- `japan-1.jpg` — arka plandaki fenerlerde karakter izlenimi veren bulanık
+  fırça lekeleri var; %600 büyütmede bile okunabilir bir harfe dönüşmüyor.
+- `norway-1.jpg` — gömleğin yan dikişinde düz terracotta bir etiket şeridi var;
+  üzerinde yazı ya da logo yok, marka etiketi konumunda duruyor.
+- `brazil-1.jpg` — yüzsüz başa takılı güneş gözlüğü, küçük boyutta göze
+  benziyor. Prompt'ta istenmişti; `australia-1`'de aynısı şapka gölgesinde
+  kalıyor.
+
+### Henüz değiştirilmemiş — 65 dosya
 
 Bunlar projenin ilk sürümüyle (Kimi K3) geldi ve **bizim olduğumuz
-gösterilemiyor.** Üretilmiş oldukları varsayılmıştı; varsayım çoğu için
-yanlış çıktı. Tersine görsel arama bir tanesini Vogue'da yayımlanmış bir
-fotoğrafla eşleştirdi, iki dosyada da yayıncının kendi filigranı karenin
-içine gömülü çıktı:
-
-| Dosya | Filigran |
-| --- | --- |
-| `public/images/nigeria-1.jpg` | **BN style** (BellaNaija Style) |
-| `public/images/japan-1.jpg` | **TokyoFashion.com** |
+gösterilemiyor.** Üretilmiş oldukları varsayılmıştı; varsayım çoğu için yanlış
+çıktı. Tersine görsel arama bir tanesini Vogue'da yayımlanmış bir fotoğrafla
+eşleştirdi; filigranlı iki dosyanın ikisi de artık değiştirildi
+(`nigeria-1`, `japan-1`).
 
 | Grup | Adet | Ne oldukları | Risk |
 | --- | --- | --- | --- |
-| Ülke fotoğrafları (kalan) | 48 | Web'den alınmış, tanınabilir kişilerin sokak stili fotoğrafları | Telif **ve** kişilik hakkı — bunlar gerçek insanlar, izinleri yok |
+| Ülke fotoğrafları (kalan) | 36 | Web'den alınmış, tanınabilir kişilerin sokak stili fotoğrafları | Telif **ve** kişilik hakkı — bunlar gerçek insanlar, izinleri yok |
 | Dönem görselleri (kalan) | 7 | Editoryal ve stüdyo moda fotoğrafları, üretim işareti yok | Aynı telif sınıfı; kaynağı bilinmiyor |
 | `eras/passport-paper.jpg` | 1 | Düz kâğıt dokusu | Düşük, ama doğrulanmamış |
 | Şehir görselleri `city-*.jpg` | 21 | **Üretilmiş**, ama hepsinde sol altta görünür `AI生成` ("YZ üretimi") filigranı var | Üçüncü taraf telifi yok; filigran uygulamanın içinde görünüyor |
