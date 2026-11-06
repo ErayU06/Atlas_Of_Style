@@ -24,11 +24,11 @@ filigran yok.** Yalnızca markasız, jenerik kıyafetler.
 Son kolondaki referans `docs/image-prompts.md` içindeki prompt numarasını gösterir;
 prompt'un tam metni orada, tek kaynak o belge. ✅ = değiştirildi.
 
-**Durum (2026-11-06):** 23/88 dosya değiştirildi. **Ana sayfadaki 19 ülke
-kartının tamamı artık bizim.** Kalan 65: 36 ülke fotoğrafı, 7 dönem görseli,
-pasaport kâğıdı ve 21 şehir. İlk partinin 9'u eski (flat lay / askılık) tarzda;
-tutarlılık için yeniden üretilebilirler, prompt'ları hazır (3. parti). Üretim ve
-atıf ayrıntıları `CREDITS.md`'de.
+**Durum (2026-11-06):** 31/88 dosya değiştirildi. **19 ülke kartının, 8 dönem
+görselinin ve pasaport kâğıdının tamamı artık bizim.** Kalan 57: 36 ülke foto
+levhası (`-2`, `-3`) ve 21 şehir. Telif riski taşıyan yalnızca o 36 fotoğraf.
+Tek tarz istisnası `united-kingdom-1`: hâlâ flat lay, yenisi reddedildi.
+Üretim ve atıf ayrıntıları `CREDITS.md`'de.
 
 
 ## Ülke görselleri — 57 dosya (19 ülke × 3)
@@ -62,7 +62,7 @@ atıf ayrıntıları `CREDITS.md`'de.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | ✅ **Değiştirildi** (eski tarz) — yeni tarz prompt: `docs/image-prompts.md`, 3. parti #6 |
+| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | ⚠️ **Değiştirildi ama eski tarzda** — mankenli yenisi Burberry tipi ekose çıktığı için kullanılmadı; yeniden üretilecek |
 | `united-kingdom-2.jpg` | 933×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | **Marlboro logolu** yarış ceketi giyen kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #5 |
 | `united-kingdom-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Desenli şal-palto ve puantiyeli etekli kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #6 |
 
@@ -218,16 +218,16 @@ Hepsi **yapay zekâ üretimi** ve sol alt köşede görünür **`AI生成`** fil
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `eras/era-1900.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Sepya fotoğraf: Edward dönemi beyaz dantel elbiseli, şemsiyeli iki kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #37 |
+| `eras/era-1900.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Sepya fotoğraf: Edward dönemi beyaz dantel elbiseli, şemsiyeli iki kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 | `eras/era-1920.jpg` ⭐ | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Boncuklu düşük belli flapper elbise ve tüylü bantlı kadın, art deco altın iç mekân | ✅ **Değiştirildi** — Google Gemini; zaten mankenli, yeni tarza uyuyor |
-| `eras/era-1950.jpg` | 900×1321 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Soluk pembe geniş etekli New Look elbise, eldivenli kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #38 |
-| `eras/era-1970.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Turuncu İspanyol paça takım ve desenli eşarplı kadın, sokak | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #39 |
-| `eras/era-1990.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Askılı elbise üzerine ekose gömlek giymiş kadın, gri zemin | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #40 |
-| `eras/era-2000.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | File/grafik crop üst ve düşük belli İspanyol paça kot giyen kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #41 |
-| `eras/era-2010.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Gri oversize takım ve beyaz spor ayakkabılı kadın, koyu duvar | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #42 |
-| `eras/era-2020.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Minimal bir kemer altında bej oversize terzi paltolu kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #43 |
+| `eras/era-1950.jpg` | 900×1321 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Soluk pembe geniş etekli New Look elbise, eldivenli kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `eras/era-1970.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Turuncu İspanyol paça takım ve desenli eşarplı kadın, sokak | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `eras/era-1990.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Askılı elbise üzerine ekose gömlek giymiş kadın, gri zemin | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `eras/era-2000.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | File/grafik crop üst ve düşük belli İspanyol paça kot giyen kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `eras/era-2010.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Gri oversize takım ve beyaz spor ayakkabılı kadın, koyu duvar | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `eras/era-2020.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Minimal bir kemer altında bej oversize terzi paltolu kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 | `eras/atlas-hero.jpg` ⭐ | 900×1200 | Foto | Ana sayfa kapak görseli | Galeri mekânında üç manken üzerinde krem drapeli giysi — **zaten insan içermiyor** | ✅ **Değiştirildi** — Google Gemini; zaten mankenli, yeni tarza uyuyor |
-| `eras/passport-paper.jpg` | 700×467 | Foto | Moda Pasaportu arka plan dokusu | Düz krem kâğıt dokusu — **içerik yok, kişi yok** | **Düz krem kâğıt dokusu** — prompt: `docs/image-prompts.md`, 2. parti #44 |
+| `eras/passport-paper.jpg` | 700×467 | Foto | Moda Pasaportu arka plan dokusu | Düz krem kâğıt dokusu — **içerik yok, kişi yok** | ✅ **Değiştirildi** — Google Gemini, kâğıt dokusu, iç kısmı kırpıldı |
 
 ---
 
