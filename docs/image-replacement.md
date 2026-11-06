@@ -24,11 +24,11 @@ filigran yok.** Yalnızca markasız, jenerik kıyafetler.
 Son kolondaki referans `docs/image-prompts.md` içindeki prompt numarasını gösterir;
 prompt'un tam metni orada, tek kaynak o belge. ✅ = değiştirildi.
 
-**Durum (2026-11-06):** 31/88 dosya değiştirildi. **19 ülke kartının, 8 dönem
-görselinin ve pasaport kâğıdının tamamı artık bizim.** Kalan 57: 36 ülke foto
-levhası (`-2`, `-3`) ve 21 şehir. Telif riski taşıyan yalnızca o 36 fotoğraf.
-Tek tarz istisnası `united-kingdom-1`: hâlâ flat lay, yenisi reddedildi.
-Üretim ve atıf ayrıntıları `CREDITS.md`'de.
+**Durum (2026-11-06):** 48/88 dosya değiştirildi ve hepsi aynı tarzda —
+mekânda tam boy manken. **19 ülke kartı, 8 dönem görseli, ana sayfa kapağı,
+pasaport kâğıdı ve 19 ülke foto levhası tamam.** Kalan 40: 19 ülke foto levhası
+ve 21 şehir. Telif riski taşıyan yalnızca o 19 fotoğraf. Üretim ve atıf
+ayrıntıları `CREDITS.md`'de.
 
 
 ## Ülke görselleri — 57 dosya (19 ülke × 3)
@@ -62,7 +62,7 @@ Tek tarz istisnası `united-kingdom-1`: hâlâ flat lay, yenisi reddedildi.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | ⚠️ **Değiştirildi ama eski tarzda** — mankenli yenisi Burberry tipi ekose çıktığı için kullanılmadı; yeniden üretilecek |
+| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 | `united-kingdom-2.jpg` | 933×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | **Marlboro logolu** yarış ceketi giyen kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #5 |
 | `united-kingdom-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Desenli şal-palto ve puantiyeli etekli kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #6 |
 
@@ -120,71 +120,71 @@ Tek tarz istisnası `united-kingdom-1`: hâlâ flat lay, yenisi reddedildi.
 | --- | --- | --- | --- | --- | --- |
 | `united-states-1.jpg` | 969×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Sarı New York taksisinin yanında leopar desenli uzun paltolu kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #5 |
 | `united-states-2.jpg` | 1400×1015 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Günlük kıyafetlerle yürüyen bir grup insan | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #19 |
-| `united-states-3.jpg` | 683×1024 | Foto | Ülke sayfası 2. fotoğraf levhası | Kot ceket ve ekose etekle karşıdan karşıya geçen kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #20 |
+| `united-states-3.jpg` | 683×1024 | Foto | Ülke sayfası 2. fotoğraf levhası | Kot ceket ve ekose etekle karşıdan karşıya geçen kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Kanada
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `canada-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kürk yakalı bej parka ve şapkalı kadın; karlı ıslak sokak, arkada yeşil kamyon | ✅ **Değiştirildi** (eski tarz) — yeni tarz prompt: `docs/image-prompts.md`, 3. parti #9 |
-| `canada-2.jpg` | 590×887 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Gece sokak lambaları altında uzun koyu paltolu kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #21 |
-| `canada-3.jpg` | 590×825 | Foto | Ülke sayfası 2. fotoğraf levhası | Uzun koyu palto, gri pantolon ve atkılı kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #22 |
+| `canada-2.jpg` | 590×887 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Gece sokak lambaları altında uzun koyu paltolu kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `canada-3.jpg` | 590×825 | Foto | Ülke sayfası 2. fotoğraf levhası | Uzun koyu palto, gri pantolon ve atkılı kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Meksika
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `mexico-1.jpg` | 1138×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Siyah deri ceket ve açık kot etekle karşıya geçen kadın; arkada turuncu çiçekli çit | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #6 |
-| `mexico-2.jpg` | 683×1024 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sarı takım elbiseyle yaya geçidinden geçen kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #23 |
-| `mexico-3.jpg` | 1124×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Beyzbol şapkalı, bol kotlu kişi; sokak pazarı | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #24 |
+| `mexico-2.jpg` | 683×1024 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sarı takım elbiseyle yaya geçidinden geçen kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `mexico-3.jpg` | 1124×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Beyzbol şapkalı, bol kotlu kişi; sokak pazarı | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Brezilya
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `brazil-1.jpg` | 1050×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Mavi çiçekli crop gömlek ve beyaz bol pantolonlu kadın, palmiyeler | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #7 |
-| `brazil-2.jpg` | 800×533 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sarı duvar ve afiş önünde duran kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #25 |
-| `brazil-3.jpg` | 700×1049 | Foto | Ülke sayfası 2. fotoğraf levhası | Copacabana yürüyüş yolunda ekose etekli kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #26 |
+| `brazil-2.jpg` | 800×533 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sarı duvar ve afiş önünde duran kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `brazil-3.jpg` | 700×1049 | Foto | Ülke sayfası 2. fotoğraf levhası | Copacabana yürüyüş yolunda ekose etekli kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Japonya
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `japan-1.jpg` | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Katmanlı koyu avangart kıyafet ve tozluklu kişi, Tokyo sokağı — **TokyoFashion.com filigranı var** | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #8 |
-| `japan-2.jpg` | 934×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Çok renkli katmanlı Harajuku kıyafeti, mavi saçlı kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #27 |
-| `japan-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Çok renkli Harajuku kıyafeti, pembe tozluklar | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #28 |
+| `japan-2.jpg` | 934×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Çok renkli katmanlı Harajuku kıyafeti, mavi saçlı kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `japan-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Çok renkli Harajuku kıyafeti, pembe tozluklar | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Güney Kore
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `south-korea-1.jpg` | 1400×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Siyah balıkçı yaka ve soluk pembe hacimli etekli kadın, mor çanta | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #9 |
-| `south-korea-2.jpg` | 1400×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Beton duvar önünde uzun siyah paltolu iki kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #29 |
-| `south-korea-3.jpg` | 1024×683 | Foto | Ülke sayfası 2. fotoğraf levhası | Siyah giyimli iki kişi, kentsel meydan | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #30 |
+| `south-korea-2.jpg` | 1400×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Beton duvar önünde uzun siyah paltolu iki kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `south-korea-3.jpg` | 1024×683 | Foto | Ülke sayfası 2. fotoğraf levhası | Siyah giyimli iki kişi, kentsel meydan | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Çin
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `china-1.jpg` | 800×1067 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Tuğla duvar önünde eşleşen kot mavisi drapeli iki kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #10 |
-| `china-2.jpg` | 800×1200 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Beyaz gömlek ve uzun krem etekli kadın, dükkân önü | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #31 |
-| `china-3.jpg` | 540×537 | Foto | Ülke sayfası 2. fotoğraf levhası | Siyah şişme ceket ve desenli çantalı kişi | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #32 |
+| `china-2.jpg` | 800×1200 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Beyaz gömlek ve uzun krem etekli kadın, dükkân önü | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `china-3.jpg` | 540×537 | Foto | Ülke sayfası 2. fotoğraf levhası | Siyah şişme ceket ve desenli çantalı kişi | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Hindistan
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `india-1.jpg` | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Türbanlı ve sakallı adam; turkuaz kurta, pembe desenli pantolon, pembe duvar | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #11 |
-| `india-2.jpg` | 1120×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Desenli gömlek ve bej pantolonlu kişi, tozlu sokak | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #33 |
-| `india-3.jpg` | 933×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Uzun paltolu kişi, tekstil pazarı | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #34 |
+| `india-2.jpg` | 1120×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Desenli gömlek ve bej pantolonlu kişi, tozlu sokak | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `india-3.jpg` | 933×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Uzun paltolu kişi, tekstil pazarı | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ### Avustralya
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `australia-1.jpg` | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | İki kadın: biri açık mavi deri takım, diğeri yeşil çiçekli uzun elbise, kovboy çizme | ✅ **Değiştirildi** — Google Gemini, mekânda manken; prompt: `docs/image-prompts.md`, 1. parti #12 |
-| `australia-2.jpg` | 1000×1333 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sydney Opera Binası yanında uzun beyaz örgü elbiseli kadın | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #35 |
-| `australia-3.jpg` | 933×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Grafik baskılı tişörtlerle iki erkek, dükkân önü — **marka logoları görünüyor** | **Mekânda manken, komple kombin** — prompt: `docs/image-prompts.md`, 2. parti #36 |
+| `australia-2.jpg` | 1000×1333 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Sydney Opera Binası yanında uzun beyaz örgü elbiseli kadın | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
+| `australia-3.jpg` | 933×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Grafik baskılı tişörtlerle iki erkek, dükkân önü — **marka logoları görünüyor** | ✅ **Değiştirildi** — Google Gemini, mekânda manken |
 
 ## Şehir görselleri — 21 dosya
 

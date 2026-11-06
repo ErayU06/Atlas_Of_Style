@@ -2,61 +2,62 @@
 
 ## Imagery
 
-88 görselin **31'i değiştirildi; 57'si hâlâ eski set.** Telif riski taşıyan
-yalnızca 36'sı kaldı (ülke sayfalarının `-2` ve `-3` foto levhaları); kalan 21
+88 görselin **48'i değiştirildi; 40'ı hâlâ eski set.** Telif riski taşıyan
+19 dosya kaldı (bazı ülke sayfalarının `-2` ve `-3` foto levhaları); kalan 21
 şehir görselinin telif sorunu yok, yalnızca üzerlerinde görünür bir filigran
 var. Envanter `docs/image-replacement.md`'de, prompt'lar `docs/image-prompts.md`'de.
 
 Tamamlananlar: **19 ülke kartının (`-1`) hepsi**, **8 dönem görselinin hepsi**,
-ana sayfa kapağı ve pasaport kâğıdı.
+ana sayfa kapağı, pasaport kâğıdı ve 19 ülke foto levhası.
 
 ### Yeni görseller — bizim ürettiklerimiz
 
-31 dosyanın hepsi **Google Gemini** ile üretildi. Her birinin ham hâli imzalı
+48 dosyanın hepsi **Google Gemini** ile üretildi. Her birinin ham hâli imzalı
 bir **C2PA kaynak kaydı** ve **SynthID** işareti taşıyordu; bu kayıtlar "Google
 Generative AI" üreticisini doğruluyor. Ham dosyalar `Atlas_Of_Style_Images/`
 klasöründeydi, kullanıldıktan sonra silindi — git geçmişinde imzalarıyla
-duruyorlar (`efc9634`, `bc6680f`, `69dc713`). Yayınlanan JPG'lerde metadata yok
-(dosya boyutu için temizlendi).
+duruyorlar (`efc9634`, `bc6680f`, `69dc713`, `1546484`). Yayınlanan JPG'lerde
+metadata yok (dosya boyutu için temizlendi).
 
 **Ticari kullanım:** Gemini Apps hizmet şartlarına göre üretilen görselin
 hakları kullanıcıya ait ve ticari kullanım serbest. Üçüncü bir tarafın telifi
 söz konusu değil; atıf zorunluluğu yok.
 
-#### Mekânda manken tarzı — 30 dosya
+#### Tarz
 
-| Grup | Dosyalar |
-| --- | --- |
-| Ülke kartları `-1` | `turkiye-1`, `france-1`, `italy-1`, `germany-1`, `spain-1`, `canada-1`, `norway-1`, `morocco-1`, `nigeria-1`, `south-africa-1`, `united-states-1`, `mexico-1`, `brazil-1`, `japan-1`, `south-korea-1`, `china-1`, `india-1`, `australia-1` (18) |
-| Ülke foto levhaları | `turkiye-2`, `france-2` (2) |
-| Dönemler | `eras/era-1900`, `era-1920`, `era-1950`, `era-1970`, `era-1990`, `era-2000`, `era-2010`, `era-2020` (8) |
-| Ana sayfa kapağı | `eras/atlas-hero` (1) |
-| Pasaport arka planı | `eras/passport-paper` (1, kâğıt dokusu — manken yok) |
+Hepsi **mekânda tam boy manken**: yüz hatsız, mat krem bir vitrin mankeni
+üzerinde o ülkenin ya da dönemin komple kombini, arkada sığ alan derinliğiyle
+eritilmiş gerçek bir mekân. Tek istisna `eras/passport-paper.jpg`, bir kâğıt
+dokusu.
 
-#### Eski tarzda kalan tek dosya
+| Grup | Adet | Dosyalar |
+| --- | --- | --- |
+| Ülke kartları `-1` | 19 | 19 ülkenin hepsi |
+| Ülke foto levhaları `-2`, `-3` | 19 | `turkiye-2`, `france-2`, `united-states-3`, `canada-2`, `canada-3`, `mexico-2`, `mexico-3`, `brazil-2`, `brazil-3`, `japan-2`, `japan-3`, `south-korea-2`, `south-korea-3`, `china-2`, `china-3`, `india-2`, `india-3`, `australia-2`, `australia-3` |
+| Dönemler | 8 | `era-1900`, `1920`, `1950`, `1970`, `1990`, `2000`, `2010`, `2020` |
+| Ana sayfa kapağı | 1 | `eras/atlas-hero` |
+| Pasaport arka planı | 1 | `eras/passport-paper` (kâğıt dokusu) |
 
-`united-kingdom-1.jpg` hâlâ 1. partinin flat lay hâli. Mankenli yenisi
-üretildi ama **kullanılmadı**: atkısındaki ekose, deve tüyü zemin üzerine koyu
-bantlar ve ince beyaz çizgilerle, Burberry'nin tescilli ev ekosesine fazla
-yakın çıktı. Prompt bunu açıkça yasaklamasına rağmen üretici yine o deseni
-verdi. Yeniden üretilmesi gerekiyor; prompt'u `docs/image-prompts.md`
-3. partide.
+#### Üretim sırasında reddedilen / düzeltilen iki dosya
 
-#### Pasaport kâğıdı hakkında bir not
-
-Üretilen dosya, gri bir zemin üzerine konmuş bir kâğıt yaprağının fotoğrafıydı.
-Bu görsel uygulamada 240 piksellik karelerle **döşeniyor**, dolayısıyla olduğu
-gibi kullanıldığında gri aralıklarla bölünmüş bir ızgara oluşturuyordu. Kâğıdın
-iç kısmından 550×550'lik bir alan kırpılıp 1024×1024'e ölçeklendi; o hâliyle
-kusursuza yakın döşeniyor. İçeriğe dokunulmadı, yalnızca kullanılabilir bölge
-alındı.
+- **`united-kingdom-1`** ilk mankenli denemede atkısı Burberry'nin tescilli ev
+  ekosesine fazla yakın çıktığı için kullanılmadı. Sebebi muhtemelen
+  prompt'un kendisiydi: yasak paragrafında marka adı geçiyordu ve üretici
+  olumsuz talimattaki markaya kaydı. Yasak paragrafı olumlu ifadeyle yeniden
+  yazıldı ("plain, original, unbranded garments; patterns are simple stripes,
+  solids or original geometric motifs"), ekose setten tamamen çıkarıldı ve
+  dosya yeniden üretildi. Şimdiki atkı desensiz, tek renk kalın örgü.
+- **`eras/passport-paper`** gri zemine konmuş bir kâğıt yaprağının fotoğrafı
+  olarak geldi; uygulama bu dosyayı 240 pikselle döşediği için gri aralıklı bir
+  ızgara oluşuyordu. Kâğıdın iç kısmından 550×550'lik alan kırpılıp 1024'e
+  ölçeklendi. İçeriğe dokunulmadı.
 
 #### İçerik kontrolü
 
-31 dosyanın hiçbirinde insan, yüz, el, ten, saç, marka logosu, tasarımcı
-monogramı, okunabilir yazı veya görünür filigran yok. Her biri büyütülerek
-tek tek incelendi. Mankenler yüz hatsız, mat krem; elleri de aynı malzemeden,
-tırnaksız.
+48 dosyanın hiçbirinde insan, yüz, el, ten, saç, marka logosu, tasarımcı
+monogramı, ekose/tartan, okunabilir yazı veya görünür filigran yok. Her biri
+büyütülerek tek tek incelendi. Mankenler yüz hatsız, mat krem; elleri de aynı
+malzemeden, tırnaksız.
 
 Kayda geçen üç ayrıntı (hiçbiri kural ihlali değil):
 
@@ -67,20 +68,24 @@ Kayda geçen üç ayrıntı (hiçbiri kural ihlali değil):
 - `brazil-1.jpg` — yüzsüz başa takılı güneş gözlüğü küçük boyutta göze
   benziyor. Prompt'ta istenmişti.
 
-### Henüz değiştirilmemiş — 57 dosya
+### Henüz değiştirilmemiş — 40 dosya
 
 | Grup | Adet | Ne oldukları | Risk |
 | --- | --- | --- | --- |
-| Ülke foto levhaları `-2`, `-3` | 36 | Web'den alınmış, tanınabilir kişilerin sokak stili fotoğrafları | **Telif ve kişilik hakkı** — bunlar gerçek insanlar, izinleri yok |
+| Ülke foto levhaları | 19 | Web'den alınmış, tanınabilir kişilerin sokak stili fotoğrafları | **Telif ve kişilik hakkı** — bunlar gerçek insanlar, izinleri yok |
 | Şehir görselleri `city-*.jpg` | 21 | **Üretilmiş**, ama hepsinde sol altta görünür `AI生成` ("YZ üretimi") filigranı var | Üçüncü taraf telifi yok; filigran uygulamanın içinde görünüyor |
 
-Kalan 36 fotoğraf projenin ilk sürümüyle (Kimi K3) geldi ve **bizim olduğumuz
+Kalan 19 fotoğraf: `turkiye-3`, `france-3`, `italy-2`, `italy-3`,
+`united-kingdom-2`, `united-kingdom-3`, `germany-2`, `germany-3`, `spain-2`,
+`spain-3`, `norway-2`, `norway-3`, `morocco-2`, `morocco-3`, `nigeria-2`,
+`nigeria-3`, `south-africa-2`, `south-africa-3`, `united-states-2`.
+
+Bunlar projenin ilk sürümüyle (Kimi K3) geldi ve **bizim olduğumuz
 gösterilemiyor.** Dosyalarda hiç EXIF, XMP veya C2PA metadata'sı yok —
 commit'lenmeden önce temizlenmiş; çok farklı piksel boyutundalar, ki bu çok
 kaynaktan toplanmış bir setin görüntüsüdür; ve git geçmişinde hiçbirinin
 nereden geldiği yazmıyor. Tersine görsel arama bir tanesini Vogue'da
-yayımlanmış bir fotoğrafla eşleştirmişti. Yayıncı filigranı taşıyan iki dosya
-(`nigeria-1`, `japan-1`) artık değiştirildi.
+yayımlanmış bir fotoğrafla eşleştirmişti.
 
 Hiçbiri lisanslı sayılmamalı. Buradan sonraki kural: kaynağı yukarıdaki
 tabloya yazılmadan hiçbir görsel depoya girmiyor.
