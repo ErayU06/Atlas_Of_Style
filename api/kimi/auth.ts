@@ -84,6 +84,13 @@ export async function authenticateRequest(headers: Headers) {
   if (!user) {
     throw Errors.forbidden("User not found. Please re-login.");
   }
+  // A token minted before `tokenVersion` existed carries no `tv`, and is
+  // honoured as it stands: the version on the App Store is holding those, and
+  // an update must not sign anybody out. Everything issued since says which
+  // generation it belongs to, and signing out moves the account past it.
+  if (claim.tv !== undefined && claim.tv !== user.tokenVersion) {
+    throw Errors.forbidden("Session ended. Please re-login.");
+  }
   return user;
 }
 

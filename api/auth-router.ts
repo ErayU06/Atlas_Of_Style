@@ -2,7 +2,11 @@ import * as cookie from "cookie";
 import { Session } from "@contracts/constants";
 import { getSessionCookieOptions } from "./lib/cookies";
 import { createRouter, authedQuery, publicQuery } from "./middleware";
-import { deleteUserCascade, toPublicUser } from "./queries/users";
+import {
+  bumpTokenVersion,
+  deleteUserCascade,
+  toPublicUser,
+} from "./queries/users";
 import type { TrpcContext } from "./context";
 
 function clearSessionCookie(ctx: Pick<TrpcContext, "req" | "resHeaders">) {
@@ -30,6 +34,9 @@ export const authRouter = createRouter({
     ctx.user ? toPublicUser(ctx.user) : null,
   ),
   logout: authedQuery.mutation(async ({ ctx }) => {
+    // Clearing the cookie only takes the token away from this client. The
+    // bump is what stops it being replayed by anyone who kept a copy.
+    await bumpTokenVersion(ctx.user.id);
     clearSessionCookie(ctx);
     return { success: true };
   }),

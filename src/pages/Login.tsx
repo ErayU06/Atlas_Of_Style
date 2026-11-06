@@ -54,6 +54,14 @@ export default function Login() {
       return;
     }
 
+    // The server puts the seconds left in the message as
+    // `too_many_attempts:<seconds>` — the only way the client learns how long
+    // to wait, since the rule lives entirely on the server.
+    const waitSeconds =
+      code === "TOO_MANY_REQUESTS"
+        ? (rawMessage?.split(":")[1] ?? "60")
+        : null;
+
     const message =
       code === "CONFLICT"
         ? t("errTaken", lang)
@@ -61,7 +69,9 @@ export default function Login() {
           ? t("errWrong", lang)
           : code === "BAD_REQUEST"
             ? t("errInvalid", lang)
-            : t("errGeneric", lang);
+            : waitSeconds
+              ? t("errTooMany", lang).replace("{s}", waitSeconds)
+              : t("errGeneric", lang);
 
     setError({
       message,

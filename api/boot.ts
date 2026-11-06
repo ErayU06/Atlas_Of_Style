@@ -66,7 +66,10 @@ app.use("/api/*", async (c, next) => {
   }
 });
 
-app.use(bodyLimit({ maxSize: 50 * 1024 * 1024 }));
+// 1 MB. The largest thing any endpoint accepts is a 2000-character trip note;
+// the previous 50 MB let an unauthenticated caller tie up the instance's
+// memory and bandwidth with a single request.
+app.use(bodyLimit({ maxSize: 1024 * 1024 }));
 app.get(Paths.oauthCallback, createOAuthCallbackHandler());
 app.use("/api/trpc/*", async (c) => {
   return fetchRequestHandler({

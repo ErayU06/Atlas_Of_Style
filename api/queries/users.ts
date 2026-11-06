@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import * as schema from "@db/schema";
 import type { InsertUser } from "@db/schema";
 import { getDb } from "./connection";
@@ -34,6 +34,21 @@ export async function findUserByUnionId(unionId: string) {
 // No FK cascade is defined at the DB level (see db/schema.ts), so the
 // account and everything tied to it are removed explicitly, in one
 // transaction, so a mid-way failure can't leave orphaned rows.
+/**
+ * Moves the account past every token it has already issued.
+ *
+ * Signing out of a stateless JWT otherwise only drops the client's copy; the
+ * token itself stays valid until it expires. This is the server's half, and
+ * it necessarily ends the account's other sessions too — a single token
+ * cannot be singled out without keeping a list of them.
+ */
+export async function bumpTokenVersion(userId: number): Promise<void> {
+  await getDb()
+    .update(schema.users)
+    .set({ tokenVersion: sql`${schema.users.tokenVersion} + 1` })
+    .where(eq(schema.users.id, userId));
+}
+
 export async function deleteUserCascade(userId: number): Promise<void> {
   const db = getDb();
   await db.transaction(async (tx) => {

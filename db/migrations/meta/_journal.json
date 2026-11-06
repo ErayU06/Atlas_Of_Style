@@ -29,6 +29,13 @@
       "when": 1793922737084,
       "tag": "0003_add_discoveries",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793924955277,
+      "tag": "0004_add_token_version",
+      "breakpoints": true
     }
   ]
 }

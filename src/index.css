@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300..700&display=swap');
+/* Bundled, not fetched. Loading these from Google Fonts sent the reader's IP
+   address to a third party on every launch, contradicted the privacy policy,
+   and left the app showing fallback type on a slow or offline connection.
+   Only the weights the app actually uses are declared: Inter at 400/500/600/700
+   and Playfair Display at 600 — the old URL was pulling Playfair 400-900 plus
+   every italic, none of which this design ever asks for. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/playfair-display/600.css';
 
 @tailwind base;
 @tailwind components;

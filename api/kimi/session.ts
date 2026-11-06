@@ -27,12 +27,20 @@ export async function verifySessionToken(
     const { payload } = await jose.jwtVerify(token, secret, {
       algorithms: [JWT_ALG],
     });
-    const { unionId, clientId } = payload;
+    const { unionId, clientId, tv } = payload;
     if (!unionId || !clientId) {
       console.warn("[session] JWT payload missing required fields.");
       return null;
     }
-    return { unionId, clientId } as SessionPayload;
+    // `tv` is carried through rather than dropped: it is what lets a sign-out
+    // disown a token, and a payload that never reaches the caller cannot be
+    // compared against anything. Absent on tokens minted before the column
+    // existed, and left undefined for them on purpose.
+    return {
+      unionId,
+      clientId,
+      ...(typeof tv === "number" ? { tv } : {}),
+    } as SessionPayload;
   } catch (error) {
     console.warn("[session] JWT verification failed:", error);
     return null;

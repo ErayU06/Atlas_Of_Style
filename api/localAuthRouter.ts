@@ -9,6 +9,7 @@ import { signSessionToken } from "./kimi/session";
 import { env } from "./lib/env";
 import { findUserByUnionId, touchLastSignIn, upsertUser } from "./queries/users";
 import { findPostgresError } from "./lib/pg-error";
+import { check, clientAddress, forget, record } from "./lib/rate-limit";
 import type { TrpcContext } from "./context";
 
 const usernameSchema = z
@@ -20,6 +21,24 @@ const usernameSchema = z
 
 const localId = (username: string) => `local:${username}`;
 
+/**
+ * Five wrong passwords a minute for one address against one username, and a
+ * wider cap so the same address cannot simply walk through usernames. Both
+ * count failures only: a correct password clears the record, so nobody
+ * signing in normally ever meets either number.
+ */
+const ATTEMPT_WINDOW_MS = 60_000;
+const ATTEMPTS_PER_USER = 5;
+const ATTEMPTS_PER_ADDRESS = 20;
+
+function tooManyAttempts(retryAfterMs: number) {
+  const seconds = Math.ceil(retryAfterMs / 1000);
+  return new TRPCError({
+    code: "TOO_MANY_REQUESTS",
+    message: `too_many_attempts:${seconds}`,
+  });
+}
+
 const emailSchema = z.string().trim().min(3).max(320).email();
 const genderSchema = z.enum(["male", "female"]);
 
@@ -30,8 +49,13 @@ function hashPassword(password: string, salt: string) {
 async function issueSession(
   ctx: TrpcContext,
   unionId: string,
+  tokenVersion: number,
 ): Promise<string> {
-  const token = await signSessionToken({ unionId, clientId: env.appId });
+  const token = await signSessionToken({
+    unionId,
+    clientId: env.appId,
+    tv: tokenVersion,
+  });
   const opts = getSessionCookieOptions(ctx.req.headers);
   ctx.resHeaders.append(
     "set-cookie",
@@ -82,7 +106,8 @@ export const localAuthRouter = createRouter({
         passwordHash: `${salt}:${hashPassword(input.password, salt)}`,
         lastSignInAt: new Date(),
       });
-      const token = await issueSession(ctx, unionId);
+      // A row that did not exist a moment ago starts at the column default.
+      const token = await issueSession(ctx, unionId, 0);
       return { success: true, token };
     }),
 
@@ -95,9 +120,29 @@ export const localAuthRouter = createRouter({
     )
     .mutation(async ({ ctx, input }) => {
       const unionId = localId(input.username);
+      const address = clientAddress(ctx.req.headers);
+      const perUser = `login:${address}:${unionId}`;
+      const perAddress = `login:${address}`;
+
+      // Checked before the database is touched, so a blocked caller costs
+      // one map lookup rather than a query and a scrypt round.
+      for (const [key, limit] of [
+        [perUser, ATTEMPTS_PER_USER],
+        [perAddress, ATTEMPTS_PER_ADDRESS],
+      ] as const) {
+        const verdict = check(key, limit);
+        if (!verdict.allowed) throw tooManyAttempts(verdict.retryAfterMs);
+      }
+
       const user = await findUserByUnionId(unionId);
-      const invalid = () =>
-        new TRPCError({ code: "UNAUTHORIZED", message: "invalid_credentials" });
+      const invalid = () => {
+        record(perUser, ATTEMPT_WINDOW_MS);
+        record(perAddress, ATTEMPT_WINDOW_MS);
+        return new TRPCError({
+          code: "UNAUTHORIZED",
+          message: "invalid_credentials",
+        });
+      };
       if (!user || !user.passwordHash) throw invalid();
       const [salt, stored] = user.passwordHash.split(":");
       // A passwordHash that didn't come from signup — a value typed straight
@@ -116,13 +161,19 @@ export const localAuthRouter = createRouter({
       // user — and it reaches the app as the same opaque "something went
       // wrong" that a wrong password would have shown. Label it on the way
       // out so the server log says which half failed.
+      // The password was right, so this address is not guessing. Clearing
+      // both records keeps a shared address — an office, a campus, mobile
+      // carrier NAT — from locking out the people behind it.
+      forget(perUser);
+      forget(perAddress);
+
       try {
         // The row was loaded above, so this only refreshes it. Going through
         // upsertUser here used to send an INSERT ... ON CONFLICT carrying no
         // email, which Postgres rejects on the NOT NULL check before it ever
         // looks at the conflict — a 500 on every successful password check.
         await touchLastSignIn(unionId);
-        const token = await issueSession(ctx, unionId);
+        const token = await issueSession(ctx, unionId, user.tokenVersion);
         return { success: true, token };
       } catch (cause) {
         console.error("[auth] login failed after the password verified", {

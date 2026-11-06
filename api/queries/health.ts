@@ -19,6 +19,7 @@ const EXPECTED_USER_COLUMNS: Array<{
   { column: "gender", nullable: true, why: "added by 0001, optional at signup" },
   { column: "role", nullable: false, why: "defaults to 'user'" },
   { column: "lastSignInAt", nullable: false, why: "login refreshes it" },
+  { column: "tokenVersion", nullable: false, why: "0003 adds it; sessions compare against it" },
 ];
 
 export type SchemaReport = {

@@ -6,6 +6,7 @@ import {
   text,
   timestamp,
   bigint,
+  integer,
   unique,
 } from "drizzle-orm/pg-core";
 
@@ -31,6 +32,19 @@ export const users = pgTable("users", {
     .notNull()
     .$onUpdate(() => new Date()),
   lastSignInAt: timestamp("lastSignInAt").defaultNow().notNull(),
+  /**
+   * Bumped to invalidate every session token this account has issued.
+   *
+   * A session is a stateless JWT, so there is nothing to delete when someone
+   * signs out — the token stays cryptographically valid for its full year.
+   * Carrying this number inside the token and comparing it on every request
+   * gives the account a way to disown them all at once.
+   *
+   * Tokens minted before this column existed carry no version at all, and are
+   * deliberately still accepted: the released app is holding them, and nobody
+   * should be signed out by an update. They age out on their own.
+   */
+  tokenVersion: integer("tokenVersion").default(0).notNull(),
 });
 
 export type User = typeof users.$inferSelect;

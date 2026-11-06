@@ -239,6 +239,8 @@ export const ui = {
     es: 'Algo salió mal, inténtalo de nuevo.',
     ar: 'حدث خطأ، حاول مجدداً.',
   },
+  // {s} is the number of seconds left; the caller substitutes it.
+  errTooMany: { tr: 'Çok fazla deneme yapıldı. {s} saniye sonra tekrar dene.', en: 'Too many attempts. Try again in {s} seconds.', zh: '尝试次数过多。请在 {s} 秒后重试。', hi: 'बहुत अधिक प्रयास। {s} सेकंड बाद फिर कोशिश करें।', es: 'Demasiados intentos. Inténtalo de nuevo en {s} segundos.', ar: 'محاولات كثيرة جداً. أعد المحاولة بعد {s} ثانية.' },
   welcomeBack: { tr: 'Tekrar hoş geldin', en: 'Welcome back', zh: '欢迎回来', hi: 'फिर से स्वागत है', es: 'Bienvenido de nuevo', ar: 'مرحباً بعودتك' },
   createAccount: { tr: 'Hesap oluştur', en: 'Create your account', zh: '创建账户', hi: 'खाता बनाएं', es: 'Crea tu cuenta', ar: 'أنشئ حسابك' },
   authDesc: {
