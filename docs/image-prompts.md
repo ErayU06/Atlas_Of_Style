@@ -1369,13 +1369,13 @@ Output: 3:4 portrait, 1536×2048.
 ```
 A plain sheet of warm cream laid paper photographed flat and evenly lit, its fibres and faint laid lines visible. Nothing printed on it.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Warm neutral palette: cream, sand, bone. Nothing saturated, no accent colour, no pattern, no printing.
 
 Flat, even and edge to edge — a background texture with no subject, tiled behind other content.
 
-Quiet museum-archive mood: still, considered, unstaged. Editorial photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+Soft even daylight straight on, no strong shadow and no vignette, so the sheet tiles seamlessly behind other content. Flat copy photography, 50mm, f/8, everything in focus, fine grain.
 
-No people, no faces, no hands, no body parts, no skin. No brand logos, no text, no lettering, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+No people, no faces, no hands, no objects of any kind. No brand logos, no text, no lettering, no printing, no watermark, no readable writing anywhere on the sheet.
 
 Output: 1:1 square, 2048×2048.
 ```
