@@ -564,7 +564,7 @@ Output: 4:5 portrait, 1536×1920.
 ```
 A full-length display mannequin wearing a bone linen shirt-dress belted with woven leather, flat cream espadrilles, a round straw bag and a folded embroidered shawl over one arm.
 
-It stands in a tiled courtyard with a small fountain and a shaded arcade, dappled light on the stone. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
+It stands in a courtyard of worn cream stone with a small fountain and a shaded arcade, dappled light; any tilework is pale and sun-bleached, in cream and clay only. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
 
 Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
 
@@ -658,7 +658,7 @@ Output: 4:5 portrait, 1536×1920.
 ```
 A full-length display mannequin wearing a caftan in tonal cream-and-clay stripes with hand-knotted sfifa trim, a narrow woven belt, flat leather slippers, a tasselled woven bag and a hammered metal cuff.
 
-It stands in a riad courtyard, zellige tilework and a still shallow pool softened by blur. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
+It stands in a riad courtyard of carved plaster and tadelakt walls in cream and clay, a still shallow pool softened by blur. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
 
 Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
 
