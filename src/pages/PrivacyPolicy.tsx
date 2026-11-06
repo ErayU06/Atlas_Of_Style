@@ -1,46 +1,44 @@
 import { Link } from 'react-router'
 import { ChevronLeft } from 'lucide-react'
 import { useApp } from '@/context/AppContext'
-import { t } from '@/i18n'
+import { t, type UiKey } from '@/i18n'
 
-const sections: { title: string; body: string[] }[] = [
+/**
+ * The address published in the policy and the one data-deletion requests are
+ * expected to arrive at. Apple and the GDPR both want a contact that works,
+ * so this has to be a mailbox somebody reads.
+ *
+ * TODO: replace with the address to publish. Left obviously wrong on purpose
+ * rather than guessed at — whichever address goes here becomes public on the
+ * App Store listing and inside the app.
+ */
+const CONTACT_EMAIL = 'SET_CONTACT_EMAIL@example.com'
+
+/**
+ * Translated like the rest of the interface rather than written once in one
+ * language: the app ships in six, and a reader who picked Arabic should not
+ * be handed a Turkish privacy policy.
+ */
+const sections: { title: UiKey; body: UiKey[] }[] = [
   {
-    title: 'Topladığımız veriler',
+    title: 'ppCollectT',
     body: [
-      'Hesap oluşturduğunuzda: kullanıcı adı ve şifrenizin geri döndürülemez şekilde şifrelenmiş (hash\'lenmiş) hâli. Zorunlu alan bunlardan ibarettir.',
-      'İsteğe bağlı olarak: cinsiyet tercihi — yalnızca bavul ve stil önerilerini buna göre sunmak için kullanılır, Profil sayfasından istediğiniz zaman değiştirebilir veya kaldırabilirsiniz.',
-      'Uygulama kullanımınız sırasında: favori ülkeleriniz ve seyahat notlarınız.',
-      'Şifreniz hiçbir zaman düz metin olarak saklanmaz; yalnızca tek yönlü bir şifreleme algoritmasıyla (scrypt) üretilmiş hash\'i tutulur.',
+      'ppCollect1',
+      'ppCollect2',
+      'ppCollect3',
+      'ppCollect4',
+      'ppCollect5',
+      'ppCollect6',
     ],
   },
   {
-    title: 'Verileri nasıl kullanıyoruz',
-    body: [
-      'Toplanan veriler yalnızca hesabınızı çalıştırmak (giriş yapabilmeniz, favori ve notlarınızın cihazlar arasında senkronize olması) ve cinsiyet tercihini verdiyseniz önerileri ona göre hazırlamak için kullanılır.',
-      'Verileriniz reklam, pazarlama veya profil oluşturma amacıyla işlenmez.',
-      'Uygulama ücretsizdir; uygulama içi satın alma, abonelik veya ödeme bilgisi toplama yoktur.',
-    ],
+    title: 'ppDeviceT',
+    body: ['ppDevice1', 'ppDevice2', 'ppDevice3', 'ppDevice4'],
   },
-  {
-    title: 'Verilerin paylaşımı',
-    body: [
-      'Verileriniz hiçbir üçüncü tarafla satılmaz, kiralanmaz veya paylaşılmaz.',
-      'Veriler yalnızca uygulamanın kendi veritabanında saklanır; hiçbir reklam ağı, analitik servisi veya harici SDK ile paylaşılmaz.',
-    ],
-  },
-  {
-    title: 'Verilerinizi silme',
-    body: [
-      'Profil sayfanızdan "Hesabı Sil" seçeneğiyle hesabınızı ve hesabınıza bağlı tüm verileri (favoriler, notlar) kalıcı ve geri döndürülemez şekilde silebilirsiniz.',
-      'Hesap silme işlemi anında uygulanır; verileriniz sunucularımızdan tamamen kaldırılır.',
-    ],
-  },
-  {
-    title: 'İletişim',
-    body: [
-      'Gizlilikle ilgili sorularınız için uygulama içindeki iletişim kanallarını kullanabilirsiniz.',
-    ],
-  },
+  { title: 'ppUseT', body: ['ppUse1', 'ppUse2', 'ppUse3'] },
+  { title: 'ppShareT', body: ['ppShare1', 'ppShare2', 'ppShare3'] },
+  { title: 'ppKeepT', body: ['ppKeep1', 'ppKeep2'] },
+  { title: 'ppDeleteT', body: ['ppDelete1', 'ppDelete2', 'ppDelete3'] },
 ]
 
 export default function PrivacyPolicyPage() {
@@ -57,25 +55,47 @@ export default function PrivacyPolicyPage() {
       </Link>
 
       <h1 className="mt-6 font-serif text-[32px] font-semibold leading-tight text-atlas-ink">
-        Gizlilik Politikası
+        {t('privacyPolicy', lang)}
       </h1>
       <p className="mt-2 text-sm text-atlas-muted">
-        Atlas of Style · Son güncelleme: Ağustos 2026
+        Atlas of Style · {t('ppUpdated', lang)}
       </p>
 
       <div className="mt-6 space-y-6">
         {sections.map((s) => (
           <section key={s.title}>
-            <h2 className="font-serif text-[19px] font-semibold text-atlas-ink">{s.title}</h2>
+            <h2 className="font-serif text-[19px] font-semibold text-atlas-ink">
+              {t(s.title, lang)}
+            </h2>
             <div className="mt-2 space-y-2">
-              {s.body.map((p) => (
-                <p key={p} className="text-sm leading-relaxed text-atlas-body">
-                  {p}
+              {s.body.map((key) => (
+                <p key={key} className="text-sm leading-relaxed text-atlas-body">
+                  {t(key, lang)}
                 </p>
               ))}
             </div>
           </section>
         ))}
+
+        {/* Last, and a real link rather than an address to copy out by hand:
+            a contact nobody can reach is the same as no contact at all. */}
+        <section>
+          <h2 className="font-serif text-[19px] font-semibold text-atlas-ink">
+            {t('ppContactT', lang)}
+          </h2>
+          <div className="mt-2 space-y-2">
+            <p className="text-sm leading-relaxed text-atlas-body">
+              {t('ppContact1', lang)}
+            </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              dir="ltr"
+              className="tap inline-flex w-fit items-center rounded-full border border-atlas-line bg-atlas-surface px-3 py-1.5 text-sm font-semibold text-atlas-clay shadow-card"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   )
