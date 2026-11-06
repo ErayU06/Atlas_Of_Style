@@ -242,11 +242,15 @@ gerekmiyor.
 | | Kural |
 | --- | --- |
 | Biçim | `.jpg`, sRGB, alfa kanalı yok |
-| Ülke `-1` ve şehir görselleri | **Dikey**, en az 1000×1500 (kapak olarak tam ekran kullanılıyor) |
-| Ülke `-2` ve `-3` | **Yatay/editoryal**, en az 1400×1050 |
-| Dönem görselleri | **Dikey**, en az 1000×1400 |
-| `atlas-hero` | **Dikey**, en az 1200×1600 |
-| `passport-paper` | Kare, 1200×1200 civarı, sade doku |
+| Ülke `-1`, şehir, dönem, `atlas-hero` | **3:4 dikey**, 1536×2048 |
+| Ülke `-2` ve `-3` | **4:5 dikey**, 1536×1920 |
+| `passport-paper` | **1:1**, 2048×2048, sade doku |
+
+> **Dikkat — kadraj kısıtı.** Kodda `SmartImage` aynı dosyayı farklı oranlarda
+> kırpıyor: `portrait` = **3:4**, `editorial` = **4:5**, `story` = **16:10**.
+> `<ülke>-1` hem 3:4 hem 16:10 olarak, `<ülke>-2` hem 4:5 hem 16:10 olarak
+> kullanılıyor. Bu yüzden özne **dikey olarak tam ortada** ve çevresinde bol
+> boşlukla durmalı; kenara yaslanan bir kompozisyon geniş kırpmada kesilir.
 | Dosya boyutu | Her biri **200 KB altı** hedef (şu an bazıları 400 KB+; toplam 14.8 MB) |
 
 Mevcut set 35 farklı ölçüde; yenileri tutarlı olsun. Boyutlandırma ve sıkıştırmayı
