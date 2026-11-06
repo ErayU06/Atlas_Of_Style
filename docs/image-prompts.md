@@ -34,11 +34,18 @@ Desen ve işleme serbest, ama paletin içinde.
 
 **Ruh hali.** Müze/arşiv sessizliği. Reklam değil, yaşam tarzı çekimi değil.
 
-**Her prompt'ta yasaklı:** gerçek insan, yüz, el, ten, saç; marka logosu;
-tasarımcı monogramı veya imza deseni (Burberry tipi ev ekosesi, LV/GG tipi
-monogram); yazı, harf, tabela, afiş, plaka, bakım etiketi, filigran, okunabilir
-herhangi bir metin. Ayrıca **tek bir ünlü yapının kadraj ortasında durduğu
-kompozisyon yok** — yer, atmosferinden ve malzemesinden tanınmalı.
+**Desen kuralı olumlu yazıldı.** Prompt'lar "şu markanın deseni olmasın"
+demiyor; **"düz, özgün, markasız giysi; desen varsa basit çizgi, düz renk ya da
+özgün geometrik motif"** diyor. Sebebi deneyle görüldü: olumsuz talimatta geçen
+marka adı üreticiyi o markaya çekiyor — `united-kingdom-1`'in atkısı tam bu
+yüzden tescilli bir ev ekosesine dönüşmüştü. Prompt metinlerinde artık hiçbir
+marka adı geçmiyor. **Ekose ve tartan da setten tamamen çıkarıldı.**
+
+**Her prompt'ta yasaklı:** gerçek insan, yüz, el, ten, saç; marka logosu,
+monogram, tekrar eden baş harfler; yazı, harf, tabela, afiş, plaka, bakım
+etiketi, askı etiketi, filigran, okunabilir herhangi bir metin. Ayrıca **tek bir
+ünlü yapının kadraj ortasında durduğu kompozisyon yok** — yer, atmosferinden ve
+malzemesinden tanınmalı.
 
 
 ## Kırpma — ve bu tarzın tek ödünü
@@ -102,7 +109,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -124,7 +131,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -146,7 +153,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -168,7 +175,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -190,7 +197,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -212,7 +219,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -234,7 +241,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -256,7 +263,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -278,7 +285,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -300,7 +307,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -322,7 +329,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -344,7 +351,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -376,7 +383,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -401,7 +408,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -426,7 +433,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -448,7 +455,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -473,7 +480,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -495,7 +502,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -520,7 +527,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -542,7 +549,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -567,7 +574,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -589,7 +596,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -614,7 +621,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -636,7 +643,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -661,7 +668,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -683,7 +690,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -708,7 +715,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -730,7 +737,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -755,7 +762,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -777,7 +784,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -802,7 +809,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -824,7 +831,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -837,7 +844,7 @@ Output: 4:5 portrait, 1536×1920.
 *Kanada · 1. fotoğraf levhası + rehber kapağı*
 
 ```
-A full-length display mannequin wearing a quilted bone vest over a cream flannel overshirt in a muted tonal check and straight warm-grey trousers, brown leather winter boots, thick undyed wool socks turned over the boot tops and knitted mittens.
+A full-length display mannequin wearing a quilted bone vest over a cream brushed-flannel overshirt with a simple broad tonal stripe, and straight warm-grey trousers, brown leather winter boots, thick undyed wool socks turned over the boot tops and knitted mittens.
 
 It stands in a frozen lakeside edged with bare birches, pale flat light. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
 
@@ -849,7 +856,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -871,7 +878,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -896,7 +903,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -918,7 +925,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -943,7 +950,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -965,7 +972,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -990,7 +997,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1012,7 +1019,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1037,7 +1044,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1059,7 +1066,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1084,7 +1091,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1106,7 +1113,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1131,7 +1138,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1153,7 +1160,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1178,7 +1185,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1200,7 +1207,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1225,7 +1232,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1247,7 +1254,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1269,7 +1276,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1279,7 +1286,7 @@ Output: 3:4 portrait, 1536×2048.
 *1990'lar · Minimal & Grunge*
 
 ```
-A full-length display mannequin wearing a bias-cut bone satin slip dress under an oversized flannel overshirt in a muted cream-and-clay check worn open, chunky dark-brown lace-up boots, a small shoulder bag on a thin strap at the hip and a fine chain choker.
+A full-length display mannequin wearing a bias-cut bone satin slip dress under an oversized flannel overshirt in a muted cream and clay with a simple broad stripe, worn open, chunky dark-brown lace-up boots, a small shoulder bag on a thin strap at the hip and a fine chain choker.
 
 It stands in a bare loft with tall industrial windows, flat grey light on a concrete floor. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
 
@@ -1291,7 +1298,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1313,7 +1320,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1335,7 +1342,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1357,7 +1364,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1406,7 +1413,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1428,7 +1435,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1450,7 +1457,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1472,7 +1479,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 4:5 portrait, 1536×1920.
 ```
@@ -1494,7 +1501,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1504,7 +1511,7 @@ Output: 3:4 portrait, 1536×2048.
 *Birleşik Krallık · kart + ülke kapağı*
 
 ```
-A full-length display mannequin wearing a warm-grey wool overcoat with a wide notched lapel over a cream chunky-knit jumper and trousers in a faint warm-grey glen check, heavy dark-brown welted lace-up boots, a plain canvas-and-leather satchel at the hip and a scarf in a muted bone-and-clay tartan — an anonymous traditional check, never a fashion house's signature check.
+A full-length display mannequin wearing a warm-grey wool overcoat with a wide notched lapel over a cream chunky-knit jumper and plain warm-grey wool flannel trousers, heavy dark-brown welted lace-up boots, a plain canvas-and-leather satchel at the hip and a chunky ribbed knitted scarf in a single solid soft clay, with no pattern of any kind.
 
 It stands in a damp Georgian terrace street of dark brick and iron railings, flat northern light, wet paving. The background is softly out of focus; the mannequin and its outfit are sharp and in the foreground.
 
@@ -1516,7 +1523,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1538,7 +1545,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1560,7 +1567,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -1582,7 +1589,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2004,7 +2011,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2025,7 +2032,7 @@ Quiet museum-archive mood: still, considered, unstaged. Editorial fashion photog
 
 The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
 
-Generic unbranded garments only: no brand logos, no designer monograms or signature house patterns (no Burberry-style house check, no LV- or GG-style monogram), no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no posters, no number plates, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
 
 Output: 3:4 portrait, 1536×2048.
 ```
