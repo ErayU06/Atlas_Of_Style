@@ -4,6 +4,23 @@ import type { InsertUser } from "@db/schema";
 import { getDb } from "./connection";
 import { env } from "../lib/env";
 
+/**
+ * A user as the client is allowed to see one.
+ *
+ * `findUserByUnionId` selects every column, because signing in needs the
+ * password hash; `auth.me` used to hand that same row straight back, so every
+ * signed-in client was being sent its own scrypt hash over the wire. Nothing
+ * in the app has ever read it. Stripping it here rather than narrowing the
+ * select keeps one place to look, and keeps the hash available to the code
+ * that genuinely needs it.
+ */
+export function toPublicUser<T extends { passwordHash?: string | null }>(
+  user: T,
+): Omit<T, "passwordHash"> {
+  const { passwordHash: _passwordHash, ...rest } = user;
+  return rest;
+}
+
 export async function findUserByUnionId(unionId: string) {
   const rows = await getDb()
     .select()
