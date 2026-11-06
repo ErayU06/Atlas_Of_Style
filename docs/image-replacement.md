@@ -19,7 +19,10 @@ imza deseni yok** (Burberry tipi ev ekosesi, LV/GG tipi monogram), **yazı ve
 filigran yok.** Yalnızca markasız, jenerik kıyafetler.
 
 Son kolondaki referans `docs/image-prompts.md` içindeki prompt numarasını gösterir;
-prompt'un tam metni orada, tek kaynak o belge.
+prompt'un tam metni orada, tek kaynak o belge. ✅ = değiştirildi.
+
+**Durum (2026-11-06):** 11/88 tamam — 1. partinin hepsi. Üretim ve atıf
+ayrıntıları `CREDITS.md`'de.
 
 
 ## Ülke görselleri — 57 dosya (19 ülke × 3)
@@ -29,23 +32,23 @@ prompt'un tam metni orada, tek kaynak o belge.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `turkiye-1.jpg` ⭐ | 768×576 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Bir kafe terasında bankta oturan kadın; başörtüsü saça bağlı, beyaz tişört, açık kot, kırmızı spor ayakkabı, kırmızı omuz çantası | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #2 |
-| `turkiye-2.jpg` ⭐ | 1050×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Siyah deri ceket, bere, krem atkı ve siyah etekli kadın | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #9 |
+| `turkiye-1.jpg` ⭐ | 768×576 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Bir kafe terasında bankta oturan kadın; başörtüsü saça bağlı, beyaz tişört, açık kot, kırmızı spor ayakkabı, kırmızı omuz çantası | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #2 |
+| `turkiye-2.jpg` ⭐ | 1050×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Siyah deri ceket, bere, krem atkı ve siyah etekli kadın | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #9 |
 | `turkiye-3.jpg` | 1129×753 | Foto | Ülke sayfası 2. fotoğraf levhası | Deve tüyü paltolu adam, arkada Boğaz ve cami silüeti | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #1 |
 
 ### Fransa
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `france-1.jpg` ⭐ | 1400×1050 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Paris sokağında yürüyen kadın; deve tüyü trençkot, siyah deri pantolon, topuklu | **Askıda komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #3 |
-| `france-2.jpg` ⭐ | 1050×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Mavi Paris kapısının önünden geçen kadın; kot ceket ve kot pantolon | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #10 |
+| `france-1.jpg` ⭐ | 1400×1050 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Paris sokağında yürüyen kadın; deve tüyü trençkot, siyah deri pantolon, topuklu | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #3 |
+| `france-2.jpg` ⭐ | 1050×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Mavi Paris kapısının önünden geçen kadın; kot ceket ve kot pantolon | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #10 |
 | `france-3.jpg` | 1120×1121 | Foto | Ülke sayfası 2. fotoğraf levhası | Bol kot ceket, kot pantolon ve kırmızı çantalı kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #2 |
 
 ### İtalya
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `italy-1.jpg` ⭐ | 1400×933 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Sonbaharda yapraklı bir ara sokakta yürüyen kadın; lacivert blazer, beyaz tişört, açık kot | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #4 |
+| `italy-1.jpg` ⭐ | 1400×933 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Sonbaharda yapraklı bir ara sokakta yürüyen kadın; lacivert blazer, beyaz tişört, açık kot | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #4 |
 | `italy-2.jpg` | 933×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Siyah blazer ve beyaz bol pantolonlu kişi, arkada kalabalık (moda haftası) | **Askıda komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #3 |
 | `italy-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Turuncu kazak, siyah etek, beyaz kovboy çizmeli kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #4 |
 
@@ -53,7 +56,7 @@ prompt'un tam metni orada, tek kaynak o belge.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #5 |
+| `united-kingdom-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kırmızı Londra telefon kulübelerinin önünde siyah deri ceketli kişi | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #5 |
 | `united-kingdom-2.jpg` | 933×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | **Marlboro logolu** yarış ceketi giyen kişi | **Askıda komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #5 |
 | `united-kingdom-3.jpg` | 934×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Desenli şal-palto ve puantiyeli etekli kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #6 |
 
@@ -61,7 +64,7 @@ prompt'un tam metni orada, tek kaynak o belge.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `germany-1.jpg` ⭐ | 850×1275 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Uzun siyah deri palto ve siyah başörtülü kişi; arkada kırmızı-beyaz bariyer | **Askıda komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #6 |
+| `germany-1.jpg` ⭐ | 850×1275 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Uzun siyah deri palto ve siyah başörtülü kişi; arkada kırmızı-beyaz bariyer | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #6 |
 | `germany-2.jpg` | 1120×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Otobüs durağında beyaz tişört ve puantiyeli pantolonlu ince kişi | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #7 |
 | `germany-3.jpg` | 1178×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Brandenburg Kapısı önünde başörtülü ve şişme montlu kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #8 |
 
@@ -69,7 +72,7 @@ prompt'un tam metni orada, tek kaynak o belge.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `spain-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Gri oversize blazer, koyu pantolon, güneş gözlüğü ve gümüş çantalı kadın | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #7 |
+| `spain-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Gri oversize blazer, koyu pantolon, güneş gözlüğü ve gümüş çantalı kadın | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #7 |
 | `spain-2.jpg` | 933×1400 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Kot elbise ve yuvarlak hasır çantalı kadın | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #9 |
 | `spain-3.jpg` | 1124×1400 | Foto | Ülke sayfası 2. fotoğraf levhası | Siyah yelek ve uzun etekli kadın, grafitili duvar önünde | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #10 |
 
@@ -117,7 +120,7 @@ prompt'un tam metni orada, tek kaynak o belge.
 
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
-| `canada-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kürk yakalı bej parka ve şapkalı kadın; karlı ıslak sokak, arkada yeşil kamyon | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #8 |
+| `canada-1.jpg` ⭐ | 933×1400 | Foto | Ülke kartı (Ana sayfa, Favoriler, Quiz sonucu, Dönemler listesi) **+** Ülke sayfası kapağı (dikey, tam genişlik) | Kürk yakalı bej parka ve şapkalı kadın; karlı ıslak sokak, arkada yeşil kamyon | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #8 |
 | `canada-2.jpg` | 590×887 | Foto | Ülke sayfası 1. fotoğraf levhası **+** Şehir Rehberi listesi ve rehber kapağı | Gece sokak lambaları altında uzun koyu paltolu kişi | **Flat lay komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #26 |
 | `canada-3.jpg` | 590×825 | Foto | Ülke sayfası 2. fotoğraf levhası | Uzun koyu palto, gri pantolon ve atkılı kişi | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #27 |
 
@@ -210,14 +213,14 @@ Hepsi **yapay zekâ üretimi** ve sol alt köşede görünür **`AI生成`** fil
 | Dosya | Boyut | Tür | Nerede görünüyor | Şu an ne gösteriyor | Yerine ne gelecek |
 | --- | --- | --- | --- | --- | --- |
 | `eras/era-1900.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Sepya fotoğraf: Edward dönemi beyaz dantel elbiseli, şemsiyeli iki kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #49 |
-| `eras/era-1920.jpg` ⭐ | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Boncuklu düşük belli flapper elbise ve tüylü bantlı kadın, art deco altın iç mekân | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #11 |
+| `eras/era-1920.jpg` ⭐ | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Boncuklu düşük belli flapper elbise ve tüylü bantlı kadın, art deco altın iç mekân | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #11 |
 | `eras/era-1950.jpg` | 900×1321 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Soluk pembe geniş etekli New Look elbise, eldivenli kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #50 |
 | `eras/era-1970.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Turuncu İspanyol paça takım ve desenli eşarplı kadın, sokak | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #51 |
 | `eras/era-1990.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Askılı elbise üzerine ekose gömlek giymiş kadın, gri zemin | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #52 |
 | `eras/era-2000.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | File/grafik crop üst ve düşük belli İspanyol paça kot giyen kadın | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #53 |
 | `eras/era-2010.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Gri oversize takım ve beyaz spor ayakkabılı kadın, koyu duvar | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #54 |
 | `eras/era-2020.jpg` | 900×1200 | Foto | Dönemler (Time Travel) sayfası dönem kapağı | Minimal bir kemer altında bej oversize terzi paltolu kişi | **Mankende komple kombin** — tam prompt: `docs/image-prompts.md`, 2. parti #55 |
-| `eras/atlas-hero.jpg` ⭐ | 900×1200 | Foto | Ana sayfa kapak görseli | Galeri mekânında üç manken üzerinde krem drapeli giysi — **zaten insan içermiyor** | **Mankende üç komple kombin** — tam prompt: `docs/image-prompts.md`, 1. parti #1 |
+| `eras/atlas-hero.jpg` ⭐ | 900×1200 | Foto | Ana sayfa kapak görseli | Galeri mekânında üç manken üzerinde krem drapeli giysi — **zaten insan içermiyor** | ✅ **Değiştirildi** — Google Gemini, `docs/image-prompts.md`, 1. parti #1 |
 | `eras/passport-paper.jpg` | 700×467 | Foto | Moda Pasaportu arka plan dokusu | Düz krem kâğıt dokusu — **içerik yok, kişi yok** | **Düz krem kâğıt dokusu** — tam prompt: `docs/image-prompts.md`, 2. parti #56 |
 
 ---
