@@ -2,24 +2,42 @@
 
 ## Imagery
 
-Every photograph in `public/images/` — the 57 country photographs, the 21 city
-photographs, the 8 era photographs, the home hero (`eras/atlas-hero.jpg`) and
-the passport paper texture (`eras/passport-paper.jpg`) — came from **Kimi K3**,
-which generated the first version of this project. No image was sourced from a
-stock library, a photographer or any other third party, and none was added from
-outside the project afterwards.
+**The photographs in `public/images/` cannot be shown to be ours to use, and are
+being replaced. See `docs/image-replacement.md`.**
 
-The files carry no EXIF, XMP or C2PA metadata: it was stripped before they were
-committed, so there is nothing embedded in them that records this. That is why
-this file exists.
+They arrived with the first version of the project, which was built with Kimi
+K3, and were assumed to have been generated. That assumption turned out to be
+wrong for most of them. A reverse image search matched one against a photograph
+published by Vogue, and inspecting the files found two more carrying a
+publisher's own watermark burned into the frame:
 
-| Group | Count | Path | Origin |
+| File | Watermark |
+| --- | --- |
+| `public/images/nigeria-1.jpg` | **BN style** (BellaNaija Style) |
+| `public/images/japan-1.jpg` | **TokyoFashion.com** |
+
+So the set is mixed, and the two halves carry different risk:
+
+| Group | Count | What they are | Risk |
 | --- | --- | --- | --- |
-| Country photographs | 57 | `public/images/<country>-1..3.jpg` | Kimi K3 |
-| City photographs | 21 | `public/images/city-*.jpg` | Kimi K3 |
-| Era photographs | 8 | `public/images/eras/era-*.jpg` | Kimi K3 |
-| Home hero | 1 | `public/images/eras/atlas-hero.jpg` | Kimi K3 |
-| Passport paper texture | 1 | `public/images/eras/passport-paper.jpg` | Kimi K3 |
+| Country photographs `<country>-1..3.jpg` | 57 | Street-style photographs of identifiable people, taken from the web | Copyright **and** personality rights — these are real people whose likeness is being used in a published app without a release |
+| Era and hero images `eras/era-*.jpg`, `atlas-hero.jpg` | 9 | Editorial and studio fashion photographs, no generation marker | Same copyright class; provenance unknown |
+| `eras/passport-paper.jpg` | 1 | A plain paper texture | Low, but unverified |
+| City images `city-*.jpg` | 21 | **Generated**, and every one carries a visible `AI生成` ("AI generated") watermark in the bottom-left corner | No third-party copyright, but the watermark is shipping inside the app |
+
+Three further signals point the same way: the files carry no EXIF, XMP or C2PA
+metadata at all — it was stripped before they were committed; they come in 35
+different pixel sizes, which is what a set collected from many sources looks
+like and not what one generator produces; and nothing in the git history records
+where any of them came from.
+
+None of them should be treated as licensed. Every one is being replaced, and the
+rule from here is that no image enters the repository without its source
+recorded in the table below.
+
+| File | Source | Link or identifier | Licence | Attribution required |
+| --- | --- | --- | --- | --- |
+| *(to be filled as replacements land)* | | | | |
 
 ## App icon
 
@@ -36,9 +54,13 @@ the Android foreground is scaled the way it is.
 ## Typefaces
 
 - **Inter** — SIL Open Font License 1.1, bundled via `@fontsource/inter`
-- **Playfair Display** — SIL Open Font License 1.1, bundled via
-  `@fontsource/playfair-display`
 
-Both are served from the app's own bundle rather than fetched from Google
-Fonts, so no request leaves the device for them and no IP address reaches a
-third party when the app opens.
+Served from the app's own bundle rather than fetched from Google Fonts, so no
+request leaves the device for it and no IP address reaches a third party when
+the app opens.
+
+Playfair Display was listed here until it turned out never to have reached
+the page: `.font-serif` is declared in `@layer base`, which Tailwind hoists
+above its own utility of the same name, so the utility won and headings have
+always resolved to `ui-serif` — New York on iOS. It was being downloaded on
+every launch and discarded. The dead rule and the font are both gone.

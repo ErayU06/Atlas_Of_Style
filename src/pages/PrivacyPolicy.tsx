@@ -6,13 +6,9 @@ import { t, type UiKey } from '@/i18n'
 /**
  * The address published in the policy and the one data-deletion requests are
  * expected to arrive at. Apple and the GDPR both want a contact that works,
- * so this has to be a mailbox somebody reads.
- *
- * TODO: replace with the address to publish. Left obviously wrong on purpose
- * rather than guessed at — whichever address goes here becomes public on the
- * App Store listing and inside the app.
+ * so this has to stay a mailbox somebody reads.
  */
-const CONTACT_EMAIL = 'SET_CONTACT_EMAIL@example.com'
+const CONTACT_EMAIL = 'wiplear.ulusoy@gmail.com'
 
 /**
  * Translated like the rest of the interface rather than written once in one
