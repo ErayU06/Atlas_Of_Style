@@ -17,7 +17,8 @@ import { env } from "../lib/env";
 export function toPublicUser<T extends { passwordHash?: string | null }>(
   user: T,
 ): Omit<T, "passwordHash"> {
-  const { passwordHash: _passwordHash, ...rest } = user;
+  const rest = { ...user };
+  delete (rest as { passwordHash?: unknown }).passwordHash;
   return rest;
 }
 
