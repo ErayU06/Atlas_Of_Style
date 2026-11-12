@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useLocation } from 'react-router'
 import { AppProvider } from '@/context/AppContext'
 import BottomNav from '@/components/BottomNav'
 import PageTransition from '@/components/PageTransition'
@@ -27,6 +27,14 @@ const Login = lazy(() => import('@/pages/Login'))
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicy'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
+const DemoHomePage = lazy(() => import('@/pages/DemoHome'))
+
+function Chrome() {
+  const { pathname } = useLocation()
+  // Demo sayfasının kendi koyu alt menüsü var; global olanı orada gizle.
+  return pathname === '/demo' ? null : <BottomNav />
+}
+
 export default function App() {
   return (
     <AppProvider>
@@ -45,6 +53,8 @@ export default function App() {
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              {/* Görsel yön denemesi — yalnızca bu dalda, /demo rotasında. */}
+              <Route path="/demo" element={<DemoHomePage />} />
               <Route path="/country/:slug" element={<CountryDetailPage />} />
               <Route path="/city/:slug" element={<CityDetailPage />} />
               <Route path="/time-travel" element={<TimeTravelPage />} />
@@ -63,7 +73,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </PageTransition>
-        <BottomNav />
+        <Chrome />
         <UnlockToast />
       </div>
     </AppProvider>
