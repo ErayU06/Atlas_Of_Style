@@ -28,11 +28,12 @@ const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicy'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 
 const DemoHomePage = lazy(() => import('@/pages/DemoHome'))
+const DemoTitlesPage = lazy(() => import('@/pages/DemoTitles'))
 
 function Chrome() {
   const { pathname } = useLocation()
   // Demo sayfasının kendi koyu alt menüsü var; global olanı orada gizle.
-  return pathname === '/demo' ? null : <BottomNav />
+  return pathname.startsWith('/demo') ? null : <BottomNav />
 }
 
 export default function App() {
@@ -55,6 +56,7 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               {/* Görsel yön denemesi — yalnızca bu dalda, /demo rotasında. */}
               <Route path="/demo" element={<DemoHomePage />} />
+              <Route path="/demo-titles" element={<DemoTitlesPage />} />
               <Route path="/country/:slug" element={<CountryDetailPage />} />
               <Route path="/city/:slug" element={<CityDetailPage />} />
               <Route path="/time-travel" element={<TimeTravelPage />} />
