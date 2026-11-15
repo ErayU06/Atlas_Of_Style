@@ -1,64 +1,65 @@
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router'
-import { ArrowRight, Search, Sparkles } from 'lucide-react'
-import { countries } from '@/data/countries'
-import { eraOfTheDay } from '@/data/eras'
-import { pick } from '@/types/country'
-import { useApp } from '@/context/AppContext'
-import { t, regions, regionLabel } from '@/i18n'
-import FashionCard from '@/components/FashionCard'
-import FavoriteButton from '@/components/FavoriteButton'
-import FashionPassport from '@/components/FashionPassport'
-import SectionHeading from '@/components/SectionHeading'
-import SmartImage from '@/components/SmartImage'
-import EmptyState from '@/components/EmptyState'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
-import { Button } from '@/components/ui/button'
+import { useMemo, useState } from "react";
+import { Link } from "react-router";
+import { ArrowRight, Search, Sparkles } from "lucide-react";
+import { countries } from "@/data/countries";
+import { eraOfTheDay } from "@/data/eras";
+import { pick } from "@/types/country";
+import { useApp } from "@/context/AppContext";
+import { t, regions, regionLabel } from "@/i18n";
+import FashionCard from "@/components/FashionCard";
+import FavoriteButton from "@/components/FavoriteButton";
+import FashionPassport from "@/components/FashionPassport";
+import SectionHeading from "@/components/SectionHeading";
+import SmartImage from "@/components/SmartImage";
+import EmptyState from "@/components/EmptyState";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { Button } from "@/components/ui/button";
 
 /**
  * Both rotations are resolved once, when the module loads. Reading the clock
  * during render is impure — and a session lasts minutes, so there is nothing
  * to gain from re-deriving them on every re-render.
  */
-const WEEK_MS = 7 * 24 * 3600 * 1000
-const STORY_OF_THE_WEEK = countries[Math.floor(Date.now() / WEEK_MS) % countries.length]
-const ERA_OF_THE_DAY = eraOfTheDay()
+const WEEK_MS = 7 * 24 * 3600 * 1000;
+const STORY_OF_THE_WEEK =
+  countries[Math.floor(Date.now() / WEEK_MS) % countries.length];
+const ERA_OF_THE_DAY = eraOfTheDay();
 
 export default function HomePage() {
-  const { lang, favorites, discovery } = useApp()
-  const [query, setQuery] = useState('')
-  const [region, setRegion] = useState('all')
+  const { lang, favorites, discovery } = useApp();
+  const [query, setQuery] = useState("");
+  const [region, setRegion] = useState("all");
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    return countries.filter((c) => {
-      const matchesRegion = region === 'all' || c.region === region
+    const q = query.trim().toLowerCase();
+    return countries.filter(c => {
+      const matchesRegion = region === "all" || c.region === region;
       const matchesQuery =
         !q ||
         c.name.tr.toLowerCase().includes(q) ||
         c.name.en.toLowerCase().includes(q) ||
-        pick(c.tagline, lang).toLowerCase().includes(q)
-      return matchesRegion && matchesQuery
-    })
-  }, [query, region, lang])
+        pick(c.tagline, lang).toLowerCase().includes(q);
+      return matchesRegion && matchesQuery;
+    });
+  }, [query, region, lang]);
 
   // Same weekly / daily rotation the app already used, resolved at module load.
-  const story = STORY_OF_THE_WEEK
-  const era = ERA_OF_THE_DAY
+  const story = STORY_OF_THE_WEEK;
+  const era = ERA_OF_THE_DAY;
 
   // Recently opened countries, newest first, minus the one already featured.
   const continueList = useMemo(
     () =>
       [...discovery.countries]
         .reverse()
-        .filter((slug) => slug !== story.slug)
-        .map((slug) => countries.find((c) => c.slug === slug))
+        .filter(slug => slug !== story.slug)
+        .map(slug => countries.find(c => c.slug === slug))
         .filter((c): c is (typeof countries)[number] => Boolean(c))
         .slice(0, 6),
-    [discovery.countries, story.slug],
-  )
+    [discovery.countries, story.slug]
+  );
 
-  const favCountries = countries.filter((c) => favorites.includes(c.slug))
+  const favCountries = countries.filter(c => favorites.includes(c.slug));
 
   return (
     <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
@@ -84,21 +85,23 @@ export default function HomePage() {
 
         <div className="absolute inset-x-0 top-0 px-6 pt-[calc(1.75rem+var(--safe-top))]">
           <div className="flex items-start justify-between gap-3">
-            <p className="kicker mt-1 text-atlas-clay">{t('homeKicker', lang)}</p>
+            <p className="kicker mt-1 text-atlas-clay">
+              {t("homeKicker", lang)}
+            </p>
             <LanguageSwitcher />
           </div>
           <h1 className="mt-3 max-w-[11ch] font-serif text-[34px] font-semibold leading-[1.05] text-atlas-ink">
-            {t('timeTravelTitle', lang)}
+            {t("timeTravelTitle", lang)}
           </h1>
         </div>
 
         <div className="relative -mt-3 px-6">
           <p className="max-w-[34ch] text-[13px] leading-relaxed text-atlas-body">
-            {t('heroSubtitle', lang)}
+            {t("heroSubtitle", lang)}
           </p>
           <Button asChild variant="atlas" size="pill" className="mt-4">
             <Link to="/time-travel">
-              {t('startTravelling', lang)}
+              {t("startTravelling", lang)}
               <ArrowRight size={16} className="rtl:rotate-180" />
             </Link>
           </Button>
@@ -107,9 +110,13 @@ export default function HomePage() {
 
       {/* ---- Today's fashion story -------------------------------------- */}
       <section className="mt-9 px-5">
-        <SectionHeading kicker={t('storyKicker', lang)} title={t('todaysStory', lang)} />
+        <SectionHeading
+          kicker={t("storyKicker", lang)}
+          title={t("todaysStory", lang)}
+        />
         <FashionCard
           to={`/country/${story.slug}`}
+          overhang
           image={`/images/${story.slug}-1.jpg`}
           imageAlt={`${story.name.en} everyday street style`}
           ratio="story"
@@ -117,23 +124,25 @@ export default function HomePage() {
           emblem={story.flag}
           title={pick(story.name, lang)}
           description={pick(story.tagline, lang)}
-          cta={t('readStory', lang)}
+          cta={t("readStory", lang)}
           badge={
             <span className="flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-atlas-clay backdrop-blur">
               <Sparkles size={11} />
-              {t('featured', lang)}
+              {t("featured", lang)}
             </span>
           }
-          action={<FavoriteButton slug={story.slug} variant="glass" size={17} />}
+          action={
+            <FavoriteButton slug={story.slug} variant="glass" size={17} />
+          }
         />
       </section>
 
       {/* ---- Featured era ----------------------------------------------- */}
       <section className="mt-10 px-5">
         <SectionHeading
-          kicker={t('timeTravel', lang)}
-          title={t('featuredEra', lang)}
-          action={{ to: '/time-travel', label: t('timeline', lang) }}
+          kicker={t("timeTravel", lang)}
+          title={t("featuredEra", lang)}
+          action={{ to: "/time-travel", label: t("timeline", lang) }}
         />
         <FashionCard
           to={`/time-travel/${era.id}`}
@@ -143,7 +152,7 @@ export default function HomePage() {
           kicker={era.span}
           title={pick(era.title, lang)}
           description={pick(era.tagline, lang)}
-          cta={t('exploreEra', lang)}
+          cta={t("exploreEra", lang)}
         />
       </section>
 
@@ -152,8 +161,8 @@ export default function HomePage() {
         <section className="mt-10">
           <div className="px-5">
             <SectionHeading
-              kicker={t('passport', lang)}
-              title={t('continueExploring', lang)}
+              kicker={t("passport", lang)}
+              title={t("continueExploring", lang)}
             />
           </div>
           <div className="no-scrollbar flex gap-3 overflow-x-auto px-5 pb-2">
@@ -161,6 +170,7 @@ export default function HomePage() {
               <FashionCard
                 key={c.slug}
                 to={`/country/${c.slug}`}
+                overhang
                 image={`/images/${c.slug}-1.jpg`}
                 imageAlt={`${c.name.en} everyday street style`}
                 size="sm"
@@ -177,8 +187,8 @@ export default function HomePage() {
       {/* ---- Explore by country ----------------------------------------- */}
       <section className="mt-10 px-5">
         <SectionHeading
-          kicker={`${countries.length} ${t('countriesCount', lang)}`}
-          title={t('exploreByCountry', lang)}
+          kicker={`${countries.length} ${t("countriesCount", lang)}`}
+          title={t("exploreByCountry", lang)}
         />
 
         <div className="relative">
@@ -188,23 +198,23 @@ export default function HomePage() {
           />
           <input
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={t('searchPlaceholder', lang)}
-            aria-label={t('searchPlaceholder', lang)}
+            onChange={e => setQuery(e.target.value)}
+            placeholder={t("searchPlaceholder", lang)}
+            aria-label={t("searchPlaceholder", lang)}
             className="w-full rounded-full border border-atlas-line bg-atlas-surface py-3 pe-4 ps-11 text-base md:text-sm text-atlas-ink shadow-card outline-none transition-colors placeholder:text-atlas-muted/70 focus:border-atlas-clay/50"
           />
         </div>
 
         <div className="no-scrollbar -mx-5 mt-3.5 flex gap-2 overflow-x-auto px-5 pb-1">
-          {regions.map((r) => (
+          {regions.map(r => (
             <button
               key={r.key}
               onClick={() => setRegion(r.key)}
               aria-pressed={region === r.key}
               className={`tap shrink-0 rounded-full px-4 py-2 text-xs font-medium transition-colors ${
                 region === r.key
-                  ? 'bg-atlas-clay text-white shadow-card'
-                  : 'border border-atlas-line bg-atlas-surface text-atlas-muted hover:border-atlas-clay/30'
+                  ? "bg-atlas-clay text-white shadow-card"
+                  : "border border-atlas-line bg-atlas-surface text-atlas-muted hover:border-atlas-clay/30"
               }`}
             >
               {pick(r.label, lang)}
@@ -218,6 +228,7 @@ export default function HomePage() {
               <FashionCard
                 key={c.slug}
                 to={`/country/${c.slug}`}
+                overhang
                 image={`/images/${c.slug}-1.jpg`}
                 imageAlt={`${c.name.en} everyday street style`}
                 size="sm"
@@ -225,7 +236,9 @@ export default function HomePage() {
                 kicker={regionLabel(c.region, lang)}
                 title={pick(c.name, lang)}
                 index={i}
-                action={<FavoriteButton slug={c.slug} variant="glass" size={15} />}
+                action={
+                  <FavoriteButton slug={c.slug} variant="glass" size={15} />
+                }
               />
             ))}
           </div>
@@ -233,18 +246,18 @@ export default function HomePage() {
           <EmptyState
             className="mt-5"
             illustration="search"
-            title={t('noResultsTitle', lang)}
-            description={t('noResults', lang)}
+            title={t("noResultsTitle", lang)}
+            description={t("noResults", lang)}
             action={
               <Button
                 variant="atlasSoft"
                 size="pill-sm"
                 onClick={() => {
-                  setQuery('')
-                  setRegion('all')
+                  setQuery("");
+                  setRegion("all");
                 }}
               >
-                {t('browseCountries', lang)}
+                {t("browseCountries", lang)}
               </Button>
             }
           />
@@ -254,11 +267,11 @@ export default function HomePage() {
       {/* ---- Your collection -------------------------------------------- */}
       <section className="mt-11 px-5">
         <SectionHeading
-          kicker={t('collection', lang)}
-          title={t('yourCollection', lang)}
+          kicker={t("collection", lang)}
+          title={t("yourCollection", lang)}
           action={
             favCountries.length > 0
-              ? { to: '/favorites', label: t('viewAll', lang) }
+              ? { to: "/favorites", label: t("viewAll", lang) }
               : undefined
           }
         />
@@ -268,6 +281,7 @@ export default function HomePage() {
               <FashionCard
                 key={c.slug}
                 to={`/country/${c.slug}`}
+                overhang
                 image={`/images/${c.slug}-1.jpg`}
                 imageAlt={`${c.name.en} everyday street style`}
                 size="sm"
@@ -283,8 +297,8 @@ export default function HomePage() {
       </section>
 
       <footer className="mt-10 px-5 text-center text-[11px] text-atlas-muted">
-        {t('footer', lang)}
+        {t("footer", lang)}
       </footer>
     </div>
-  )
+  );
 }

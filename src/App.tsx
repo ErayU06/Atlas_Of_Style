@@ -1,11 +1,11 @@
-import { Suspense, lazy } from 'react'
-import { Routes, Route, useLocation } from 'react-router'
-import { AppProvider } from '@/context/AppContext'
-import BottomNav from '@/components/BottomNav'
-import PageTransition from '@/components/PageTransition'
-import PageLoader from '@/components/PageLoader'
-import UnlockToast from '@/components/UnlockToast'
-import HomePage from '@/pages/Home'
+import { Suspense, lazy } from "react";
+import { Routes, Route, useLocation } from "react-router";
+import { AppProvider } from "@/context/AppContext";
+import BottomNav from "@/components/BottomNav";
+import PageTransition from "@/components/PageTransition";
+import PageLoader from "@/components/PageLoader";
+import UnlockToast from "@/components/UnlockToast";
+import HomePage from "@/pages/Home";
 
 /**
  * Home ships in the entry chunk so the first screen paints without a second
@@ -13,27 +13,27 @@ import HomePage from '@/pages/Home'
  * off the packing lists, quiz, guides and city data — all six translations of
  * each — that most sessions never open.
  */
-const CountryDetailPage = lazy(() => import('@/pages/CountryDetail'))
-const CityDetailPage = lazy(() => import('@/pages/CityDetail'))
-const TimeTravelPage = lazy(() => import('@/pages/TimeTravel'))
-const FavoritesPage = lazy(() => import('@/pages/Favorites'))
-const ToolsPage = lazy(() => import('@/pages/Tools'))
-const PackingPage = lazy(() => import('@/pages/Packing'))
-const QuizPage = lazy(() => import('@/pages/Quiz'))
-const PremiumPage = lazy(() => import('@/pages/Premium'))
-const GuideDetailPage = lazy(() => import('@/pages/GuideDetail'))
-const ProfilePage = lazy(() => import('@/pages/Profile'))
-const Login = lazy(() => import('@/pages/Login'))
-const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicy'))
-const NotFound = lazy(() => import('@/pages/NotFound'))
+const CountryDetailPage = lazy(() => import("@/pages/CountryDetail"));
+const CityDetailPage = lazy(() => import("@/pages/CityDetail"));
+const TimeTravelPage = lazy(() => import("@/pages/TimeTravel"));
+const FavoritesPage = lazy(() => import("@/pages/Favorites"));
+const ToolsPage = lazy(() => import("@/pages/Tools"));
+const PackingPage = lazy(() => import("@/pages/Packing"));
+const QuizPage = lazy(() => import("@/pages/Quiz"));
+const PremiumPage = lazy(() => import("@/pages/Premium"));
+const GuideDetailPage = lazy(() => import("@/pages/GuideDetail"));
+const ProfilePage = lazy(() => import("@/pages/Profile"));
+const Login = lazy(() => import("@/pages/Login"));
+const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicy"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
-const DemoHomePage = lazy(() => import('@/pages/DemoHome'))
-const DemoTitlesPage = lazy(() => import('@/pages/DemoTitles'))
+const DemoHomePage = lazy(() => import("@/pages/DemoHome"));
+const DemoTitlesPage = lazy(() => import("@/pages/DemoTitles"));
 
 function Chrome() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   // Demo sayfasının kendi koyu alt menüsü var; global olanı orada gizle.
-  return pathname.startsWith('/demo') ? null : <BottomNav />
+  return pathname.startsWith("/demo") ? null : <BottomNav />;
 }
 
 export default function App() {
@@ -44,10 +44,10 @@ export default function App() {
       {/* Horizontal insets live here rather than on each page: in landscape
           on a notched phone one side is inset, and every screen needs it. */}
       <div
-        className="min-h-screen bg-background"
+        className="app-shell min-h-screen bg-background"
         style={{
-          paddingLeft: 'var(--safe-left)',
-          paddingRight: 'var(--safe-right)',
+          paddingLeft: "var(--safe-left)",
+          paddingRight: "var(--safe-right)",
         }}
       >
         <PageTransition>
@@ -79,5 +79,5 @@ export default function App() {
         <UnlockToast />
       </div>
     </AppProvider>
-  )
+  );
 }

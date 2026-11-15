@@ -1,34 +1,40 @@
-import type { ReactNode } from 'react'
-import { Link } from 'react-router'
-import { ArrowRight } from 'lucide-react'
-import SmartImage, { type ImageRatio } from '@/components/SmartImage'
-import { cn } from '@/lib/utils'
+import type { ReactNode } from "react";
+import { Link } from "react-router";
+import { ArrowRight } from "lucide-react";
+import SmartImage, { type ImageRatio } from "@/components/SmartImage";
+import { cn } from "@/lib/utils";
 
 interface FashionCardProps {
-  to: string
-  image: string
-  imageAlt: string
+  to: string;
+  image: string;
+  imageAlt: string;
   /** Era, region or country line above the title. */
-  kicker?: string
-  title: string
-  description?: string
+  kicker?: string;
+  title: string;
+  description?: string;
   /** Label for the explore affordance. Omit to hide it. */
-  cta?: string
+  cta?: string;
   /** Flag or emoji shown before the title. */
-  emblem?: string
+  emblem?: string;
   /** `overlay` = full-bleed editorial, `row` = compact list item. */
-  variant?: 'overlay' | 'row'
+  variant?: "overlay" | "row";
   /** Type scale for the overlay variant: `sm` fits a two-column grid. */
-  size?: 'sm' | 'md'
-  ratio?: ImageRatio
-  priority?: boolean
+  size?: "sm" | "md";
+  ratio?: ImageRatio;
+  priority?: boolean;
   /** Badges (PRO, "new") pinned to the top-left of the image. */
-  badge?: ReactNode
+  badge?: ReactNode;
   /** Actions pinned to the top-right — usually a FavoriteButton. */
-  action?: ReactNode
+  action?: ReactNode;
+  /**
+   * Başlığı görselin alt kenarına bindirir: yarısı fotoğrafın üstünde, yarısı
+   * zeminde. İsme fotoğrafı karartmadan daha fazla yer açıyor. Kartın altında
+   * boşluk gerektirdiği için sadece o boşluğun olduğu yerlerde açılmalı.
+   */
+  overhang?: boolean;
   /** Stagger index, so a list of cards arrives in sequence. */
-  index?: number
-  className?: string
+  index?: number;
+  className?: string;
 }
 
 /**
@@ -45,23 +51,24 @@ export default function FashionCard({
   description,
   cta,
   emblem,
-  variant = 'overlay',
-  size = 'md',
-  ratio = 'editorial',
+  variant = "overlay",
+  size = "md",
+  ratio = "editorial",
   priority = false,
   badge,
+  overhang = false,
   action,
   index = 0,
   className,
 }: FashionCardProps) {
   // Cap the stagger so long lists never feel like they are loading slowly.
-  const delay = `${Math.min(index, 6) * 70}ms`
-  const small = size === 'sm'
+  const delay = `${Math.min(index, 6) * 70}ms`;
+  const small = size === "sm";
 
-  if (variant === 'row') {
+  if (variant === "row") {
     return (
       <div
-        className={cn('animate-fade-up', className)}
+        className={cn("animate-fade-up", className)}
         style={{ animationDelay: delay }}
       >
         <Link
@@ -83,7 +90,9 @@ export default function FashionCard({
               <span className="truncate">{title}</span>
             </h3>
             {description && (
-              <p className="mt-0.5 truncate text-[13px] text-atlas-muted">{description}</p>
+              <p className="mt-0.5 truncate text-[13px] text-atlas-muted">
+                {description}
+              </p>
             )}
           </div>
           {action ? (
@@ -98,16 +107,23 @@ export default function FashionCard({
           )}
         </Link>
       </div>
-    )
+    );
   }
 
   return (
-    <div className={cn('animate-fade-up', className)} style={{ animationDelay: delay }}>
+    <div
+      className={cn(
+        "animate-fade-up",
+        overhang && "relative pb-7 dark:pb-6",
+        className
+      )}
+      style={{ animationDelay: delay }}
+    >
       <Link
         to={to}
         className={cn(
-          'tap group relative block overflow-hidden shadow-card transition-shadow duration-300 hover:shadow-lift',
-          small ? 'rounded-2xl' : 'rounded-3xl',
+          "tap group relative block overflow-hidden shadow-card transition-shadow duration-300 hover:shadow-lift",
+          small ? "rounded-2xl" : "rounded-3xl"
         )}
       >
         <SmartImage
@@ -121,51 +137,75 @@ export default function FashionCard({
               Small cards get a shallower one so the photo stays the subject. */}
           <div
             className={cn(
-              'absolute inset-0 bg-gradient-to-t',
+              "absolute inset-0 bg-gradient-to-t",
               small
-                ? 'from-black/75 via-black/12 to-transparent'
-                : 'from-black/80 via-black/25 to-black/5',
+                ? "from-black/75 via-black/12 to-transparent"
+                : "from-black/80 via-black/25 to-black/5"
             )}
             aria-hidden
           />
         </SmartImage>
 
         {badge && (
-          <div className={cn('absolute flex gap-2', small ? 'left-3 top-3' : 'left-4 top-4')}>
+          <div
+            className={cn(
+              "absolute flex gap-2",
+              small ? "left-3 top-3" : "left-4 top-4"
+            )}
+          >
             {badge}
           </div>
         )}
         {action && (
-          <div className={cn('absolute', small ? 'right-2 top-2' : 'right-3 top-3')}>{action}</div>
+          <div
+            className={cn(
+              "absolute",
+              small ? "right-2 top-2" : "right-3 top-3"
+            )}
+          >
+            {action}
+          </div>
         )}
 
-        <div className={cn('absolute inset-x-0 bottom-0 text-white', small ? 'p-3.5' : 'p-5')}>
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 text-white",
+            small ? "p-3.5" : "p-5",
+            overhang && (small ? "pb-2.5" : "pb-4")
+          )}
+        >
           {kicker && (
             <p
               className={cn(
-                'font-semibold uppercase text-white/75',
-                small ? 'text-[9px] tracking-[0.2em]' : 'text-[10px] tracking-[0.28em]',
+                "font-semibold uppercase text-white/75",
+                small
+                  ? "text-[9px] tracking-[0.2em]"
+                  : "text-[10px] tracking-[0.28em]"
               )}
             >
               {kicker}
             </p>
           )}
-          <h3
-            className={cn(
-              'flex items-center gap-1.5 font-serif font-semibold leading-tight drop-shadow-sm',
-              small ? 'mt-1 text-[17px]' : 'mt-1.5 gap-2 text-[27px]',
-            )}
-          >
-            {emblem && <span className={small ? 'text-sm' : 'text-2xl'}>{emblem}</span>}
-            <span className="min-w-0 truncate">{title}</span>
-          </h3>
+          {!overhang && (
+            <h3
+              className={cn(
+                "flex items-center gap-1.5 font-serif font-semibold leading-tight drop-shadow-sm",
+                small ? "mt-1 text-[17px]" : "mt-1.5 gap-2 text-[27px]"
+              )}
+            >
+              {emblem && (
+                <span className={small ? "text-sm" : "text-2xl"}>{emblem}</span>
+              )}
+              <span className="min-w-0 truncate">{title}</span>
+            </h3>
+          )}
           {description && (
             <p
               className={cn(
-                'leading-relaxed text-white/85',
+                "leading-relaxed text-white/85",
                 small
-                  ? 'mt-0.5 line-clamp-1 text-[11px]'
-                  : 'mt-1.5 line-clamp-2 max-w-[34ch] text-[13px]',
+                  ? "mt-0.5 line-clamp-1 text-[11px]"
+                  : "mt-1.5 line-clamp-2 max-w-[34ch] text-[13px]"
               )}
             >
               {description}
@@ -182,6 +222,25 @@ export default function FashionCard({
           )}
         </div>
       </Link>
+
+      {/* Taşan başlık: fotoğrafın alt kenarını keserek zemine iniyor. */}
+      {overhang && (
+        <h3
+          className={cn(
+            "pointer-events-none absolute inset-x-0 bottom-0 flex items-center gap-2 font-serif font-semibold leading-none text-atlas-ink",
+            small ? "px-2 text-[23px]" : "px-3 text-[31px]"
+          )}
+          style={{
+            textShadow:
+              "0 2px 14px hsl(var(--atlas-paper) / .85), 0 0 34px hsl(var(--atlas-paper) / .6)",
+          }}
+        >
+          {emblem && (
+            <span className={small ? "text-sm" : "text-xl"}>{emblem}</span>
+          )}
+          <span className="min-w-0 truncate">{title}</span>
+        </h3>
+      )}
     </div>
-  )
+  );
 }
