@@ -24,6 +24,15 @@ filigran yok.** Yalnızca markasız, jenerik kıyafetler.
 Son kolondaki referans `docs/image-prompts.md` içindeki prompt numarasını gösterir;
 prompt'un tam metni orada, tek kaynak o belge. ✅ = değiştirildi.
 
+**Durum (2026-11-15):** 67/88 dosya değiştirildi. Kalan 21 dosyanın tamamı
+`city-*`; prompt'ları `docs/image-prompts.md` → **5. parti**'de hazır.
+Bu partide kompozisyon farklı: özne mekân, kıyafet detay (manken yanda,
+şehre kadrajın üçte ikisi).
+
+**Neden değişiyorlar:** 21'inin hepsinde gerçek insan yüzü, çoğunda
+okunabilir ticari tabela, her birinde görünür `AI生成` filigranı var; hiçbirinde
+C2PA/EXIF/XMP yok.
+
 **Durum (2026-11-06):** 67/88 dosya değiştirildi. **Şehirler dışındaki her
 görsel artık bizim** — 57 ülke görseli, 8 dönem görseli, ana sayfa kapağı ve
 pasaport kâğıdı, hepsi aynı tarzda (mekânda tam boy manken). Kalan 21 şehir

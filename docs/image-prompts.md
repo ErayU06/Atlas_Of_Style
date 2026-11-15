@@ -2036,3 +2036,489 @@ Plain, original, unbranded garments; patterns are simple stripes, solids or orig
 
 Output: 3:4 portrait, 1536×2048.
 ```
+
+---
+
+# 5. parti — 21 şehir görseli
+
+Uygulama şehir ve ülke turlarına kaydığı için bu 21 dosya artık setin en
+görünür parçası. Önceki partilerden **tek farkı kompozisyon**: burada özne
+mekân, kıyafet onun içindeki detay. Manken kadrajın sol ya da sağ üçte
+birinde duruyor ve şehre kadrajın yaklaşık üçte ikisi kalıyor.
+
+Değiştirilme sebebi tarz değil, hukuk: mevcut 21 dosyanın **hepsinde gerçek
+insan yüzü**, çoğunda okunabilir ticari tabela (`THIRD WAVE COFFEE`,
+`NORDSTROM`, Delhi ve Guangzhou dükkân tabelaları) ve **her birinde sol altta
+görünür `AI生成` filigranı** var. Hiçbirinde C2PA, EXIF veya XMP yok.
+
+Kırpma: kaynak 3:4; uygulama aynı dosyayı ülke sayfasındaki satır kartında
+4:5, demo şeridinde 5:6 olarak kesiyor. Kayıp en fazla yüksekliğin %10'u, o
+yüzden kural basit: **üstte ve altta birer onda bir boşluk bırak.** Satır
+kartı 68px genişliğinde, bu yüzden figürle zemin arasında net ton farkı
+isteniyor.
+
+| Dosya | Kırpmalar | Prompt'taki kural |
+| --- | --- | --- |
+| Şehir | 3:4 + 4:5 + 5:6 | Mekân üçte iki, manken yanda, üst/alt onda bir boşluk |
+
+## 1. `city-istanbul.jpg`
+
+*İstanbul · Türkiye*
+
+```
+A full-length display mannequin wearing a long warm-grey wool coat worn open over a cream cable knit, bone wide-leg trousers, a fine clay-red wool scarf, brown leather ankle boots and a soft tan leather satchel.
+
+It stands in a steep cobbled hillside lane of worn pale stone, weathered timber bay windows and lime-washed walls, with morning haze over the water far below at the end of the street. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 2. `city-cappadocia.jpg`
+
+*Kapadokya · Türkiye*
+
+```
+A full-length display mannequin wearing a sand canvas field jacket over a cream merino crew neck, warm-grey trousers, a clay knitted beanie, brown lace-up walking boots and a waxed sand rucksack.
+
+It stands in an eroded pale tuff valley at first light, rows of rounded rock cones and dry bleached grasses, with a few plain unmarked balloons very small and far away on the horizon. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 3. `city-mugla.jpg`
+
+*Muğla · Türkiye*
+
+```
+A full-length display mannequin wearing a cream linen shirt over a bone vest, bone linen trousers, a clay woven belt, flat tan leather sandals, a straw tote and a light sand linen overshirt carried over one arm.
+
+It stands in a whitewashed Aegean harbour quay of bleached timber decking and lime-washed stone, with the hulls of moored wooden boats and a bougainvillea-draped wall softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 4. `city-new-york.jpg`
+
+*New York · ABD*
+
+```
+A full-length display mannequin wearing a long bone wool overcoat over a warm-grey roll-neck, charcoal-warm tailored trousers, brown leather ankle boots, a structured clay leather bag and a cream knitted scarf.
+
+It stands in a brownstone block in low winter sun: sandstone stoops, cast-iron railings, bare street trees and a thin drift of steam across the pavement. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 5. `city-los-angeles.jpg`
+
+*Los Angeles · ABD*
+
+```
+A full-length display mannequin wearing an oversized sand linen shirt worn open over a cream ribbed tank, bone wide-leg trousers, clay leather slides, a soft tan shoulder bag and a woven sun hat held in one hand.
+
+It stands in a low cream stucco wall and tall palms in late afternoon, long shadows raking across pale pavement, dry warm-grey hills far behind and softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 6. `city-miami.jpg`
+
+*Miami · ABD*
+
+```
+A full-length display mannequin wearing a clay-and-cream wide-stripe short-sleeve camp shirt, bone linen shorts, cream canvas sneakers, a woven straw tote and a light sand overshirt tied at the waist.
+
+It stands in pastel plaster facades in cream, sand and faded clay with rounded deco mouldings and glass brick, palm shadow falling across them. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 7. `city-beijing.jpg`
+
+*Pekin · Çin*
+
+```
+A full-length display mannequin wearing a long sand quilted coat over a cream high-neck knit, warm-grey straight trousers, brown leather boots, a clay wool scarf and a soft bone shoulder bag.
+
+It stands in a grey brick hutong wall with a timber gateway frame in worn clay-red paint, bare winter branches reaching over the roofline. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 8. `city-shanghai.jpg`
+
+*Şanghay · Çin*
+
+```
+A full-length display mannequin wearing a tailored bone wool blazer over a cream silk shell, warm-grey tailored trousers, clay leather loafers and a slim structured sand leather bag.
+
+It stands in a plane-tree avenue of cream stucco and warm-grey stone facades with wrought-iron balconies, damp pavement reflecting a flat pale sky. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 9. `city-guangzhou.jpg`
+
+*Guangzhou · Çin*
+
+```
+A full-length display mannequin wearing a light sand linen shirt-jacket over a cream tee, bone cropped trousers, woven clay flats and a large soft canvas carryall.
+
+It stands in an arcaded qilou colonnade of cream and warm-grey plaster piers, light filtering down the arcade onto worn stone paving, with potted foliage softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 10. `city-delhi.jpg`
+
+*Delhi · Hindistan*
+
+```
+A full-length display mannequin wearing a long cream cotton tunic over bone tapered trousers, a clay hand-woven shawl over one shoulder, flat tan leather sandals and a soft sand cotton shoulder bag.
+
+It stands in a clay-red sandstone colonnade in winter haze, carved stone screens throwing lattice shadows across sand-coloured paving. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 11. `city-mumbai.jpg`
+
+*Mumbai · Hindistan*
+
+```
+A full-length display mannequin wearing a sand waxed-cotton rain coat worn open over a cream cotton shirt, bone cropped trousers, clay rubber-soled sandals and a waterproof sand canvas satchel.
+
+It stands in a sea wall of dark wet basalt blocks under heavy monsoon cloud, spray haze in the air and warm-grey stone facades far behind and soft. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 12. `city-bangalore.jpg`
+
+*Bengaluru · Hindistan*
+
+```
+A full-length display mannequin wearing a cream cotton overshirt over a bone tee, warm-grey tapered trousers, clay canvas sneakers and a slim sand crossbody bag.
+
+It stands in a shaded avenue of old rain trees, dappled light on cream plaster garden walls, muted olive-grey foliage softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 13. `city-sydney.jpg`
+
+*Sydney · Avustralya*
+
+```
+A full-length display mannequin wearing a bone cotton overshirt over a cream ribbed tee, sand chino shorts, clay canvas shoes, a woven straw tote and a light sand knit tied at the shoulders.
+
+It stands in a honey-coloured sandstone headland path above the water, salt-bleached timber railings and a flat silver sea stretching out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 14. `city-melbourne.jpg`
+
+*Melbourne · Avustralya*
+
+```
+A full-length display mannequin wearing a charcoal-warm wool overcoat over a cream knit and a bone shirt, warm-grey trousers, brown leather derby shoes, a clay wool scarf and a structured sand leather bag.
+
+It stands in a narrow bluestone laneway of dark wet cobbles, plain unpainted warm-grey brick walls, cream-painted window frames and a tangle of overhead wires. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 15. `city-cairns.jpg`
+
+*Cairns · Avustralya*
+
+```
+A full-length display mannequin wearing a sand technical overshirt over a cream tee, bone quick-dry shorts, a clay webbing belt, tan leather sandals, a light sand rucksack and a woven sun hat hanging from the pack.
+
+It stands in a timber boardwalk along a mangrove shoreline, warm weathered boards underfoot, muted olive foliage and a pale humid sky softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 16. `city-rio.jpg`
+
+*Rio de Janeiro · Brezilya*
+
+```
+A full-length display mannequin wearing a clay-and-cream vertically striped short-sleeve shirt, bone linen trousers, flat tan leather sandals and a woven straw bag.
+
+It stands in a promenade paved in a sweeping wave pattern of cream and dark stone mosaic, palms along its edge, a hazy headland far off and out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 17. `city-sao-paulo.jpg`
+
+*São Paulo · Brezilya*
+
+```
+A full-length display mannequin wearing a warm-grey tailored overcoat over a cream knit, bone straight trousers, dark brown leather boots and a clay leather document bag.
+
+It stands in a wide avenue of warm-grey concrete and board-marked modernist facades under flat cloud, bare planting beds and damp pavement. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 18. `city-manaus.jpg`
+
+*Manaus · Brezilya*
+
+```
+A full-length display mannequin wearing a cream long-sleeve cotton shirt rolled at the sleeves, sand quick-dry trousers, a clay webbing belt, brown leather boots, a waxed sand duffel and a wide woven hat hanging from its strap.
+
+It stands in a floating timber river dock on wide brown water, pale humid sky, plain unmarked wooden hulls moored alongside and softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 19. `city-vancouver.jpg`
+
+*Vancouver · Kanada*
+
+```
+A full-length display mannequin wearing a sand waxed rain shell over a cream knitted fleece, warm-grey trousers, brown waterproof boots, a clay beanie and a sand roll-top rucksack.
+
+It stands in a wet seawall path in pale mist, warm-grey concrete darkened by rain, tall conifers and flat silver water softly out of focus. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 20. `city-toronto.jpg`
+
+*Toronto · Kanada*
+
+```
+A full-length display mannequin wearing a long sand wool coat over a cream roll-neck, warm-grey trousers, brown leather boots, a clay wool scarf and a structured bone leather tote.
+
+It stands in a warm-grey steel footbridge over a wooded ravine in late autumn, bare branches in clay and sand tones, a flat overcast sky. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the right third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
+
+## 21. `city-montreal.jpg`
+
+*Montreal · Kanada*
+
+```
+A full-length display mannequin wearing a long cream down-filled coat, a clay knitted scarf and hat, bone wool trousers, dark brown shearling-lined boots, warm-grey knitted mittens and a sand leather satchel.
+
+It stands in a snow-banked street of grey stone row houses with exterior wrought-iron staircases, bare trees and flat winter light. The background is softly out of focus; the mannequin and its outfit are sharp.
+
+Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+
+This is a picture of the place first and of the outfit second. Give the setting roughly two thirds of the frame: the mannequin stands full length in the left third, sharp and clearly separated in tone from its surroundings, while the city fills the rest and falls softly out of focus. Keep at least a tenth of the frame height empty above the head and the same below the shoes, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+
+Quiet museum-archive mood: still, considered, unstaged. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+
+The figure is a faceless display mannequin in smooth matte cream-white: either a plain abstract head with no eyes, nose, mouth or hair, or no head at all, finished cleanly at the neck. Its arms and hands are the same smooth matte material, simplified, with no skin texture and no fingernails. No real people, no human faces, no human hands, no skin anywhere in the frame.
+
+Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot.
+
+Output: 3:4 portrait, 1536×2048.
+```
