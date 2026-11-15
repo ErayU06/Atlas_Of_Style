@@ -1,21 +1,23 @@
-import { Link, useParams, Navigate } from 'react-router'
-import { ChevronLeft, MapPin, Thermometer } from 'lucide-react'
-import { getCity } from '@/data/cities'
-import { countries } from '@/data/countries'
-import { pick } from '@/types/country'
-import { useApp } from '@/context/AppContext'
-import { t } from '@/i18n'
-import PremiumGate from '@/components/PremiumGate'
-import SmartImage from '@/components/SmartImage'
-import { Button } from '@/components/ui/button'
+import { Link, useParams, Navigate } from "react-router";
+import { ChevronLeft, MapPin, Thermometer } from "lucide-react";
+import { getCity } from "@/data/cities";
+import { countries } from "@/data/countries";
+import { pick } from "@/types/country";
+import { useApp } from "@/context/AppContext";
+import { t } from "@/i18n";
+import PremiumGate from "@/components/PremiumGate";
+import SmartImage from "@/components/SmartImage";
+import { Button } from "@/components/ui/button";
 
 export default function CityDetailPage() {
-  const { slug } = useParams()
-  const { lang } = useApp()
-  const city = getCity(slug ?? '')
-  const country = city ? countries.find((c) => c.slug === city.countrySlug) : undefined
+  const { slug } = useParams();
+  const { lang } = useApp();
+  const city = getCity(slug ?? "");
+  const country = city
+    ? countries.find(c => c.slug === city.countrySlug)
+    : undefined;
 
-  if (!city || !country) return <Navigate to="/" replace />
+  if (!city || !country) return <Navigate to="/" replace />;
 
   return (
     <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
@@ -39,18 +41,28 @@ export default function CityDetailPage() {
             className="tap flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
           >
             <ChevronLeft size={16} className="rtl:rotate-180" />
-            {t('backToCountry', lang)}
+            {t("backToCountry", lang)}
           </Link>
         </div>
 
+        {/* Ülke detayıyla aynı başlık dili: kil çizgi + ülke adı üstte,
+            şehir adı altta, fotoğraftan gölgeyle ayrılmış. */}
         <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-          <div className="text-3xl leading-none">{country.flag}</div>
-          <h1 className="mt-2 font-serif text-[38px] font-semibold leading-[1.02] drop-shadow-sm">
-            {pick(city.name, lang)}
-          </h1>
-          <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">
+          <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/75">
+            <span className="inline-block h-[2px] w-5 shrink-0 rounded-full bg-atlas-clay" />
             {pick(country.name, lang)}
           </p>
+          <h1
+            className="mt-2 flex items-start gap-2.5 font-serif text-[38px] font-semibold leading-[1.02]"
+            style={{
+              textShadow: "0 2px 18px rgba(0,0,0,.6), 0 0 48px rgba(0,0,0,.45)",
+            }}
+          >
+            <span className="mt-1 shrink-0 text-2xl leading-none">
+              {country.flag}
+            </span>
+            <span className="min-w-0">{pick(city.name, lang)}</span>
+          </h1>
         </div>
       </div>
 
@@ -72,7 +84,7 @@ export default function CityDetailPage() {
               <Thermometer size={18} />
             </span>
             <div>
-              <p className="kicker">{t('climateLabel', lang)}</p>
+              <p className="kicker">{t("climateLabel", lang)}</p>
               <p className="mt-1.5 text-[14px] leading-relaxed text-atlas-body">
                 {pick(city.climate, lang)}
               </p>
@@ -84,7 +96,7 @@ export default function CityDetailPage() {
         <div className="mt-5 space-y-3 px-5">
           <Button asChild variant="atlasSoft" size="pill" className="w-full">
             <Link to={`/packing/${country.slug}`}>
-              🧳 {t('whatToWear', lang)}
+              🧳 {t("whatToWear", lang)}
             </Link>
           </Button>
           <Button asChild variant="atlasOutline" size="pill" className="w-full">
@@ -96,5 +108,5 @@ export default function CityDetailPage() {
         </div>
       </PremiumGate>
     </div>
-  )
+  );
 }

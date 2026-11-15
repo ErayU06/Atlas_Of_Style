@@ -114,7 +114,7 @@ export default function FashionCard({
     <div
       className={cn(
         "animate-fade-up",
-        overhang && "relative pb-7 dark:pb-6",
+        overhang && (small ? "relative" : "relative pb-7 dark:pb-6"),
         className
       )}
       style={{ animationDelay: delay }}
@@ -223,24 +223,30 @@ export default function FashionCard({
         </div>
       </Link>
 
-      {/* Taşan başlık: fotoğrafın alt kenarını keserek zemine iniyor. */}
-      {overhang && (
-        <h3
-          className={cn(
-            "pointer-events-none absolute inset-x-0 bottom-0 flex items-center gap-2 font-serif font-semibold leading-none text-atlas-ink",
-            small ? "px-2 text-[23px]" : "px-3 text-[31px]"
-          )}
-          style={{
-            textShadow:
-              "0 2px 14px hsl(var(--atlas-paper) / .85), 0 0 34px hsl(var(--atlas-paper) / .6)",
-          }}
-        >
-          {emblem && (
-            <span className={small ? "text-sm" : "text-xl"}>{emblem}</span>
-          )}
-          <span className="min-w-0 truncate">{title}</span>
-        </h3>
-      )}
+      {/* Taşan başlık. Büyük kartta fotoğrafın alt kenarını keserek zemine
+          iniyor. İki sütunlu küçük kartta akışta duruyor ve iki satıra
+          sarıyor: "Amerika Birleşik Devletleri" hiçbir puntoda tek satıra
+          sığmıyor, kısaltmak da ülke adını okunmaz hâle getiriyor. */}
+      {overhang &&
+        (small ? (
+          <h3 className="mt-2 flex items-start gap-1.5 px-0.5 font-serif text-[18px] font-semibold leading-[1.18] text-atlas-ink">
+            {emblem && (
+              <span className="mt-0.5 shrink-0 text-xs">{emblem}</span>
+            )}
+            <span className="line-clamp-2 min-w-0">{title}</span>
+          </h3>
+        ) : (
+          <h3
+            className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center gap-2 px-3 font-serif text-[31px] font-semibold leading-none text-atlas-ink"
+            style={{
+              textShadow:
+                "0 2px 14px hsl(var(--atlas-paper) / .85), 0 0 34px hsl(var(--atlas-paper) / .6)",
+            }}
+          >
+            {emblem && <span className="text-xl">{emblem}</span>}
+            <span className="min-w-0 truncate">{title}</span>
+          </h3>
+        ))}
     </div>
   );
 }

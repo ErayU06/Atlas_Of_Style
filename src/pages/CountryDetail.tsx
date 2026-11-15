@@ -1,42 +1,42 @@
-import { useEffect, useMemo } from 'react'
-import { Link, useParams, Navigate } from 'react-router'
-import { ChevronLeft, Camera, ArrowRight } from 'lucide-react'
-import { countries } from '@/data/countries'
-import { citiesByCountry } from '@/data/cities'
-import { eras } from '@/data/eras'
-import { pick } from '@/types/country'
-import { useApp } from '@/context/AppContext'
-import { t, regionLabel, sectionMeta } from '@/i18n'
-import PremiumGate from '@/components/PremiumGate'
-import SmartImage from '@/components/SmartImage'
-import SectionHeading from '@/components/SectionHeading'
-import FashionCard from '@/components/FashionCard'
-import FavoriteButton from '@/components/FavoriteButton'
-import { Button } from '@/components/ui/button'
+import { useEffect, useMemo } from "react";
+import { Link, useParams, Navigate } from "react-router";
+import { ChevronLeft, Camera, ArrowRight } from "lucide-react";
+import { countries } from "@/data/countries";
+import { citiesByCountry } from "@/data/cities";
+import { eras } from "@/data/eras";
+import { pick } from "@/types/country";
+import { useApp } from "@/context/AppContext";
+import { t, regionLabel, sectionMeta } from "@/i18n";
+import PremiumGate from "@/components/PremiumGate";
+import SmartImage from "@/components/SmartImage";
+import SectionHeading from "@/components/SectionHeading";
+import FashionCard from "@/components/FashionCard";
+import FavoriteButton from "@/components/FavoriteButton";
+import { Button } from "@/components/ui/button";
 
 export default function CountryDetailPage() {
-  const { slug } = useParams()
-  const { lang, discover } = useApp()
-  const country = countries.find((c) => c.slug === slug)
+  const { slug } = useParams();
+  const { lang, discover } = useApp();
+  const country = countries.find(c => c.slug === slug);
 
   // Opening a country stamps the passport. Guarded on the slug so a re-render
   // never re-fires it.
   useEffect(() => {
-    if (country) discover('country', country.slug)
-  }, [country, discover])
+    if (country) discover("country", country.slug);
+  }, [country, discover]);
 
   const linkedEras = useMemo(
-    () => (country ? eras.filter((e) => e.countries.includes(country.slug)) : []),
-    [country],
-  )
+    () => (country ? eras.filter(e => e.countries.includes(country.slug)) : []),
+    [country]
+  );
 
-  if (!country) return <Navigate to="/" replace />
+  if (!country) return <Navigate to="/" replace />;
 
-  const others = countries.filter((c) => c.slug !== country.slug).slice(0, 6)
-  const countryCities = citiesByCountry(country.slug)
+  const others = countries.filter(c => c.slug !== country.slug).slice(0, 6);
+  const countryCities = citiesByCountry(country.slug);
 
-  const img = (n: number) => `/images/${country.slug}-${n}.jpg`
-  const imgAlt = `${country.name.en} everyday street style`
+  const img = (n: number) => `/images/${country.slug}-${n}.jpg`;
+  const imgAlt = `${country.name.en} everyday street style`;
 
   /** A full-bleed photographic plate, the way a museum breaks up wall text. */
   const Plate = ({ n }: { n: number }) => (
@@ -44,10 +44,10 @@ export default function CountryDetailPage() {
       <SmartImage src={img(n)} alt={imgAlt} ratio="editorial" />
       <figcaption className="flex items-center gap-1.5 px-6 pt-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-atlas-muted">
         <Camera size={12} />
-        {t('everydayStyle', lang)} · {pick(country.name, lang)}
+        {t("everydayStyle", lang)} · {pick(country.name, lang)}
       </figcaption>
     </figure>
-  )
+  );
 
   return (
     <div className="mx-auto max-w-md pb-[calc(7rem+var(--safe-bottom))]">
@@ -66,19 +66,29 @@ export default function CountryDetailPage() {
             className="tap flex items-center gap-1 rounded-full bg-atlas-surface/85 px-3 py-1.5 text-xs font-semibold text-atlas-body shadow-card backdrop-blur-md"
           >
             <ChevronLeft size={16} className="rtl:rotate-180" />
-            {t('back', lang)}
+            {t("back", lang)}
           </Link>
           <FavoriteButton slug={country.slug} variant="glass" size={18} />
         </div>
 
+        {/* Başlık bloğu: kil çizgi + bölge üstte, isim altta. Düz metin gibi
+            durmasın diye iki katmanlı gölge ile fotoğraftan ayrılıyor. */}
         <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-          <div className="text-3xl leading-none">{country.flag}</div>
-          <h1 className="mt-2 font-serif text-[40px] font-semibold leading-[1.02] drop-shadow-sm">
-            {pick(country.name, lang)}
-          </h1>
-          <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">
+          <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/75">
+            <span className="inline-block h-[2px] w-5 shrink-0 rounded-full bg-atlas-clay" />
             {regionLabel(country.region, lang)}
           </p>
+          <h1
+            className="mt-2 flex items-start gap-2.5 font-serif text-[40px] font-semibold leading-[1.02]"
+            style={{
+              textShadow: "0 2px 18px rgba(0,0,0,.6), 0 0 48px rgba(0,0,0,.45)",
+            }}
+          >
+            <span className="mt-1 shrink-0 text-2xl leading-none">
+              {country.flag}
+            </span>
+            <span className="min-w-0">{pick(country.name, lang)}</span>
+          </h1>
         </div>
       </div>
 
@@ -95,7 +105,7 @@ export default function CountryDetailPage() {
       <div className="mt-6 px-5">
         <Button asChild variant="atlasSoft" size="pill" className="w-full">
           <Link to={`/packing/${country.slug}`}>
-            🧳 {t('whatToWear', lang)}
+            🧳 {t("whatToWear", lang)}
           </Link>
         </Button>
       </div>
@@ -104,7 +114,10 @@ export default function CountryDetailPage() {
       {linkedEras.length > 0 && (
         <section className="mt-10">
           <div className="px-5">
-            <SectionHeading kicker={t('timeTravel', lang)} title={t('eras', lang)} />
+            <SectionHeading
+              kicker={t("timeTravel", lang)}
+              title={t("eras", lang)}
+            />
           </div>
           <div className="no-scrollbar flex gap-3 overflow-x-auto px-5 pb-2">
             {linkedEras.map((e, i) => (
@@ -129,8 +142,8 @@ export default function CountryDetailPage() {
       {countryCities.length > 0 && (
         <section className="mt-10 px-5">
           <SectionHeading
-            kicker={t('citiesSubtitle', lang)}
-            title={t('destinations', lang)}
+            kicker={t("citiesSubtitle", lang)}
+            title={t("destinations", lang)}
           />
           <PremiumGate>
             <div className="flex flex-col gap-2.5">
@@ -156,17 +169,17 @@ export default function CountryDetailPage() {
         <div className="px-5">
           <SectionHeading
             kicker={pick(country.name, lang)}
-            title={t('storyKicker', lang)}
+            title={t("storyKicker", lang)}
           />
         </div>
         {country.sections.map((s, i) => {
-          const meta = sectionMeta[s.key]
+          const meta = sectionMeta[s.key];
           return (
             <div key={s.key}>
               <section className="px-6 py-5">
                 <div className="flex items-baseline gap-3">
                   <span className="font-serif text-sm font-semibold text-atlas-clay">
-                    {String(i + 1).padStart(2, '0')}
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="font-serif text-[21px] font-semibold leading-tight text-atlas-ink">
@@ -187,18 +200,18 @@ export default function CountryDetailPage() {
                 <div className="mx-6 h-px bg-atlas-line" />
               )}
             </div>
-          )
+          );
         })}
       </div>
 
       {/* ---- Explore more ---------------------------------------------- */}
       <section className="mt-10 px-5">
         <SectionHeading
-          kicker={t('exploreByCountry', lang)}
-          title={t('exploreMore', lang)}
+          kicker={t("exploreByCountry", lang)}
+          title={t("exploreMore", lang)}
         />
         <div className="flex flex-wrap gap-2">
-          {others.map((c) => (
+          {others.map(c => (
             <Link
               key={c.slug}
               to={`/country/${c.slug}`}
@@ -213,10 +226,10 @@ export default function CountryDetailPage() {
           to="/time-travel"
           className="tap mt-5 flex items-center justify-center gap-1.5 text-xs font-semibold text-atlas-clay"
         >
-          {t('timeTravelTitle', lang)}
+          {t("timeTravelTitle", lang)}
           <ArrowRight size={14} className="rtl:rotate-180" />
         </Link>
       </section>
     </div>
-  )
+  );
 }
