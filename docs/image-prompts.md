@@ -2041,49 +2041,57 @@ Output: 3:4 portrait, 1536×2048.
 
 # 5. parti — 21 şehir görseli
 
-Uygulama şehir ve ülke turlarına kaydığı için bu 21 dosya setin en görünür
-parçası. Önceki partilerden **iki farkı** var.
+Uygulama şehir turlarına kaydığı için bu 21 dosya setin en görünür parçası.
+Önceki partilerden **üç farkı** var.
 
-**1. Özne mekân.** Kıyafet onun içindeki detay. Figür kadrajın sol ya da sağ
-üçte birinde, şehre kadrajın üçte ikisi kalıyor.
+**1. Şehrin adı prompt'un ilk cümlesinde geçiyor.** İlk denemede geçmiyordu ve
+sonuç felaketti: İstanbul prompt'u "pale stone hillside lane, lime-washed
+walls" diye tarif edilince Gemini bir Cornwall balıkçı kasabası üretti. Üretici
+İstanbul'un nasıl göründüğünü zaten biliyor; tarif etmek yerine adını söylemek
+gerekiyor.
 
-**2. Manken değil, kurgusal bir insan.** Mat vitrin mankeni cansız duruyordu
-ve şehir turu anlatısına uymuyordu. Telif açısından fark yok: tamamen üretilmiş
-bir figür kimsenin fotoğrafı değil ve model izni gerektirmiyor. Riski yöneten
-şey prompt disiplini — her prompt **kurgusal, hiçbir gerçek kişiye benzemeyen,
-ünlü olmayan bir yetişkin** istiyor ve yüzü çoğunlukla kameradan çevirip
-figürü sahnenin içinde küçük tutuyor.
+**2. Ünlü yapı yasağı kalktı.** O kural ülke görselleri için yazılmıştı, orada
+konu giysiydi. Şehir kartının tek işi 68 pikselde bile "burası İstanbul"
+demek; minareyi, vapuru, cumbayı yasaklayınca geriye jenerik bir kasaba
+kalıyor. Yerine **iki hedefli yasak** kondu, çünkü gerçek risk bütün yapılar
+değil, belirli ikisi:
+- **Sydney Opera Binası** — Opera House Trust görsel haklarını iddia ediyor.
+- **Kurtarıcı İsa heykeli (Rio)** — heykeltıraş Landowski 1961'de öldü, eser
+  telifi 2031'e kadar sürüyor.
+Ayasofya, Galata, Bodrum Kalesi, Yasak Şehir, hutong'lar, Mughal anıtları,
+Kapadokya: hepsi yüzyıllık, telif yok. Vancouver'da ayrıca totem ve yerli
+oymaları yasak — kültürel mülkiyet.
+
+**3. Objektif değişti.** `85mm f/2.0` arka planı eritiyordu; giyside doğruydu,
+şehirde mimariyi yok ediyor. Artık **28-35mm, f/5.6-f/8**, baştan sona net.
+Figür de küçüldü: kadrajın altıda biri ile dörtte biri arası, şehrin içinde
+bir insan, kadrajın öznesi değil.
 
 **Teslim öncesi zorunlu kontrol:** her görseli ters görsel aramadan geçir. Bir
 yüz tanınan birine benziyorsa o dosyayı kullanma, yeniden ürettir.
 
-Değiştirilme sebebi: mevcut 21 dosyanın hepsinde gerçek insan yüzü, çoğunda
-okunabilir ticari tabela (`THIRD WAVE COFFEE`, `NORDSTROM`, Delhi ve Guangzhou
-dükkân tabelaları) ve her birinde görünür `AI生成` filigranı var; hiçbirinde
-C2PA/EXIF/XMP yok.
-
 | Dosya | Kırpmalar | Prompt'taki kural |
 | --- | --- | --- |
-| Şehir | 3:4 + 4:5 + 5:6 | Mekân üçte iki, figür yanda, üst/alt onda bir boşluk |
+| Şehir | 3:4 + 4:5 + 5:6 | Güçlü şekiller içeride, üst/alt onda bir boşluk, küçük boyda da okunur |
 
 ## 1. `city-istanbul.jpg`
 
 *İstanbul · Türkiye*
 
 ```
-A candid editorial travel photograph of one person wearing a long warm-grey wool coat worn open over a cream cable knit, bone wide-leg trousers, a fine clay-red wool scarf, brown leather ankle boots and a soft tan leather satchel.
+A rich, high-detail editorial travel photograph of Istanbul, Türkiye.
 
-They are in a steep cobbled hillside lane of worn pale stone, weathered timber bay windows and lime-washed walls, with morning haze over the water far below at the end of the street. The background is softly out of focus; the figure and the outfit are sharp.
+A steep cobbled lane in a historic hillside quarter dropping straight down to the Bosphorus. Ottoman timber houses with overhanging upper storeys and shuttered bay windows in faded clay, ochre and cream crowd both sides. At the foot of the lane the strait opens out: a passenger ferry crossing the water, gulls over it, and on the far shore a low grey skyline of domes and slender minarets in the morning haze. Worn granite setts, a cat on a step, laundry lines overhead.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Early morning, low golden light raking down the lane, soft mist on the water.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long warm-grey wool coat, a clay-red scarf, bone trousers, brown leather boots and a tan leather satchel. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2093,19 +2101,19 @@ Output: 3:4 portrait, 1536×2048.
 *Kapadokya · Türkiye*
 
 ```
-A candid editorial travel photograph of one person wearing a sand canvas field jacket over a cream merino crew neck, warm-grey trousers, a clay knitted beanie, brown lace-up walking boots and a waxed sand rucksack.
+A rich, high-detail editorial travel photograph of Cappadocia, Türkiye.
 
-They are in an eroded pale tuff valley at first light, rows of rounded rock cones and dry bleached grasses, with a few plain unmarked balloons very small and far away on the horizon. The background is softly out of focus; the figure and the outfit are sharp.
+A valley of pale tuff fairy chimneys at dawn, with rock-cut cave dwellings carved directly into the cliffs: arched doorways, carved window openings, stone terraces and pigeon houses in the rock face. Dozens of hot-air balloons rise in the distance across the whole width of the valley, plain and unmarked. Dry golden grasses and vine terraces in the foreground.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+First light, the sun just clearing the ridge, long warm shadows across the rock, cool blue in the hollows.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen in profile, looking out at the view, the face turned away from the lens and softly lit. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a sand canvas field jacket, a clay knitted beanie, warm-grey trousers, walking boots and a waxed rucksack. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2115,19 +2123,19 @@ Output: 3:4 portrait, 1536×2048.
 *Muğla · Türkiye*
 
 ```
-A candid editorial travel photograph of one person wearing a cream linen shirt over a bone vest, bone linen trousers, a clay woven belt, flat tan leather sandals and a straw tote.
+A rich, high-detail editorial travel photograph of the Muğla coast, Türkiye.
 
-They are in a whitewashed Aegean harbour quay of bleached timber decking and lime-washed stone, with the hulls of moored wooden boats and a bougainvillea-draped wall softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A whitewashed Aegean harbour town on a steep hillside: cubic lime-washed houses with blue timber shutters, bougainvillea in clay pink and magenta spilling over garden walls, narrow stepped alleys of worn stone. Below, a horseshoe bay of clear turquoise water with wooden gulet schooners moored along a stone quay, masts bare, and a low crusader stone castle on the headland.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Late afternoon, hard Mediterranean sun softening to gold, deep shadow in the alleys, the sea glittering.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at a distance so the figure reads as a traveller in the scene rather than as a portrait; the face is small in the frame and softly rendered. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a cream linen shirt, bone linen trousers, a woven belt, flat tan sandals and a straw tote. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2137,19 +2145,19 @@ Output: 3:4 portrait, 1536×2048.
 *New York · ABD*
 
 ```
-A candid editorial travel photograph of one person wearing a long bone wool overcoat over a warm-grey roll-neck, charcoal-warm tailored trousers, brown leather ankle boots, a structured clay leather bag and a cream knitted scarf.
+A rich, high-detail editorial travel photograph of New York City, United States.
 
-They are in a brownstone block in low winter sun: sandstone stoops, cast-iron railings, bare street trees and a thin drift of steam across the pavement. The background is softly out of focus; the figure and the outfit are sharp.
+A downtown street of nineteenth-century cast-iron facades: tall arched windows, fluted columns painted deep green and cream, black fire escapes zigzagging down every frontage. Wooden water towers stand on the rooftops against the sky. Steam drifts from a vent in the asphalt, a yellow taxi passes too fast to read any marking, bare plane trees line the kerb and a brownstone stoop with iron railings sits in the foreground.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Late autumn afternoon, low sun firing down the avenue between the buildings, long shadows, cold clear air.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at three-quarter from behind, the head turned just enough to catch the light, the face mostly away from the lens. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long bone wool overcoat, a warm-grey roll-neck, dark tailored trousers, leather ankle boots and a structured clay leather bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2159,19 +2167,19 @@ Output: 3:4 portrait, 1536×2048.
 *Los Angeles · ABD*
 
 ```
-A candid editorial travel photograph of one person wearing an oversized sand linen shirt worn open over a cream ribbed tank, bone wide-leg trousers, clay leather slides, a soft tan shoulder bag and a woven sun hat.
+A rich, high-detail editorial travel photograph of Los Angeles, United States.
 
-They are in a low cream stucco wall and tall palms in late afternoon, long shadows raking across pale pavement, dry warm-grey hills far behind and softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A wide residential boulevard lined with tall thin palms running to a vanishing point. Low mid-century stucco bungalows in cream, sand and pale mint with flat roofs, carports and picture windows; bougainvillea over a breeze-block wall, a jacaranda dropping violet flowers on the pavement. Behind the rooftops the dry warm-grey hills rise through the afternoon haze.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Golden hour, long palm shadows striping the road, warm hazy light, a soft smog gradient in the sky.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear an oversized sand linen shirt, a cream tank, bone wide-leg trousers, leather slides and a soft tan shoulder bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2181,19 +2189,19 @@ Output: 3:4 portrait, 1536×2048.
 *Miami · ABD*
 
 ```
-A candid editorial travel photograph of one person wearing a clay-and-cream wide-stripe short-sleeve camp shirt, bone linen shorts, cream canvas sneakers, a woven straw tote and a light sand overshirt tied at the waist.
+A rich, high-detail editorial travel photograph of Miami, United States.
 
-They are in pastel plaster facades in cream, sand and faded clay with rounded deco mouldings and glass brick, palm shadow falling across them. The background is softly out of focus; the figure and the outfit are sharp.
+A seafront row of Art Deco hotels in pastel pink, mint, cream and butter yellow: rounded corners, horizontal eyebrow ledges over the windows, porthole glass, glass-brick panels and stepped parapets. Royal palms along the pavement, a strip of sand beyond with white timber lifeguard towers, and the Atlantic flat and bright behind.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Strong subtropical light just past midday softening toward afternoon, crisp shadows under the eyebrow ledges, a high blue sky.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at a distance so the figure reads as a traveller in the scene rather than as a portrait; the face is small in the frame and softly rendered. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a clay-and-cream wide-stripe camp shirt, bone linen shorts, canvas sneakers and a woven straw tote. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2203,19 +2211,19 @@ Output: 3:4 portrait, 1536×2048.
 *Pekin · Çin*
 
 ```
-A candid editorial travel photograph of one person wearing a long sand quilted coat over a cream high-neck knit, warm-grey straight trousers, brown leather boots, a clay wool scarf and a soft bone shoulder bag.
+A rich, high-detail editorial travel photograph of Beijing, China.
 
-They are in a grey brick hutong wall with a timber gateway frame in worn clay-red paint, bare winter branches reaching over the roofline. The background is softly out of focus; the figure and the outfit are sharp.
+A hutong lane of grey brick courtyard walls topped with upturned grey tile roofs. A red lacquered timber gate with brass door studs, carved lintel and a pair of round stone drums sits halfway along; bicycles lean against the wall, a bare scholar tree reaches over from a courtyard. Beyond the rooftops at the end of the lane, a glimpse of a yellow-glazed imperial tile roof above a deep red wall.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Clear dry winter morning, hard low sunlight, blue shadow on the grey brick, breath-cold air.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long sand quilted coat, a cream high-neck knit, warm-grey trousers, leather boots and a clay wool scarf. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2225,19 +2233,19 @@ Output: 3:4 portrait, 1536×2048.
 *Şanghay · Çin*
 
 ```
-A candid editorial travel photograph of one person wearing a tailored bone wool blazer over a cream silk shell, warm-grey tailored trousers, clay leather loafers and a slim structured sand leather bag.
+A rich, high-detail editorial travel photograph of Shanghai, China.
 
-They are in a plane-tree avenue of cream stucco and warm-grey stone facades with wrought-iron balconies, damp pavement reflecting a flat pale sky. The background is softly out of focus; the figure and the outfit are sharp.
+A narrow lilong lane of shikumen houses: grey brick terraces with carved stone gateways, heavy black timber doors and Western-style stone lintels, bamboo poles of laundry strung overhead between the walls. Plane trees lean in from the street at the end of the lane, and beyond them, far off and softly hazed, the towers of the modern skyline across the river.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Dusk, the last warm light on the upper brickwork while the lane below falls into cool blue shadow.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at three-quarter from behind, the head turned just enough to catch the light, the face mostly away from the lens. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a tailored bone wool blazer, a cream silk shell, warm-grey trousers, leather loafers and a slim sand leather bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2247,19 +2255,19 @@ Output: 3:4 portrait, 1536×2048.
 *Guangzhou · Çin*
 
 ```
-A candid editorial travel photograph of one person wearing a light sand linen shirt-jacket over a cream tee, bone cropped trousers, woven clay flats and a large soft canvas carryall.
+A rich, high-detail editorial travel photograph of Guangzhou, China.
 
-They are in an arcaded qilou colonnade of cream and warm-grey plaster piers, light filtering down the arcade onto worn stone paving, with potted foliage softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A qilou arcade street: continuous colonnades carrying the upper storeys out over the pavement, pastel stucco facades in cream, celadon and faded rose mixing Western mouldings with Chinese tilework, timber louvred shutters and ornate balustrades. Huge banyan trees drop aerial roots along the kerb, and the pavement under the arcade is worn smooth.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Humid subtropical morning, diffused light through haze, soft shadows, moisture in the air.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen in profile, looking out at the view, the face turned away from the lens and softly lit. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a light sand linen shirt-jacket, a cream tee, bone cropped trousers, woven flats and a large soft canvas carryall. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2269,19 +2277,19 @@ Output: 3:4 portrait, 1536×2048.
 *Delhi · Hindistan*
 
 ```
-A candid editorial travel photograph of one person wearing a long cream cotton tunic over bone tapered trousers, a clay hand-woven shawl over one shoulder, flat tan leather sandals and a soft sand cotton shoulder bag.
+A rich, high-detail editorial travel photograph of Delhi, India.
 
-They are in a clay-red sandstone colonnade in winter haze, carved stone screens throwing lattice shadows across sand-coloured paving. The background is softly out of focus; the figure and the outfit are sharp.
+A Mughal monument in red sandstone inlaid with white marble: deep scalloped arches, a high iwan portal, carved jali lattice screens casting intricate shadows, chhatri pavilions on the roofline and a bulbous dome. In front, a formal charbagh garden with long still water channels, clipped lawns and sandstone paths; parakeets in the trees.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Winter morning, soft golden haze, the sandstone glowing warm, long low shadows across the garden.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long cream cotton tunic, bone tapered trousers, a clay hand-woven shawl over one shoulder and flat tan sandals. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2291,19 +2299,19 @@ Output: 3:4 portrait, 1536×2048.
 *Mumbai · Hindistan*
 
 ```
-A candid editorial travel photograph of one person wearing a sand waxed-cotton rain coat worn open over a cream cotton shirt, bone cropped trousers, clay rubber-soled sandals and a waterproof sand canvas satchel.
+A rich, high-detail editorial travel photograph of Mumbai, India.
 
-They are in a sea wall of dark wet basalt blocks under heavy monsoon cloud, spray haze in the air and warm-grey stone facades far behind and soft. The background is softly out of focus; the figure and the outfit are sharp.
+The long curving sea wall of a bayfront promenade, lined with 1930s Art Deco apartment blocks in weathered cream and ochre: rounded corner balconies, vertical fins, ziggurat parapets. Grey basalt tetrapods are piled along the water, waves breaking over them and throwing spray across the promenade; coconut palms bend in the wind.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Monsoon afternoon, heavy slate cloud with a bright silver break low on the horizon, wet stone, spray haze.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen in profile, looking out at the view, the face turned away from the lens and softly lit. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a sand waxed-cotton rain coat over a cream shirt, bone cropped trousers, rubber-soled sandals and a waterproof canvas satchel. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2313,19 +2321,19 @@ Output: 3:4 portrait, 1536×2048.
 *Bengaluru · Hindistan*
 
 ```
-A candid editorial travel photograph of one person wearing a cream cotton overshirt over a bone tee, warm-grey tapered trousers, clay canvas sneakers and a slim sand crossbody bag.
+A rich, high-detail editorial travel photograph of Bengaluru, India.
 
-They are in a shaded avenue of old rain trees, dappled light on cream plaster garden walls, muted olive-grey foliage softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A quiet avenue under enormous old rain trees whose canopies meet overhead, dappling the road. Along it, a colonial-era bungalow with a deep red-oxide verandah, monkey-top gables over the windows, whitewashed columns and a low garden wall; flowering gulmohar drops scarlet petals on the pavement, and a stone-edged lake shows through the trees.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Mild morning, dappled light through the canopy, soft shadows, clean air after overnight rain.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at three-quarter from behind, the head turned just enough to catch the light, the face mostly away from the lens. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a cream cotton overshirt, a bone tee, warm-grey tapered trousers, canvas sneakers and a slim sand crossbody bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2335,19 +2343,19 @@ Output: 3:4 portrait, 1536×2048.
 *Sydney · Avustralya*
 
 ```
-A candid editorial travel photograph of one person wearing a bone cotton overshirt over a cream ribbed tee, sand chino shorts, clay canvas shoes, a woven straw tote and a light sand knit tied at the shoulders.
+A rich, high-detail editorial travel photograph of Sydney, Australia.
 
-They are in a honey-coloured sandstone headland path above the water, salt-bleached timber railings and a flat silver sea stretching out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A harbourside street of Victorian terraces with two tiers of cast-iron lace verandahs, painted cream and heritage green, standing above honey-coloured sandstone retaining walls and stone steps. Below, the harbour opens out: deep blue water, a green-and-cream passenger ferry crossing it, sandstone headlands with gum trees, and the steel arch of the harbour bridge far off on the left.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Bright clear morning, hard Southern-Hemisphere sun, crisp shadows, saturated blue water.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at a distance so the figure reads as a traveller in the scene rather than as a portrait; the face is small in the frame and softly rendered. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a bone cotton overshirt, a cream ribbed tee, sand chino shorts, canvas shoes and a woven straw tote. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces. Do not include the Sydney Opera House anywhere in the frame.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2357,19 +2365,19 @@ Output: 3:4 portrait, 1536×2048.
 *Melbourne · Avustralya*
 
 ```
-A candid editorial travel photograph of one person wearing a charcoal-warm wool overcoat over a cream knit and a bone shirt, warm-grey trousers, brown leather derby shoes, a clay wool scarf and a structured sand leather bag.
+A rich, high-detail editorial travel photograph of Melbourne, Australia.
 
-They are in a narrow bluestone laneway of dark wet cobbles, plain unpainted warm-grey brick walls, cream-painted window frames and a tangle of overhead wires. The background is softly out of focus; the figure and the outfit are sharp.
+A wide inner-city boulevard of dark bluestone kerbs and plane trees, flanked by Victorian buildings with ornate cast-iron verandahs and rendered parapets in cream and warm grey. A tram runs down the centre of the road on its own tracks, overhead wires crossing the sky in a fine grid; a narrow bluestone laneway opens off to one side, its cobbles wet and its brick walls plain and unpainted.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Changeable afternoon, a shaft of sun breaking through heavy cloud and lighting one side of the street while the other stays in shadow, wet road reflecting the sky.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a charcoal-warm wool overcoat, a cream knit, warm-grey trousers, leather derbies and a clay wool scarf. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces. The laneway walls are plain brick and stone: no murals, no street art, no painted lettering.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2379,19 +2387,19 @@ Output: 3:4 portrait, 1536×2048.
 *Cairns · Avustralya*
 
 ```
-A candid editorial travel photograph of one person wearing a sand technical overshirt over a cream tee, bone quick-dry shorts, a clay webbing belt, tan leather sandals, a light sand rucksack and a woven sun hat.
+A rich, high-detail editorial travel photograph of Cairns, Tropical North Queensland, Australia.
 
-They are in a timber boardwalk along a mangrove shoreline, warm weathered boards underfoot, muted olive foliage and a pale humid sky softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A tropical street of timber Queenslander houses raised on stumps, with wide shaded verandahs, lattice screens and corrugated iron roofs, painted cream, pale blue and faded clay. Coconut palms and flame trees along the road; beyond the rooftops a boardwalk runs over tidal mudflats and mangroves, and steep rainforest-covered mountains rise directly behind the town.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Humid tropical morning, towering white cloud over the ranges, bright diffused light, deep green shadow under the verandahs.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a sand technical overshirt, a cream tee, bone quick-dry shorts, leather sandals, a light rucksack and a woven sun hat. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2401,19 +2409,19 @@ Output: 3:4 portrait, 1536×2048.
 *Rio de Janeiro · Brezilya*
 
 ```
-A candid editorial travel photograph of one person wearing a clay-and-cream vertically striped short-sleeve shirt, bone linen trousers, flat tan leather sandals and a woven straw bag.
+A rich, high-detail editorial travel photograph of Rio de Janeiro, Brazil.
 
-They are in a promenade paved in a sweeping wave pattern of cream and dark stone mosaic, palms along its edge, a hazy headland far off and out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A beachfront promenade paved in the famous sweeping black-and-white Portuguese stone wave mosaic, royal palms along its edge. To one side the long curve of golden sand and surf; ahead, a bare granite monolith rises straight out of the sea at the mouth of the bay, and behind the beachfront a steep green hillside of densely stacked, brightly painted small houses.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Late afternoon, warm low sun along the beach, long palm shadows across the mosaic, sea haze softening the granite peak.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen in profile, looking out at the view, the face turned away from the lens and softly lit. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a clay-and-cream vertically striped short-sleeve shirt, bone linen trousers, flat tan sandals and a woven straw bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces. Do not include the Christ the Redeemer statue anywhere in the frame.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2423,19 +2431,19 @@ Output: 3:4 portrait, 1536×2048.
 *São Paulo · Brezilya*
 
 ```
-A candid editorial travel photograph of one person wearing a warm-grey tailored overcoat over a cream knit, bone straight trousers, dark brown leather boots and a clay leather document bag.
+A rich, high-detail editorial travel photograph of São Paulo, Brazil.
 
-They are in a wide avenue of warm-grey concrete and board-marked modernist facades under flat cloud, bare planting beds and damp pavement. The background is softly out of focus; the figure and the outfit are sharp.
+A dense modern avenue walled on both sides by tall concrete and glass towers of every decade, receding to a hazy vanishing point with no horizon visible. A long curving white modernist apartment block with horizontal brise-soleil fins dominates one side; jacaranda trees in flower break the grey, and the wide asphalt is wet and reflective.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Overcast afternoon drizzle, flat silver light, the towers fading into mist with distance, reflections on the road.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at three-quarter from behind, the head turned just enough to catch the light, the face mostly away from the lens. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a warm-grey tailored overcoat, a cream knit, bone straight trousers, dark leather boots and a clay leather document bag. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2445,19 +2453,19 @@ Output: 3:4 portrait, 1536×2048.
 *Manaus · Brezilya*
 
 ```
-A candid editorial travel photograph of one person wearing a cream long-sleeve cotton shirt rolled at the sleeves, sand quick-dry trousers, a clay webbing belt, brown leather boots, a waxed sand duffel and a wide woven hat.
+A rich, high-detail editorial travel photograph of Manaus, in the Brazilian Amazon.
 
-They are in a floating timber river dock on wide brown water, pale humid sky, plain unmarked wooden hulls moored alongside and softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A Belle Epoque opera house in the middle of the rainforest city: a pink and cream neoclassical building with a tall dome covered in glazed tiles in a diamond pattern, columns and a grand stair, standing on a plaza paved in black-and-white stone waves. Around the plaza, two-storey colonial houses faced with patterned azulejo tiles in faded blue and ochre; above the rooftops, a wall of dense jungle, and beyond it the dark water of the river with floating timber docks.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Equatorial afternoon, huge white cumulus building over the forest, bright humid light, deep shadow under the colonnade.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at a distance so the figure reads as a traveller in the scene rather than as a portrait; the face is small in the frame and softly rendered. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a cream long-sleeve cotton shirt with rolled sleeves, sand quick-dry trousers, leather boots, a waxed duffel and a wide woven hat. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2467,19 +2475,19 @@ Output: 3:4 portrait, 1536×2048.
 *Vancouver · Kanada*
 
 ```
-A candid editorial travel photograph of one person wearing a sand waxed rain shell over a cream knitted fleece, warm-grey trousers, brown waterproof boots, a clay beanie and a sand roll-top rucksack.
+A rich, high-detail editorial travel photograph of Vancouver, Canada.
 
-They are in a wet seawall path in pale mist, warm-grey concrete darkened by rain, tall conifers and flat silver water softly out of focus. The background is softly out of focus; the figure and the outfit are sharp.
+A waterfront seawall path of wet grey concrete curving along the inlet, with slender blue-green glass residential towers rising on one side and tall Douglas firs and cedars leaning over from a forested shore on the other. Across the water, snow-capped coastal mountains stand close and steep above the city. Floatplane wakes and small boats on the flat grey-green water, driftwood on a pebble beach.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Rain just stopped, low cloud tearing open over the mountains, cool silver light with a warm break on the peaks, everything wet and reflective.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Shown from behind, walking away from the camera, so the face is not visible. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a sand waxed rain shell, a cream knitted fleece, warm-grey trousers, waterproof boots, a clay beanie and a roll-top rucksack. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces. Do not include totem poles or any Indigenous carving, crest or cultural object.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2489,19 +2497,19 @@ Output: 3:4 portrait, 1536×2048.
 *Toronto · Kanada*
 
 ```
-A candid editorial travel photograph of one person wearing a long sand wool coat over a cream roll-neck, warm-grey trousers, brown leather boots, a clay wool scarf and a structured bone leather tote.
+A rich, high-detail editorial travel photograph of Toronto, Canada.
 
-They are in a warm-grey steel footbridge over a wooded ravine in late autumn, bare branches in clay and sand tones, a flat overcast sky. The background is softly out of focus; the figure and the outfit are sharp.
+A residential street of Victorian bay-and-gable houses in deep red brick, with steep gables, decorative bargeboard, bay windows and wide wooden porches behind low hedges. Enormous maples arch over the road in full autumn colour, dropping leaves across the pavement; streetcar wires cross the sky at the intersection, and far away between the rooftops the thin spire of the city's tall concrete tower stands against the sky.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Clear October afternoon, low warm sun through red and gold leaves, long shadows, crisp blue sky.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the right third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen at three-quarter from behind, the head turned just enough to catch the light, the face mostly away from the lens. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long sand wool coat, a cream roll-neck, warm-grey trousers, leather boots, a clay wool scarf and a structured bone leather tote. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
@@ -2511,19 +2519,19 @@ Output: 3:4 portrait, 1536×2048.
 *Montreal · Kanada*
 
 ```
-A candid editorial travel photograph of one person wearing a long cream down-filled coat, a clay knitted scarf and hat, bone wool trousers, dark brown shearling-lined boots, warm-grey knitted mittens and a sand leather satchel.
+A rich, high-detail editorial travel photograph of Montreal, Canada.
 
-They are in a snow-banked street of grey stone row houses with exterior wrought-iron staircases, bare trees and flat winter light. The background is softly out of focus; the figure and the outfit are sharp.
+A residential street of three-storey row houses in grey limestone and dark red brick, each with an exterior wrought-iron staircase curling up from the pavement to the first-floor door, iron balconies and cornices above. Deep snow banks line the kerb, bare trees stand against the facades, and the street is packed white under foot.
 
-Soft natural daylight from one side, long gentle shadows, matte tactile surfaces. Warm neutral palette: cream, sand, bone, warm grey, soft clay — the setting may carry the muted local colours of the place but stays inside that family. Terracotta #c2603a is the only strong accent. No saturated blue, green or neon.
+Clear cold winter afternoon, very low sun, long blue shadows on the snow, warm gold light on the upper brickwork.
 
-This is a picture of the place first and of the person second. Give the setting roughly two thirds of the frame: the figure stands or walks in the left third, sharp and clearly separated in tone from the surroundings, while the city fills the rest and falls softly out of focus. Seen in profile, looking out at the view, the face turned away from the lens and softly lit. Keep at least a tenth of the frame height empty above the head and the same below the feet, because the same file is also cropped to 4:5 and to 5:6, and it is shown as a small thumbnail as well as full width.
+Shot wide and deep, not with a long portrait lens: 28-35mm, f/5.6 to f/8, the architecture sharp from foreground to the far end of the view, with real depth and layers. Very high detail in stone, plaster, timber, tile and paving. Natural colour, richly but not garishly graded, warm highlights and clean shadows. Fine photographic grain, no HDR halos, no oversharpening, no tilt-shift miniature effect.
 
-Quiet, unstaged, documentary feeling — a real moment, not an advertisement and not a posed lifestyle shoot. Editorial travel photography, 85mm, f/2.0, shallow depth of field, natural light, fine grain.
+One person appears in the scene for life and scale, small in the frame and clearly secondary to the city: roughly a sixth to a quarter of the frame height, placed off to one side or walking along the view, seen from behind or in profile so the face is not the subject. They wear a long cream down-filled coat, a clay knitted scarf and hat, bone wool trousers, shearling-lined boots and warm-grey mittens. The person is entirely fictional and must not resemble any real, identifiable individual: no celebrity likeness, no public figure. An ordinary adult, naturally proportioned, believable skin and hands, not retouched. No children.
 
-The person is entirely fictional, generated from scratch, and must not resemble any real, identifiable individual: no celebrity likeness, no public figure, no recognisable model. An ordinary adult traveller, naturally proportioned, with believable skin, hair and hands, not glossy or retouched. No children.
+Compose for a 3:4 vertical frame that is also cropped to 4:5 and to 5:6 and shown as a small thumbnail, so keep the strongest shapes well inside the frame and leave about a tenth of the height spare at the top and bottom. The picture must still say which city it is at thumbnail size.
 
-Plain, original, unbranded garments; patterns are simple stripes, solids or original geometric motifs. No brand logos, no monograms, no repeated initials, no text, no lettering, no care labels, no hang tags, no shop signs, no street name plates, no posters, no destination boards, no vehicle markings, no number plates, no murals or street art, no watermark, no readable writing anywhere in the frame. The place must read through its atmosphere, materials and light, never through one famous landmark centred in the shot. No other recognisable bystanders: any further figures are distant, small and out of focus.
+No readable writing anywhere in the frame: no shop signs, no street name plates, no posters, no banners, no destination boards, no vehicle livery or number plates, no advertising, no murals or street art, no brand logos or monograms, no watermark. Garments are plain and unbranded. Any other people are distant, small and out of focus, with no readable faces.
 
 Output: 3:4 portrait, 1536×2048.
 ```
